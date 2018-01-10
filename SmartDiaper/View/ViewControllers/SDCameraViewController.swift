@@ -25,12 +25,10 @@ class SDCameraViewController: UIViewController, UINavigationControllerDelegate, 
         imagePicker.delegate = self
         imagePicker.sourceType = .camera
         present(imagePicker, animated: true, completion: nil)
-        
-        let qrCodeFrameView = UIView.init(frame: CGRect.init(x: 50, y: 50, width: 50, height: 50))
-            qrCodeFrameView.layer.borderColor = UIColor.green.cgColor
-            qrCodeFrameView.layer.borderWidth = 2
-            imagePicker.cameraOverlayView = qrCodeFrameView
-        
+
+        let overlayView = SDCameraOverlayView.init(frame: self.imagePicker.view.frame)
+        imagePicker.cameraOverlayView = overlayView
+
     }
 
     func image(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer) {
