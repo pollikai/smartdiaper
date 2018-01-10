@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D064EDECF5F421878A80DCF8C0F7EBB1"
+               BlueprintIdentifier = "CC7E65A9FA390E19D44893DE36BC5DA6"
                BuildableName = "Pods_SmartDiaper.framework"
                BlueprintName = "Pods-SmartDiaper"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -47,7 +47,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D064EDECF5F421878A80DCF8C0F7EBB1"
+            BlueprintIdentifier = "CC7E65A9FA390E19D44893DE36BC5DA6"
             BuildableName = "Pods_SmartDiaper.framework"
             BlueprintName = "Pods-SmartDiaper"
             ReferencedContainer = "container:Pods.xcodeproj">

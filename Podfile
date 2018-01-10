@@ -5,7 +5,8 @@ target 'SmartDiaper' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
 
-	pod 'SwiftLint'
+    pod 'SwiftLint'
+    pod 'R.swift'
 
   target 'SmartDiaperTests' do
     inherit! :search_paths
