@@ -19,6 +19,7 @@ DerivedData
 *.xcuserstate
 *.generated.swift
 xcschememanagement.plist
+R.generated.swift
 
 # CocoaPods
 #
