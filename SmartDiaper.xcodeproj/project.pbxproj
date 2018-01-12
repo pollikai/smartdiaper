@@ -19,6 +19,11 @@
 		AC4252F5200631810083D2AB /* SDCameraOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4252F4200631810083D2AB /* SDCameraOverlayView.swift */; };
 		AC4252F7200631890083D2AB /* SDCameraOverlayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC4252F6200631890083D2AB /* SDCameraOverlayView.xib */; };
 		AC4252FE2006347F0083D2AB /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4252FD2006347F0083D2AB /* R.generated.swift */; };
+		AC4A1FAE2007580C00C191AA /* UIView+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4A1FAD2007580C00C191AA /* UIView+Extentions.swift */; };
+		AC4A1FB020075B0600C191AA /* SDCapturedImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4A1FAF20075B0600C191AA /* SDCapturedImageViewController.swift */; };
+		ACDF72BE200784D100F0DBCF /* SDAVCaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDF72BD200784D100F0DBCF /* SDAVCaptureViewController.swift */; };
+		ACDF72C020078D2C00F0DBCF /* SDCapturedAVSessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDF72BF20078D2C00F0DBCF /* SDCapturedAVSessionViewController.swift */; };
+		ACDF72C22007911900F0DBCF /* SDCapturedAVSessionScreenShotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDF72C12007911900F0DBCF /* SDCapturedAVSessionScreenShotViewController.swift */; };
 		D4479573F404F1649B02C9DC /* Pods_SmartDiaperTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6029B941F729BAB756958506 /* Pods_SmartDiaperTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +58,11 @@
 		AC4252F4200631810083D2AB /* SDCameraOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDCameraOverlayView.swift; sourceTree = "<group>"; };
 		AC4252F6200631890083D2AB /* SDCameraOverlayView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SDCameraOverlayView.xib; sourceTree = "<group>"; };
 		AC4252FD2006347F0083D2AB /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
+		AC4A1FAD2007580C00C191AA /* UIView+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extentions.swift"; sourceTree = "<group>"; };
+		AC4A1FAF20075B0600C191AA /* SDCapturedImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDCapturedImageViewController.swift; sourceTree = "<group>"; };
+		ACDF72BD200784D100F0DBCF /* SDAVCaptureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDAVCaptureViewController.swift; sourceTree = "<group>"; };
+		ACDF72BF20078D2C00F0DBCF /* SDCapturedAVSessionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDCapturedAVSessionViewController.swift; sourceTree = "<group>"; };
+		ACDF72C12007911900F0DBCF /* SDCapturedAVSessionScreenShotViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDCapturedAVSessionScreenShotViewController.swift; sourceTree = "<group>"; };
 		F0157F1410F5FB330BCF24E7 /* Pods-SmartDiaper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartDiaper.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SmartDiaper/Pods-SmartDiaper.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -145,6 +155,7 @@
 			children = (
 				AC1FE4EF20060A2A00EB2BD2 /* UIImage+Extensions.swift */,
 				AC1FE4F120060A3700EB2BD2 /* UIColor+Extensions.swift */,
+				AC4A1FAD2007580C00C191AA /* UIView+Extentions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -163,6 +174,10 @@
 			isa = PBXGroup;
 			children = (
 				AC1FE4CB2005FDF700EB2BD2 /* SDCameraViewController.swift */,
+				AC4A1FAF20075B0600C191AA /* SDCapturedImageViewController.swift */,
+				ACDF72BD200784D100F0DBCF /* SDAVCaptureViewController.swift */,
+				ACDF72BF20078D2C00F0DBCF /* SDCapturedAVSessionViewController.swift */,
+				ACDF72C12007911900F0DBCF /* SDCapturedAVSessionScreenShotViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -412,9 +427,14 @@
 				AC1FE4CC2005FDF700EB2BD2 /* SDCameraViewController.swift in Sources */,
 				AC1FE4F220060A3700EB2BD2 /* UIColor+Extensions.swift in Sources */,
 				AC1FE4F020060A2B00EB2BD2 /* UIImage+Extensions.swift in Sources */,
+				AC4A1FAE2007580C00C191AA /* UIView+Extentions.swift in Sources */,
 				AC1FE4CA2005FDF700EB2BD2 /* SDAppDelegate.swift in Sources */,
 				AC4252F5200631810083D2AB /* SDCameraOverlayView.swift in Sources */,
 				AC4252FE2006347F0083D2AB /* R.generated.swift in Sources */,
+				ACDF72C020078D2C00F0DBCF /* SDCapturedAVSessionViewController.swift in Sources */,
+				ACDF72C22007911900F0DBCF /* SDCapturedAVSessionScreenShotViewController.swift in Sources */,
+				AC4A1FB020075B0600C191AA /* SDCapturedImageViewController.swift in Sources */,
+				ACDF72BE200784D100F0DBCF /* SDAVCaptureViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

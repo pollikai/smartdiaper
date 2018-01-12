@@ -35,7 +35,7 @@ class SDCameraOverlayView: UIView {
         self.leftView.layer.borderColor = UIColor.green.cgColor
         self.leftView.layer.borderWidth = 2
         self.leftView.backgroundColor = .clear
-        
+
         self.middleView.layer.borderColor = UIColor.green.cgColor
         self.middleView.layer.borderWidth = 2
         self.middleView.backgroundColor = .clear
