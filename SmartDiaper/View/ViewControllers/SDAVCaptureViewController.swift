@@ -10,7 +10,9 @@ import UIKit
 import AVFoundation
 
 class SDAVCaptureViewController: UIViewController, AVCapturePhotoCaptureDelegate {
-
+    enum SDAVCaptureError: Error {
+        case noVideoInout(Error)
+    }
     @IBOutlet weak var capturedImage: UIImageView!
     @IBOutlet weak var previewView: UIView!
     @IBOutlet weak var photoButton: UIButton!
@@ -91,8 +93,7 @@ class SDAVCaptureViewController: UIViewController, AVCapturePhotoCaptureDelegate
                                                             preferredStyle: .alert)
 
                     alertController.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Alert OK button"),
-                                                            style: .cancel,
-                                                            handler: nil))
+                                                            style: .cancel, handler: nil))
 
                     alertController.addAction(UIAlertAction(title:
                         NSLocalizedString("Settings", comment: "Alert button to open Settings"),
@@ -187,12 +188,39 @@ class SDAVCaptureViewController: UIViewController, AVCapturePhotoCaptureDelegate
         session.beginConfiguration()
         session.sessionPreset = AVCaptureSession.Preset.photo
 
-        // Add video input.
+        do {
+            try self.addVieoInput(text: "")
+        } catch let error as NSError {
+
+            print("Caught NSError: \(error.localizedDescription), \(error.domain), \(error.code)")
+
+            setupResult = .configurationFailed
+            session.commitConfiguration()
+            return
+        }
+
+        // Add photo output.
+        if session.canAddOutput(photoOutput) {
+            session.addOutput(photoOutput)
+
+            photoOutput.isHighResolutionCaptureEnabled = true
+            photoOutput.isLivePhotoCaptureEnabled = photoOutput.isLivePhotoCaptureSupported
+        } else {
+            print("Could not add photo output to the session")
+            setupResult = .configurationFailed
+            session.commitConfiguration()
+            return
+        }
+
+        session.commitConfiguration()
+    }
+
+    private func addVieoInput(text: String) throws {
         do {
             var defaultVideoDevice: AVCaptureDevice?
 
             // Choose the back dual camera if available, otherwise default to a wide angle camera.
-            if let dualCameraDevice = AVCaptureDevice.default(AVCaptureDevice.DeviceType.builtInDuoCamera,
+            if let dualCameraDevice = AVCaptureDevice.default(AVCaptureDevice.DeviceType.builtInDualCamera,
                                                               for: AVMediaType.video,
                                                               position: .back) {
                 defaultVideoDevice = dualCameraDevice
@@ -218,32 +246,14 @@ class SDAVCaptureViewController: UIViewController, AVCapturePhotoCaptureDelegate
                 self.videoDeviceInput = videoDeviceInput
 
             } else {
-                print("Could not add video device input to the session")
                 setupResult = .configurationFailed
                 session.commitConfiguration()
-                return
+
+                throw  SDAVCaptureError.noVideoInout(NSError(domain: "Could not add video device input to the session",
+                                                             code: -1,
+                                                             userInfo: nil))
             }
-        } catch {
-            print("Could not create video device input: \(error)")
-            setupResult = .configurationFailed
-            session.commitConfiguration()
-            return
         }
-
-        // Add photo output.
-        if session.canAddOutput(photoOutput) {
-            session.addOutput(photoOutput)
-
-            photoOutput.isHighResolutionCaptureEnabled = true
-            photoOutput.isLivePhotoCaptureEnabled = photoOutput.isLivePhotoCaptureSupported
-        } else {
-            print("Could not add photo output to the session")
-            setupResult = .configurationFailed
-            session.commitConfiguration()
-            return
-        }
-
-        session.commitConfiguration()
     }
 
     @IBAction private func capturePhoto(_ sender: UIButton) {
@@ -277,38 +287,17 @@ class SDAVCaptureViewController: UIViewController, AVCapturePhotoCaptureDelegate
 
     // MARK: - AVCapturePhotoCaptureDelegate Methods
 
-    func photoOutput(_ captureOutput: AVCapturePhotoOutput,
-                     didFinishProcessingPhoto photoSampleBuffer: CMSampleBuffer?,
-                     previewPhoto previewPhotoSampleBuffer: CMSampleBuffer?,
-                     resolvedSettings: AVCaptureResolvedPhotoSettings,
-                     bracketSettings: AVCaptureBracketedStillImageSettings?, error: Error?) {
-
-        if let error = error {
-            print("Error capturing photo: \(error)")
-        } else {
-            if let sampleBuffer = photoSampleBuffer, let previewBuffer = previewPhotoSampleBuffer,
-                let dataImage = AVCapturePhotoOutput.jpegPhotoDataRepresentation(forJPEGSampleBuffer:
-                    sampleBuffer,
-                                                                        previewPhotoSampleBuffer: previewBuffer) {
-
-                if let image = UIImage(data: dataImage) {
-                    self.capturedImage.image = image
-                }
-
-//                if let appDelegate = UIApplication.shared.delegate as? SDAppDelegate {
-//                    _ = screenshotOf(window: appDelegate.window!)
-//
-////                    self.capturedImage.image = image
-//                }
-
-                self.leftImage = self.previewView.snapshot(of: self.overlayView?.leftView.frameInSuperView!)
-                self.middleImage = self.previewView.snapshot(of: self.overlayView?.middleView.frameInSuperView!)
-                self.rightImage = self.previewView.snapshot(of: self.overlayView?.rightView.frameInSuperView!)
-
-                self.showImage("")
-            }
+    func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
+        guard let imageData = photo.fileDataRepresentation() else {return}
+        if let image = UIImage(data: imageData) {
+            self.capturedImage.image = image
         }
 
+        self.leftImage = self.previewView.snapshot(of: self.overlayView?.leftView.frameInSuperView!)
+        self.middleImage = self.previewView.snapshot(of: self.overlayView?.middleView.frameInSuperView!)
+        self.rightImage = self.previewView.snapshot(of: self.overlayView?.rightView.frameInSuperView!)
+
+        self.showImage("")
     }
 
     func screenshotOf(window: UIWindow) -> UIImage? {

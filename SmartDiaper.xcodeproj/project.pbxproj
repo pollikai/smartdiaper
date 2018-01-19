@@ -126,6 +126,7 @@
 				AC1FE4C92005FDF700EB2BD2 /* SDAppDelegate.swift */,
 				AC4252FD2006347F0083D2AB /* R.generated.swift */,
 				AC4252F2200631420083D2AB /* View */,
+				ACF7A48D20122C3C00417AEE /* ViewModel */,
 				AC1FE4EC200607C500EB2BD2 /* Extensions */,
 				AC1FE4CD2005FDF700EB2BD2 /* Main.storyboard */,
 				AC1FE4D02005FDF700EB2BD2 /* Assets.xcassets */,
@@ -171,6 +172,13 @@
 				ACDF72BF20078D2C00F0DBCF /* SDCapturedAVSessionViewController.swift */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		ACF7A48D20122C3C00417AEE /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
