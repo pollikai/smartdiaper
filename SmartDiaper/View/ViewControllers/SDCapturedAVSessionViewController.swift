@@ -73,16 +73,5 @@ class SDCapturedAVSessionViewController: UIViewController {
         self.imageView.addSubview(pixelView)
 
     }
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-
-        if segue.identifier == R.segue.sdCapturedAVSessionViewController.sdCapturedImageViewController.identifier {
-            guard let viewController = R.storyboard.main.sdCapturedAVSessionViewController() else {return}
-
-            viewController.leftImage = self.imageView.snapshot(of: overlayView?.leftView.frameInSuperView!)
-            viewController.leftImage = self.imageView.snapshot(of: overlayView?.leftView.frameInSuperView!)
-            viewController.leftImage = self.imageView.snapshot(of: overlayView?.leftView.frameInSuperView!)
-            self.show(viewController, sender: nil)
-        }
-    }
 
 }

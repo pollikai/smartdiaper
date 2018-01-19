@@ -83,18 +83,25 @@ class SDAVCaptureViewController: UIViewController, AVCapturePhotoCaptureDelegate
 
             case .notAuthorized:
                 DispatchQueue.main.async { [unowned self] in
-                    let changePrivacySetting = "AVCam doesn't have permission to use the camera, please change privacy settings"
-                    let message = NSLocalizedString(changePrivacySetting, comment: "Alert message when the user has denied access to the camera")
-                    let alertController = UIAlertController(title: "AVCam", message: message, preferredStyle: .alert)
+                    let changePrivacySetting = "AVCam have no permission to use camera, please change privacy settings"
+                    let message = NSLocalizedString(changePrivacySetting,
+                                                    comment: "Alert message when user has denied access to the camera")
+                    let alertController = UIAlertController(title: "AVCam",
+                                                            message: message,
+                                                            preferredStyle: .alert)
 
                     alertController.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Alert OK button"),
                                                             style: .cancel,
                                                             handler: nil))
 
-                    alertController.addAction(UIAlertAction(title: NSLocalizedString("Settings", comment: "Alert button to open Settings"),
+                    alertController.addAction(UIAlertAction(title:
+                        NSLocalizedString("Settings", comment: "Alert button to open Settings"),
                                                             style: .`default`,
                                                             handler: { _ in
-                                                                UIApplication.shared.open(URL(string: UIApplicationOpenSettingsURLString)!, options: [:], completionHandler: nil)
+                                                                UIApplication.shared.open(URL(string:
+                                                                    UIApplicationOpenSettingsURLString)!,
+                                                                                          options: [:],
+                                                                                          completionHandler: nil)
                     }))
 
                     self.present(alertController, animated: true, completion: nil)
@@ -133,16 +140,7 @@ class SDAVCaptureViewController: UIViewController, AVCapturePhotoCaptureDelegate
 
             viewController.image = self.capturedImage.image
             self.show(viewController, sender: nil)
-        } else if segue.identifier == R.segue.sdavCaptureViewController.sdCapturedImageViewController.identifier {
-
-            guard let viewController = R.storyboard.main.sdCapturedImageViewController() else {return}
-
-            viewController.leftImage = self.leftImage
-            viewController.middleImage = self.middleImage
-            viewController.rightImage = self.rightImage
-            self.show(viewController, sender: nil)
         }
-
     }
 
     // MARK: Session Management
@@ -194,12 +192,18 @@ class SDAVCaptureViewController: UIViewController, AVCapturePhotoCaptureDelegate
             var defaultVideoDevice: AVCaptureDevice?
 
             // Choose the back dual camera if available, otherwise default to a wide angle camera.
-            if let dualCameraDevice = AVCaptureDevice.default(AVCaptureDevice.DeviceType.builtInDuoCamera, for: AVMediaType.video, position: .back) {
+            if let dualCameraDevice = AVCaptureDevice.default(AVCaptureDevice.DeviceType.builtInDuoCamera,
+                                                              for: AVMediaType.video,
+                                                              position: .back) {
                 defaultVideoDevice = dualCameraDevice
-            } else if let backCameraDevice = AVCaptureDevice.default(AVCaptureDevice.DeviceType.builtInWideAngleCamera, for: AVMediaType.video, position: .back) {
+            } else if let backCameraDevice = AVCaptureDevice.default(AVCaptureDevice.DeviceType.builtInWideAngleCamera,
+                                                                     for: AVMediaType.video,
+                                                                     position: .back) {
                 // If the back dual camera is not available, default to the back wide angle camera.
                 defaultVideoDevice = backCameraDevice
-            } else if let frontCameraDevice = AVCaptureDevice.default(AVCaptureDevice.DeviceType.builtInWideAngleCamera, for: AVMediaType.video, position: .front) {
+            } else if let frontCameraDevice = AVCaptureDevice.default(AVCaptureDevice.DeviceType.builtInWideAngleCamera,
+                                                                      for: AVMediaType.video,
+                                                                      position: .front) {
                 /*
                  In some cases where users break their phones, the back wide angle camera is not available.
                  In this case, we should default to the front wide angle camera.
@@ -249,26 +253,25 @@ class SDAVCaptureViewController: UIViewController, AVCapturePhotoCaptureDelegate
             photoSettings.flashMode = .auto
         }
         if !photoSettings.availablePreviewPhotoPixelFormatTypes.isEmpty {
-            photoSettings.previewPhotoFormat = [kCVPixelBufferPixelFormatTypeKey as String: photoSettings.availablePreviewPhotoPixelFormatTypes.first!]
+            photoSettings.previewPhotoFormat = [kCVPixelBufferPixelFormatTypeKey as String:
+                photoSettings.availablePreviewPhotoPixelFormatTypes.first!]
         }
         photoOutput.capturePhoto(with: photoSettings, delegate: self)
 
     }
 
     @IBAction func showImage(_ sender: Any) {
-        self.performSegue(withIdentifier: R.segue.sdavCaptureViewController.sdCapturedAVSessionViewController.identifier,
+        self.performSegue(withIdentifier:
+            R.segue.sdavCaptureViewController.sdCapturedAVSessionViewController.identifier,
                                           sender: nil)
 
     }
 
     @IBAction func showScreenShot(_ sender: Any) {
 
-        if let appDelegate = UIApplication.shared.delegate as? SDAppDelegate {
-            let image = screenshotOf(window: appDelegate.window!)
-        }
-
-        self.performSegue(withIdentifier: R.segue.sdavCaptureViewController.sdCapturedImageViewController.identifier,
-                          sender: nil)
+//        if let appDelegate = UIApplication.shared.delegate as? SDAppDelegate {
+//            let image = screenshotOf(window: appDelegate.window!)
+//        }
 
     }
 
@@ -284,18 +287,19 @@ class SDAVCaptureViewController: UIViewController, AVCapturePhotoCaptureDelegate
             print("Error capturing photo: \(error)")
         } else {
             if let sampleBuffer = photoSampleBuffer, let previewBuffer = previewPhotoSampleBuffer,
-                let dataImage = AVCapturePhotoOutput.jpegPhotoDataRepresentation(forJPEGSampleBuffer: sampleBuffer,
-                                                                                 previewPhotoSampleBuffer: previewBuffer) {
+                let dataImage = AVCapturePhotoOutput.jpegPhotoDataRepresentation(forJPEGSampleBuffer:
+                    sampleBuffer,
+                                                                        previewPhotoSampleBuffer: previewBuffer) {
 
                 if let image = UIImage(data: dataImage) {
                     self.capturedImage.image = image
                 }
 
-                if let appDelegate = UIApplication.shared.delegate as? SDAppDelegate {
-                    let image = screenshotOf(window: appDelegate.window!)
-
-//                    self.capturedImage.image = image
-                }
+//                if let appDelegate = UIApplication.shared.delegate as? SDAppDelegate {
+//                    _ = screenshotOf(window: appDelegate.window!)
+//
+////                    self.capturedImage.image = image
+//                }
 
                 self.leftImage = self.previewView.snapshot(of: self.overlayView?.leftView.frameInSuperView!)
                 self.middleImage = self.previewView.snapshot(of: self.overlayView?.middleView.frameInSuperView!)
