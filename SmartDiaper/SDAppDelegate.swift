@@ -16,6 +16,27 @@ class SDAppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        
+        let redColor = UIColor(red: 255/255.0, green: 0/255.0, blue: 0/255.0, alpha: 1.0)
+        let greenColor = UIColor(red: 0/255.0, green: 255/255.0, blue: 0/255.0, alpha: 1.0)
+
+        let myColor = UIColor(red: 0/255.0, green: 0/255.0, blue: 0/255.0, alpha: 1.0)
+        
+        print(myColor.isEqualToColor(color: greenColor, withTolerance: 2/255.0))
+        
+        
+        for i in 1...255 {
+            
+            let x = CGFloat(i)
+            if myColor.isEqualToColor(color: greenColor, withTolerance: x/255.0)
+            {
+                break
+            }
+            print(x)
+
+        }
+       
         return true
     }
 

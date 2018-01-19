@@ -13,21 +13,45 @@ extension UIColor {
     var hexValue: String? {
         return self.hexValue(alpha: false)
     }
+}
 
+public extension UIColor{
+    
+    func isEqualToColor(color: UIColor, withTolerance tolerance: CGFloat = 0.0) -> Bool{
+        
+        var r1 :CGFloat = 0
+        var g1 :CGFloat = 0
+        var b1 :CGFloat = 0
+        var a1 :CGFloat = 0
+        var r2 :CGFloat = 0
+        var g2 :CGFloat = 0
+        var b2 :CGFloat = 0
+        var a2 :CGFloat = 0
+        
+        self.getRed(&r1, green: &g1, blue: &b1, alpha: &a1)
+        color.getRed(&r2, green: &g2, blue: &b2, alpha: &a2)
+        
+        return
+            fabs(r1 - r2) <= tolerance &&
+                fabs(g1 - g2) <= tolerance &&
+                fabs(b1 - b2) <= tolerance &&
+                fabs(a1 - a2) <= tolerance
+    }
+    
     func hexValue(alpha: Bool = false) -> String? {
         guard let components = cgColor.components, components.count >= 3 else {
             return nil
         }
-
+        
         let r = Float(components[0])
         let g = Float(components[1])
         let b = Float(components[2])
         var a = Float(1.0)
-
+        
         if components.count >= 4 {
             a = Float(components[3])
         }
-
+        
         if alpha {
             return String(format: "%02lX%02lX%02lX%02lX",
                           lroundf(r * 255),
@@ -41,4 +65,6 @@ extension UIColor {
                           lroundf(b * 255))
         }
     }
+
+    
 }
