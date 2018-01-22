@@ -141,6 +141,12 @@ class SDAVCaptureViewController: UIViewController, AVCapturePhotoCaptureDelegate
 
             viewController.image = self.capturedImage.image
             self.show(viewController, sender: nil)
+
+        } else if segue.identifier == R.segue.sdavCaptureViewController.sdAnalysisResultViewController.identifier {
+
+            guard let viewController = R.storyboard.main.sdAnalysisResultViewController() else {return}
+            viewController.image = self.capturedImage.image
+            self.show(viewController, sender: nil)
         }
     }
 
@@ -271,9 +277,15 @@ class SDAVCaptureViewController: UIViewController, AVCapturePhotoCaptureDelegate
     }
 
     @IBAction func showImage(_ sender: Any) {
-        self.performSegue(withIdentifier:
+#if DEBUG
+self.performSegue(withIdentifier:
             R.segue.sdavCaptureViewController.sdCapturedAVSessionViewController.identifier,
                                           sender: nil)
+#else
+        self.performSegue(withIdentifier:
+            R.segue.sdavCaptureViewController.sdAnalysisResultViewController.identifier,
+                          sender: nil)
+#endif
 
     }
 

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		12F04E0E4392FE3A6805DA5A /* Pods_SmartDiaper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 506DA3BAA69EB07ADEC94FCA /* Pods_SmartDiaper.framework */; };
+		AC1B0AC5201603D100059BD5 /* SDAnalysisResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1B0AC4201603D100059BD5 /* SDAnalysisResultViewController.swift */; };
 		AC1FE4CA2005FDF700EB2BD2 /* SDAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1FE4C92005FDF700EB2BD2 /* SDAppDelegate.swift */; };
 		AC1FE4CF2005FDF700EB2BD2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC1FE4CD2005FDF700EB2BD2 /* Main.storyboard */; };
 		AC1FE4D12005FDF700EB2BD2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC1FE4D02005FDF700EB2BD2 /* Assets.xcassets */; };
@@ -42,6 +43,7 @@
 		715A482C0A10708EADAA6540 /* Pods-SmartDiaperTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartDiaperTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SmartDiaperTests/Pods-SmartDiaperTests.release.xcconfig"; sourceTree = "<group>"; };
 		9F585AD57E8FE490910061BB /* Pods-SmartDiaperTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartDiaperTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SmartDiaperTests/Pods-SmartDiaperTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A96877B5675B97BB58DC6E9D /* Pods-SmartDiaper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartDiaper.release.xcconfig"; path = "Pods/Target Support Files/Pods-SmartDiaper/Pods-SmartDiaper.release.xcconfig"; sourceTree = "<group>"; };
+		AC1B0AC4201603D100059BD5 /* SDAnalysisResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDAnalysisResultViewController.swift; sourceTree = "<group>"; };
 		AC1FE4C62005FDF700EB2BD2 /* SmartDiaper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartDiaper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC1FE4C92005FDF700EB2BD2 /* SDAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDAppDelegate.swift; sourceTree = "<group>"; };
 		AC1FE4CE2005FDF700EB2BD2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 			children = (
 				ACDF72BD200784D100F0DBCF /* SDAVCaptureViewController.swift */,
 				ACDF72BF20078D2C00F0DBCF /* SDCapturedAVSessionViewController.swift */,
+				AC1B0AC4201603D100059BD5 /* SDAnalysisResultViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -438,6 +441,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ACF7A49220122D8500417AEE /* SDModels.swift in Sources */,
+				AC1B0AC5201603D100059BD5 /* SDAnalysisResultViewController.swift in Sources */,
 				AC1FE4F220060A3700EB2BD2 /* UIColor+Extensions.swift in Sources */,
 				AC1FE4F020060A2B00EB2BD2 /* UIImage+Extensions.swift in Sources */,
 				ACF7A48F20122CFA00417AEE /* SDColorAnalysis.swift in Sources */,

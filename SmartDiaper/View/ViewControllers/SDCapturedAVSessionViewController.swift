@@ -52,19 +52,16 @@ class SDCapturedAVSessionViewController: UIViewController {
          sampleImage.image = self.imageView.snapshot(of: self.overlayView?.leftView.frameInSuperView)
 
         self.leftView.backgroundColor = sampleImage.image?.areaAverageColor()
-        
-        
-        
+
         let colorAnalysis = SDColorAnalysis()
-        
+
         //                           (red: 23, green: 42, blue: 46)
         let mycolor = sampleImage.image?.areaAverageColor()
-        
+
         let sg = colorAnalysis.specificGravityForColor(color: mycolor!)
         let rgbColour = sg?.color.cgColor
         let rgbColours = rgbColour?.components
-        
-        
+
         let capruredRgbColours = mycolor?.cgColor.components
         print("Caprured Red: \(capruredRgbColours![0] * 255) Green: \(capruredRgbColours![1] * 255), Blue: \(capruredRgbColours![2] * 255)")
 
