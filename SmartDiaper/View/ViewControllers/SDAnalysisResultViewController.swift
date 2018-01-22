@@ -46,34 +46,31 @@ class SDAnalysisResultViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.image = image.resized(toWidth: self.imageView.frame.width)
+        self.imageView.contentMode = .scaleAspectFill
+
         self.imageView.image = image
 
         self.overlayView = SDCameraOverlayView.init(frame: .zero)
         self.imageView.addSubview(self.overlayView!)
 
-        sampleImage.image = self.imageView.snapshot(of: self.overlayView?.leftView.frameInSuperView)
+        sampleImage.image = self.view.snapshot(of: self.overlayView?.leftView.frameInSuperView)
 
         self.leftView.backgroundColor = sampleImage.image?.areaAverageColor()
 
-        sampleImage.image = self.imageView.snapshot(of: self.overlayView?.middleView.frameInSuperView)
+        sampleImage.image = self.view.snapshot(of: self.overlayView?.middleView.frameInSuperView)
 
         self.middleView.backgroundColor = sampleImage.image?.areaAverageColor()
 
         let colorAnalysis = SDColorAnalysis()
 
-        let specificGravitySampleColor = sampleImage.image?.areaAverageColor()
-
         let specificGravity = colorAnalysis.specificGravityForColor(color: self.leftView.backgroundColor!)
-
         self.label1.text = "SG: \(String(format: "%.3f", specificGravity!.specificGravityValue))"
 
         let phValue = colorAnalysis.phValueForColor(color: self.middleView.backgroundColor!)
-
-//        let specificGravity = colorAnalysis.specificGravityForColor(color: mycolor!)
+        self.label2.text = "PH: \(String(format: "%d", phValue!.phValue))"
 
 #if !DEBUG
-//    self.imageView.isHidden = true
+    self.imageView.isHidden = true
 
     let rgbColour = specificGravity?.color.cgColor
     let rgbColours = rgbColour?.components

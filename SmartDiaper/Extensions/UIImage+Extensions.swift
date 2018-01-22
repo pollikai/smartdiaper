@@ -28,14 +28,6 @@ extension UIImage {
         return UIColor(red: r, green: g, blue: b, alpha: a)
     }
 
-    func resized(toWidth width: CGFloat) -> UIImage? {
-        let canvasSize = CGSize(width: width, height: CGFloat(ceil(width/size.width * size.height)))
-        UIGraphicsBeginImageContextWithOptions(canvasSize, false, scale)
-        defer { UIGraphicsEndImageContext() }
-        draw(in: CGRect(origin: .zero, size: canvasSize))
-        return UIGraphicsGetImageFromCurrentImageContext()
-    }
-
     func cropedImage(cropRect: CGRect) -> UIImage {
         UIGraphicsBeginImageContextWithOptions(cropRect.size, false, 0)
         let context = UIGraphicsGetCurrentContext()

@@ -71,7 +71,7 @@ class SDAVCaptureViewController: UIViewController, AVCapturePhotoCaptureDelegate
                     self.previewView.layer.addSublayer(self.previewLayer)
                     self.session.startRunning()
 
-//                    self.previewLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
+                    self.previewLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
 
 //                    self.view.layer.addSublayer(self.previewLayer)
 
@@ -277,15 +277,15 @@ class SDAVCaptureViewController: UIViewController, AVCapturePhotoCaptureDelegate
     }
 
     @IBAction func showImage(_ sender: Any) {
-#if DEBUG
-self.performSegue(withIdentifier:
-            R.segue.sdavCaptureViewController.sdCapturedAVSessionViewController.identifier,
-                                          sender: nil)
-#else
+//#if DEBUG
+//self.performSegue(withIdentifier:
+//            R.segue.sdavCaptureViewController.sdCapturedAVSessionViewController.identifier,
+//                                          sender: nil)
+//#else
         self.performSegue(withIdentifier:
             R.segue.sdavCaptureViewController.sdAnalysisResultViewController.identifier,
                           sender: nil)
-#endif
+//#endif
 
     }
 

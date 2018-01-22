@@ -36,7 +36,6 @@ class SDCapturedAVSessionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.image = image.resized(toWidth: self.imageView.frame.width)
         self.imageView.image = image
 
         self.overlayView = SDCameraOverlayView.init(frame: .zero)
