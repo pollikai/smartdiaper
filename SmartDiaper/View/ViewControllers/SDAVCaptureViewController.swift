@@ -13,14 +13,10 @@ class SDAVCaptureViewController: UIViewController, AVCapturePhotoCaptureDelegate
     enum SDAVCaptureError: Error {
         case noVideoInout(Error)
     }
-    @IBOutlet weak var capturedImage: UIImageView!
     @IBOutlet weak var previewView: UIView!
-    @IBOutlet weak var photoButton: UIButton!
 
-    var leftImage: UIImage?
-    var middleImage: UIImage?
-    var rightImage: UIImage?
     var overlayView: SDCameraOverlayView?
+    var capturedImage: UIImage!
 
     let session = AVCaptureSession()
     let photoOutput = AVCapturePhotoOutput()
@@ -28,7 +24,6 @@ class SDAVCaptureViewController: UIViewController, AVCapturePhotoCaptureDelegate
                                      attributes: [],
                                      target: nil)
 
-    var previewLayer: AVCaptureVideoPreviewLayer!
     var videoDeviceInput: AVCaptureDeviceInput!
     var setupResult: SessionSetupResult = .success
 
@@ -66,18 +61,16 @@ class SDAVCaptureViewController: UIViewController, AVCapturePhotoCaptureDelegate
             case .success:
                 // Only start the session running if setup succeeded.
                 DispatchQueue.main.async { [unowned self] in
-                    self.previewLayer = AVCaptureVideoPreviewLayer(session: self.session)
-                    self.previewLayer.frame = self.previewView.bounds
-                    self.previewView.layer.addSublayer(self.previewLayer)
+                    let previewLayer = AVCaptureVideoPreviewLayer(session: self.session)
+                    previewLayer.frame = self.previewView.bounds
+                    self.previewView.layer.addSublayer(previewLayer)
                     self.session.startRunning()
 
-                    self.previewLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
-
-//                    self.view.layer.addSublayer(self.previewLayer)
+                    previewLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
 
                     self.overlayView = SDCameraOverlayView.init(frame: .zero)
 
-                    self.previewView.layer.addSublayer(self.previewLayer)
+                    self.previewView.layer.addSublayer(previewLayer)
 
                     self.view.addSubview(self.overlayView!)
 
@@ -95,8 +88,7 @@ class SDAVCaptureViewController: UIViewController, AVCapturePhotoCaptureDelegate
                     alertController.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Alert OK button"),
                                                             style: .cancel, handler: nil))
 
-                    alertController.addAction(UIAlertAction(title:
-                        NSLocalizedString("Settings", comment: "Alert button to open Settings"),
+                    alertController.addAction(UIAlertAction(title: "Alert button to open Settings",
                                                             style: .`default`,
                                                             handler: { _ in
                                                                 UIApplication.shared.open(URL(string:
@@ -110,9 +102,8 @@ class SDAVCaptureViewController: UIViewController, AVCapturePhotoCaptureDelegate
 
             case .configurationFailed:
                 DispatchQueue.main.async { [unowned self] in
-                    let alertMsg = "Alert message when something goes wrong during capture session configuration"
-                    let message = NSLocalizedString("Unable to capture media", comment: alertMsg)
-                    let alertController = UIAlertController(title: "AVCam", message: message, preferredStyle: .alert)
+                     let alertController = UIAlertController(title: "AVCam",
+                                                             message: "Unable to capture media", preferredStyle: .alert)
 
                     alertController.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Alert OK button"),
                                                             style: .cancel,
@@ -135,17 +126,10 @@ class SDAVCaptureViewController: UIViewController, AVCapturePhotoCaptureDelegate
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-
-        if segue.identifier == R.segue.sdavCaptureViewController.sdCapturedAVSessionViewController.identifier {
-            guard let viewController = R.storyboard.main.sdCapturedAVSessionViewController() else {return}
-
-            viewController.image = self.capturedImage.image
-            self.show(viewController, sender: nil)
-
-        } else if segue.identifier == R.segue.sdavCaptureViewController.sdAnalysisResultViewController.identifier {
+       if segue.identifier == R.segue.sdavCaptureViewController.sdAnalysisResultViewController.identifier {
 
             guard let viewController = R.storyboard.main.sdAnalysisResultViewController() else {return}
-            viewController.image = self.capturedImage.image
+            viewController.image = self.capturedImage
             self.show(viewController, sender: nil)
         }
     }
@@ -153,25 +137,11 @@ class SDAVCaptureViewController: UIViewController, AVCapturePhotoCaptureDelegate
     // MARK: Session Management
 
     func checkAuthorization() {
-        /*
-         Check video authorization status. Video access is required and audio
-         access is optional. If audio access is denied, audio is not recorded
-         during movie recording.
-         */
         switch AVCaptureDevice.authorizationStatus(for: AVMediaType.video) {
         case .authorized:
-            // The user has previously granted access to the camera.
             break
 
         case .notDetermined:
-            /*
-             The user has not yet been presented with the option to grant
-             video access. We suspend the session queue to delay session
-             setup until the access request has completed.
-             
-             Note that audio access will be implicitly requested when we
-             create an AVCaptureDeviceInput for audio during session setup.
-             */
             sessionQueue.suspend()
             AVCaptureDevice.requestAccess(for: AVMediaType.video, completionHandler: { [unowned self] granted in
                 if !granted {
@@ -181,7 +151,6 @@ class SDAVCaptureViewController: UIViewController, AVCapturePhotoCaptureDelegate
             })
 
         default:
-            // The user has previously denied access.
             setupResult = .notAuthorized
         }
     }
@@ -277,23 +246,9 @@ class SDAVCaptureViewController: UIViewController, AVCapturePhotoCaptureDelegate
     }
 
     @IBAction func showImage(_ sender: Any) {
-//#if DEBUG
-//self.performSegue(withIdentifier:
-//            R.segue.sdavCaptureViewController.sdCapturedAVSessionViewController.identifier,
-//                                          sender: nil)
-//#else
         self.performSegue(withIdentifier:
             R.segue.sdavCaptureViewController.sdAnalysisResultViewController.identifier,
                           sender: nil)
-//#endif
-
-    }
-
-    @IBAction func showScreenShot(_ sender: Any) {
-
-//        if let appDelegate = UIApplication.shared.delegate as? SDAppDelegate {
-//            let image = screenshotOf(window: appDelegate.window!)
-//        }
 
     }
 
@@ -302,12 +257,8 @@ class SDAVCaptureViewController: UIViewController, AVCapturePhotoCaptureDelegate
     func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
         guard let imageData = photo.fileDataRepresentation() else {return}
         if let image = UIImage(data: imageData) {
-            self.capturedImage.image = image
+            self.capturedImage = image
         }
-
-        self.leftImage = self.previewView.snapshot(of: self.overlayView?.leftView.frameInSuperView!)
-        self.middleImage = self.previewView.snapshot(of: self.overlayView?.middleView.frameInSuperView!)
-        self.rightImage = self.previewView.snapshot(of: self.overlayView?.rightView.frameInSuperView!)
 
         self.showImage("")
     }
