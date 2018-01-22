@@ -23,6 +23,7 @@ class SDAnalysisResultViewController: UIViewController {
     @IBOutlet weak var middleView: UIView!
     @IBOutlet weak var rightView: UIView!
     @IBOutlet weak var sampleImage: UIImageView!
+    @IBOutlet weak var sampleImage2: UIImageView!
 
     @IBOutlet weak var label1: UILabel!
     @IBOutlet weak var label2: UILabel!
@@ -44,6 +45,7 @@ class SDAnalysisResultViewController: UIViewController {
     }
 
     override func viewDidLoad() {
+
         super.viewDidLoad()
 
         self.imageView.contentMode = .scaleAspectFill
@@ -53,13 +55,19 @@ class SDAnalysisResultViewController: UIViewController {
         self.overlayView = SDCameraOverlayView.init(frame: .zero)
         self.imageView.addSubview(self.overlayView!)
 
+        self.overlayView?.setBorderColorOfAreas(color: .clear)
+        // System taking correct frame in snapshot once we calll this function
+        self.view.snapshot(of: self.overlayView?.leftView.frameInSuperView) // FIXME
+
         sampleImage.image = self.view.snapshot(of: self.overlayView?.leftView.frameInSuperView)
+        addSubViewAtFrame(frame: (self.overlayView?.leftView.frameInSuperView)!) // for debugging
 
         self.leftView.backgroundColor = sampleImage.image?.areaAverageColor()
 
-        sampleImage.image = self.view.snapshot(of: self.overlayView?.middleView.frameInSuperView)
+        sampleImage2.image = self.view.snapshot(of: self.overlayView?.middleView.frameInSuperView)
+        addSubViewAtFrame(frame: (self.overlayView?.middleView.frameInSuperView)!) // for debugging
 
-        self.middleView.backgroundColor = sampleImage.image?.areaAverageColor()
+        self.middleView.backgroundColor = sampleImage2.image?.areaAverageColor()
 
         let colorAnalysis = SDColorAnalysis()
 
@@ -83,5 +91,12 @@ class SDAnalysisResultViewController: UIViewController {
     print("specificGravityValue: \(specificGravity!.specificGravityValue)")
 
 #endif
+    }
+
+    func addSubViewAtFrame(frame: CGRect) {
+
+        let view = UIView(frame: frame)
+        view.backgroundColor = .red
+        self.view.addSubview(view)
     }
 }

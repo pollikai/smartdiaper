@@ -76,4 +76,10 @@ class SDCameraOverlayView: UIView {
 //        self.contentView.layoutIfNeeded()
     }
 
+    func setBorderColorOfAreas(color: UIColor) {
+        self.leftView.layer.borderColor = color.cgColor
+        self.middleView.layer.borderColor = color.cgColor
+        self.rightView.layer.borderColor = color.cgColor
+    }
+
 }

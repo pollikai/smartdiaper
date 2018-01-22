@@ -33,6 +33,10 @@ class SDAVCaptureViewController: UIViewController, AVCapturePhotoCaptureDelegate
         case configurationFailed
     }
 
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
