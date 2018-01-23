@@ -9,10 +9,6 @@
 import UIKit
 extension UIView {
 
-    var centerInSuperView: CGPoint? {
-        return self.superview?.convert(self.center, to: nil)
-    }
-
     var frameInSuperView: CGRect? {
         return self.superview?.convert(self.frame, to: nil)
     }
@@ -21,7 +17,6 @@ extension UIView {
 extension UIView {
 
     func snapshot(of rect: CGRect? = nil) -> UIImage? {
-        // snapshot entire view
 
         UIGraphicsBeginImageContextWithOptions(bounds.size, isOpaque, 0)
         drawHierarchy(in: bounds, afterScreenUpdates: true)

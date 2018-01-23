@@ -144,7 +144,7 @@ class SDAVCaptureViewController: UIViewController, AVCapturePhotoCaptureDelegate
 
     // MARK: Session Management
 
-    func checkAuthorization() {
+    private func checkAuthorization() {
         switch AVCaptureDevice.authorizationStatus(for: AVMediaType.video) {
         case .authorized:
             break
@@ -273,19 +273,5 @@ class SDAVCaptureViewController: UIViewController, AVCapturePhotoCaptureDelegate
         }
 
         self.showImage("")
-    }
-
-    func screenshotOf(window: UIWindow) -> UIImage? {
-        UIGraphicsBeginImageContextWithOptions(window.bounds.size, true, UIScreen.main.scale)
-        guard let currentContext = UIGraphicsGetCurrentContext() else {
-            return nil
-        }
-        window.layer.render(in: currentContext)
-        guard let image = UIGraphicsGetImageFromCurrentImageContext() else {
-            UIGraphicsEndImageContext()
-            return nil
-        }
-        UIGraphicsEndImageContext()
-        return image
     }
 }

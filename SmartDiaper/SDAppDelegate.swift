@@ -16,18 +16,6 @@ class SDAppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-
-        let colorAnalysis = SDColorAnalysis()
-
-//                           (red: 23, green: 42, blue: 46)
-        let mycolor = UIColor(red: 156, green: 106, blue: 29)
-
-        let sg = colorAnalysis.specificGravityForColor(color: mycolor)
-        let rgbColour = sg?.color.cgColor
-        let rgbColours = rgbColour?.components
-
-        print("Red: \(rgbColours![0] * 255) Green: \(rgbColours![1] * 255), Blue: \(rgbColours![2] * 255)")
-
         return true
     }
 

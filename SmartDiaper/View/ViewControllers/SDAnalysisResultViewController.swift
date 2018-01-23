@@ -57,7 +57,7 @@ class SDAnalysisResultViewController: UIViewController {
 
         self.overlayView?.setBorderColorOfAreas(color: .clear)
         // System taking correct frame in snapshot once we calll this function
-        self.view.snapshot(of: self.overlayView?.leftView.frameInSuperView) // FIXME
+        self.view.snapshot(of: self.overlayView?.leftView.frameInSuperView) // FIXME:
 
         sampleImage.image = self.view.snapshot(of: self.overlayView?.leftView.frameInSuperView)
         addSubViewAtFrame(frame: (self.overlayView?.leftView.frameInSuperView)!) // for debugging

@@ -9,12 +9,12 @@ import Foundation
 import UIKit
 struct SDColorAnalysis {
 
-    let specificGravityData: [SDSpecificGravityModel]!
-    let phValuesData: [SDPHModel]!
+    let specificGravitySet: [SDSpecificGravityModel]!
+    let phValuesSet: [SDPHModel]!
 
     init() {
 
-        self.specificGravityData = [SDSpecificGravityModel(color: UIColor(red: 23, green: 42, blue: 46),
+        self.specificGravitySet = [SDSpecificGravityModel(color: UIColor(red: 23, green: 42, blue: 46),
                                                       specificGravityValue: 1.000),
                                SDSpecificGravityModel(color: UIColor(red: 26, green: 46, blue: 35),
                                                       specificGravityValue: 1.005),
@@ -29,7 +29,7 @@ struct SDColorAnalysis {
                                SDSpecificGravityModel(color: UIColor(red: 168, green: 106, blue: 29),
                                                       specificGravityValue: 1.030)]
 
-        self.phValuesData = [SDPHModel(color: UIColor(red: 180, green: 90, blue: 38), phValue: 5),
+        self.phValuesSet = [SDPHModel(color: UIColor(red: 180, green: 90, blue: 38), phValue: 5),
                                 SDPHModel(color: UIColor(red: 170, green: 124, blue: 46), phValue: 6),
                                 SDPHModel(color: UIColor(red: 121, green: 125, blue: 28), phValue: 7),
                                 SDPHModel(color: UIColor(red: 73, green: 98, blue: 66), phValue: 8),
@@ -55,28 +55,28 @@ struct SDColorAnalysis {
 
     func specificGravityForColor(color: UIColor) -> SDSpecificGravityModel? {
 
-        let mutableSpecificGravityData = specificGravityData.map { (specificGravity: SDSpecificGravityModel) -> SDSpecificGravityModel in
-            var mutablespecificGravity = specificGravity
+        let mutableSGData = specificGravitySet.map { (sgModel: SDSpecificGravityModel) -> SDSpecificGravityModel in
+            var mutablespecificGravity = sgModel
             let tolerance = colorsBecomeSimilarAtTolerance(color1: mutablespecificGravity.color, color2: color)
             mutablespecificGravity.tolerance = tolerance
             return mutablespecificGravity
         }
 
-        let result = mutableSpecificGravityData.min {firstElement, secondElement in firstElement.tolerance < secondElement.tolerance}
+        let result = mutableSGData.min {first, second in first.tolerance < second.tolerance}
 
         return result
     }
 
     func phValueForColor(color: UIColor) -> SDPHModel? {
 
-        let mutablePhValuesData = self.phValuesData.map { (specificGravity: SDPHModel) -> SDPHModel in
+        let mutablePhValues = self.phValuesSet.map { (specificGravity: SDPHModel) -> SDPHModel in
             var mutablePhValue = specificGravity
             let tolerance = colorsBecomeSimilarAtTolerance(color1: mutablePhValue.color, color2: color)
             mutablePhValue.tolerance = tolerance
             return mutablePhValue
         }
 
-        let result = mutablePhValuesData.min {firstElement, secondElement in firstElement.tolerance < secondElement.tolerance}
+        let result = mutablePhValues.min {first, second in first.tolerance < second.tolerance}
 
         return result
     }
