@@ -12,11 +12,9 @@ class SDAnalysisResultViewController: UIViewController {
 
     @IBOutlet weak var imageView: UIImageView!
 
-    var image: UIImage!
+    private var viewModel: SDAnalysisResultViewModel?
 
-    var leftImage: UIImage?
-    var middleImage: UIImage?
-    var rightImage: UIImage?
+    var image: UIImage!
 
     var overlayView: SDCameraOverlayView?
     @IBOutlet weak var leftView: UIView!
@@ -48,6 +46,8 @@ class SDAnalysisResultViewController: UIViewController {
 
         super.viewDidLoad()
 
+        viewModel = SDAnalysisResultViewModel()
+
         self.imageView.contentMode = .scaleAspectFill
 
         self.imageView.image = image
@@ -69,20 +69,16 @@ class SDAnalysisResultViewController: UIViewController {
 
         self.middleView.backgroundColor = sampleImage2.image?.areaAverageColor()
 
-        let colorAnalysis = SDColorAnalysis()
+        let specificGravityValueString = self.viewModel?.specificGravityForColor(color: self.leftView.backgroundColor!)
+        self.label1.text = "SG: \(specificGravityValueString ?? "")"
 
-        let specificGravity = colorAnalysis.specificGravityForColor(color: self.leftView.backgroundColor!)
-        self.label1.text = "SG: \(String(format: "%.3f", specificGravity!.specificGravityValue))"
-
-        let phValue = colorAnalysis.phValueForColor(color: self.middleView.backgroundColor!)
-        self.label2.text = "PH: \(String(format: "%d", phValue!.phValue))"
+        let phValueString = self.viewModel?.phValueForColor(color: self.middleView.backgroundColor!)
+        self.label2.text = "PH: \(phValueString ?? "")"
 
         self.imageView.isHidden = true
         sampleImage.isHidden = true
         sampleImage2.isHidden = true
 
-        saveResultInDB(specificGravity: specificGravity?.specificGravityValue,
-                       phValue: phValue?.phValue)
 #if DEBUG
     self.imageView.isHidden = false
     sampleImage.isHidden = false
@@ -109,39 +105,4 @@ class SDAnalysisResultViewController: UIViewController {
 #endif
     }
 
-    private func saveResultInDB(specificGravity: Double?, phValue: Int?) {
-
-        guard let specificGravity = specificGravity, let phValue = phValue else { return }
-
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd.MM.yyyy HH:mm"
-        let dateString = dateFormatter.string(from: Date())
-
-        let defaults = UserDefaults.standard
-
-        if  var data = defaults.object(forKey: "scan_results") as? [[String: Any]] {
-
-            let dict = ["ph": phValue,
-                        "specific_gravity": specificGravity,
-                        "date": dateString] as [String: Any]
-            data.append(dict)
-
-            defaults.set(data, forKey: "scan_results")
-
-        } else {
-            defaults.set(phValue, forKey: "ph")
-            defaults.set(specificGravity, forKey: "specific_gravity")
-
-            let dict = ["ph": phValue,
-                        "specific_gravity": specificGravity,
-                        "date": dateString] as [String: Any]
-
-            var data = [[String: Any]]()
-            data.append(dict)
-            defaults.set(data, forKey: "scan_results")
-
-        }
-
-        defaults.synchronize()
-    }
 }

@@ -10,30 +10,27 @@ import UIKit
 
 class SDDataDisplayViewModel {
 
-    private var data: [[String: Any]]? = []
+    private var data: [[String: Any]]?
 
     init() {
         self.refreshData()
     }
 
     func refreshData() {
-        if let data = UserDefaults.standard.object(forKey: "scan_results") as? [[String: Any]] {
-            self.data = data
-        }
+        self.data = SDDatabaseManager.sharedInstance.savedResults()
     }
-    
-    func configure(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cellIdentifier = R.reuseIdentifier.sdDataDisplayTableViewCell
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
+
+    func textForCellAt(indexPath: IndexPath) -> String {
 
         let dict = self.data![indexPath.row]
 
-        cell?.textLabel?.text = "\(dict["date"]!)     pH: \(dict["ph"]!)     SG: \(dict["specific_gravity"]!)"
+        let text = "\(dict[DBKeys.dateKey]!)     pH: \(dict[DBKeys.phKey]!)     SG: \(dict[DBKeys.specificGravityKey]!)"
 
-        return cell!
+        return text
     }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.data!.count
+
+    func numberOfRows() -> Int {
+        return self.data?.count ?? 0
     }
+
 }

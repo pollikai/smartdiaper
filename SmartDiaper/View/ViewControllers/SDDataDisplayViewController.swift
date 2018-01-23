@@ -39,14 +39,17 @@ class SDDataDisplayViewController: UIViewController, UITableViewDataSource {
 extension SDDataDisplayViewController {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.viewModel.tableView(tableView, numberOfRowsInSection: section)
+        return self.viewModel.numberOfRows()
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
-        let cell = self.viewModel.configure(tableView, cellForRowAt: indexPath)
+        let cellIdentifier = R.reuseIdentifier.sdDataDisplayTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
 
-        return cell
+        cell?.textLabel?.text = self.viewModel.textForCellAt(indexPath: indexPath)
+
+        return cell!
     }
 
 }
