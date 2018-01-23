@@ -14,7 +14,8 @@ class SDAVCaptureViewController: UIViewController, AVCapturePhotoCaptureDelegate
         case noVideoInout(Error)
     }
     @IBOutlet weak var previewView: UIView!
-
+    @IBOutlet weak var showImageButton: UIButton!
+    
     var overlayView: SDCameraOverlayView?
     var capturedImage: UIImage!
 
@@ -40,6 +41,9 @@ class SDAVCaptureViewController: UIViewController, AVCapturePhotoCaptureDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
 
+#if DEBUG
+            showImageButton.isHidden = false
+#endif
         checkAuthorization()
 
         /*

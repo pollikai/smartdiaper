@@ -77,12 +77,17 @@ class SDAnalysisResultViewController: UIViewController {
         let phValue = colorAnalysis.phValueForColor(color: self.middleView.backgroundColor!)
         self.label2.text = "PH: \(String(format: "%d", phValue!.phValue))"
 
-#if !DEBUG
-    self.imageView.isHidden = true
+        self.imageView.isHidden = true
+        sampleImage.isHidden = true
+        sampleImage2.isHidden = true
+#if DEBUG
+    self.imageView.isHidden = false
+    sampleImage.isHidden = false
+    sampleImage2.isHidden = false
 
     let rgbColour = specificGravity?.color.cgColor
     let rgbColours = rgbColour?.components
-    let capruredRgb = specificGravitySampleColor?.cgColor.components
+    let capruredRgb = self.leftView.backgroundColor?.cgColor.components
 
     print("Caprured Red: \(capruredRgb![0] * 255) Green: \(capruredRgb![1] * 255), Blue: \(capruredRgb![2] * 255)")
 
@@ -94,9 +99,10 @@ class SDAnalysisResultViewController: UIViewController {
     }
 
     func addSubViewAtFrame(frame: CGRect) {
-
+#if DEBUG
         let view = UIView(frame: frame)
         view.backgroundColor = .red
         self.view.addSubview(view)
+#endif
     }
 }
