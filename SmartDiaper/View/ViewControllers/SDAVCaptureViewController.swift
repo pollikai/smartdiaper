@@ -15,7 +15,7 @@ class SDAVCaptureViewController: UIViewController, AVCapturePhotoCaptureDelegate
     }
     @IBOutlet weak var previewView: UIView!
     @IBOutlet weak var showImageButton: UIButton!
-    
+
     var overlayView: SDCameraOverlayView?
     var capturedImage: UIImage!
 
@@ -251,6 +251,10 @@ class SDAVCaptureViewController: UIViewController, AVCapturePhotoCaptureDelegate
         }
         photoOutput.capturePhoto(with: photoSettings, delegate: self)
 
+    }
+
+    @IBAction func backButtonAction(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
     }
 
     @IBAction func showImage(_ sender: Any) {

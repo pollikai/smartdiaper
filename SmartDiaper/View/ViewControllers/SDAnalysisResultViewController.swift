@@ -80,6 +80,9 @@ class SDAnalysisResultViewController: UIViewController {
         self.imageView.isHidden = true
         sampleImage.isHidden = true
         sampleImage2.isHidden = true
+
+        saveResultInDB(specificGravity: specificGravity?.specificGravityValue,
+                       phValue: phValue?.phValue)
 #if DEBUG
     self.imageView.isHidden = false
     sampleImage.isHidden = false
@@ -98,11 +101,47 @@ class SDAnalysisResultViewController: UIViewController {
 #endif
     }
 
-    func addSubViewAtFrame(frame: CGRect) {
+    private func addSubViewAtFrame(frame: CGRect) {
 #if DEBUG
         let view = UIView(frame: frame)
         view.backgroundColor = .red
         self.view.addSubview(view)
 #endif
+    }
+
+    private func saveResultInDB(specificGravity: Double?, phValue: Int?) {
+
+        guard let specificGravity = specificGravity, let phValue = phValue else { return }
+
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd.MM.yyyy HH:mm"
+        let dateString = dateFormatter.string(from: Date())
+
+        let defaults = UserDefaults.standard
+
+        if  var data = defaults.object(forKey: "scan_results") as? [[String: Any]] {
+
+            let dict = ["ph": phValue,
+                        "specific_gravity": specificGravity,
+                        "date": dateString] as [String: Any]
+            data.append(dict)
+
+            defaults.set(data, forKey: "scan_results")
+
+        } else {
+            defaults.set(phValue, forKey: "ph")
+            defaults.set(specificGravity, forKey: "specific_gravity")
+
+            let dict = ["ph": phValue,
+                        "specific_gravity": specificGravity,
+                        "date": dateString] as [String: Any]
+
+            var data = [[String: Any]]()
+            data.append(dict)
+            defaults.set(data, forKey: "scan_results")
+
+        }
+
+        defaults.synchronize()
     }
 }

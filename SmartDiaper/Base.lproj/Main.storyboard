@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="m2X-Cb-Y7h">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4XK-7Z-lK2">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -13,7 +13,7 @@
         <!--Capture View Controller-->
         <scene sceneID="RxD-OC-b2k">
             <objects>
-                <viewController id="m2X-Cb-Y7h" customClass="SDAVCaptureViewController" customModule="SmartDiaper" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SDAVCaptureViewController" id="m2X-Cb-Y7h" customClass="SDAVCaptureViewController" customModule="SmartDiaper" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sI3-Qj-s3w">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -32,6 +32,9 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <state key="normal" title="X"/>
+                                        <connections>
+                                            <action selector="backButtonAction:" destination="m2X-Cb-Y7h" eventType="touchUpInside" id="3G8-Xg-Hmg"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Focus green boxes of camera inside markers" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lFb-Xm-9SN">
                                         <rect key="frame" x="22" y="67" width="341" height="21"/>
@@ -236,7 +239,65 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rOd-eB-4zC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1085" y="2038"/>
+            <point key="canvasLocation" x="-186" y="1074"/>
+        </scene>
+        <!--Data Display View Controller-->
+        <scene sceneID="vbC-EE-nD0">
+            <objects>
+                <viewController storyboardIdentifier="SDDataDisplayViewController" id="4XK-7Z-lK2" customClass="SDDataDisplayViewController" customModule="SmartDiaper" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="e68-Zz-drU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="d05-b5-Ien">
+                                <rect key="frame" x="0.0" y="140" width="375" height="457"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SDDataDisplayTableViewCell" id="sYe-AE-cm0">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="sYe-AE-cm0" id="EgF-SQ-dSd">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u2w-7c-OhJ">
+                                <rect key="frame" x="136" y="617" width="102" height="30"/>
+                                <state key="normal" title="Start Scanning"/>
+                                <connections>
+                                    <action selector="startScanningButtonAction:" destination="4XK-7Z-lK2" eventType="touchUpInside" id="hH9-Mp-hIH"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Previous scans" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a67-XF-IPo">
+                                <rect key="frame" x="130" y="60" width="115" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="d05-b5-Ien" firstAttribute="leading" secondItem="37H-BD-Qdk" secondAttribute="leading" id="6gg-2C-lYj"/>
+                            <constraint firstItem="u2w-7c-OhJ" firstAttribute="centerX" secondItem="37H-BD-Qdk" secondAttribute="centerX" id="NEG-Qz-xyH"/>
+                            <constraint firstItem="a67-XF-IPo" firstAttribute="top" secondItem="37H-BD-Qdk" secondAttribute="top" constant="40" id="SVz-A1-qZD"/>
+                            <constraint firstItem="37H-BD-Qdk" firstAttribute="trailing" secondItem="d05-b5-Ien" secondAttribute="trailing" id="im9-Di-erw"/>
+                            <constraint firstItem="a67-XF-IPo" firstAttribute="centerX" secondItem="37H-BD-Qdk" secondAttribute="centerX" id="mgD-Mq-CD6"/>
+                            <constraint firstItem="d05-b5-Ien" firstAttribute="top" secondItem="a67-XF-IPo" secondAttribute="bottom" constant="59" id="orB-XQ-uvJ"/>
+                            <constraint firstItem="37H-BD-Qdk" firstAttribute="bottom" secondItem="u2w-7c-OhJ" secondAttribute="bottom" constant="20" id="pnT-dt-FEJ"/>
+                            <constraint firstItem="u2w-7c-OhJ" firstAttribute="top" secondItem="d05-b5-Ien" secondAttribute="bottom" constant="20" id="x1d-UB-s3H"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="37H-BD-Qdk"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="d05-b5-Ien" id="v8h-g0-hsP"/>
+                        <segue destination="m2X-Cb-Y7h" kind="show" identifier="SDAVCaptureViewController" id="CQu-a0-anA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rGX-ET-WnY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1990" y="1074"/>
         </scene>
     </scenes>
 </document>
