@@ -83,6 +83,14 @@
                                             <action selector="showImage:" destination="m2X-Cb-Y7h" eventType="touchUpInside" id="dsi-F8-X3i"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h4e-rx-Zcz">
+                                        <rect key="frame" x="23" y="67" width="82" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Flash on/off"/>
+                                        <connections>
+                                            <action selector="toggleFlashButtonAction:" destination="m2X-Cb-Y7h" eventType="touchUpInside" id="eu5-qI-3el"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>

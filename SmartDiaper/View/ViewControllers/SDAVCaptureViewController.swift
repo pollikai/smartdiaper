@@ -257,6 +257,19 @@ class SDAVCaptureViewController: UIViewController, AVCapturePhotoCaptureDelegate
         self.dismiss(animated: true, completion: nil)
     }
 
+    @IBAction func toggleFlashButtonAction(_ sender: Any) {
+        guard let device = AVCaptureDevice.default(for: AVMediaType.video), device.hasTorch else {return}
+        do {
+            try device.lockForConfiguration()
+            let torchOn = !device.isTorchActive
+            try device.setTorchModeOn(level: 1.0)
+            device.torchMode = torchOn ? .on : .off
+            device.unlockForConfiguration()
+        } catch {
+            print("error")
+        }
+    }
+
     @IBAction func showImage(_ sender: Any) {
         self.performSegue(withIdentifier:
             R.segue.sdavCaptureViewController.sdAnalysisResultViewController.identifier,
