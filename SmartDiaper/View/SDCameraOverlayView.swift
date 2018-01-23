@@ -11,7 +11,6 @@ import UIKit
 class SDCameraOverlayView: UIView {
 
     @IBOutlet weak var leftView: UIView!
-    @IBOutlet weak var rightView: UIView!
     @IBOutlet weak var middleView: UIView!
 
     @IBOutlet var contentView: UIView!
@@ -39,10 +38,6 @@ class SDCameraOverlayView: UIView {
         self.middleView.layer.borderColor = UIColor.green.cgColor
         self.middleView.layer.borderWidth = 2
         self.middleView.backgroundColor = .clear
-
-        self.rightView.layer.borderColor = UIColor.green.cgColor
-        self.rightView.layer.borderWidth = 2
-        self.rightView.backgroundColor = .clear
 
         self.contentView.backgroundColor = .clear
 
@@ -79,7 +74,6 @@ class SDCameraOverlayView: UIView {
     func setBorderColorOfAreas(color: UIColor) {
         self.leftView.layer.borderColor = color.cgColor
         self.middleView.layer.borderColor = color.cgColor
-        self.rightView.layer.borderColor = color.cgColor
     }
 
 }
