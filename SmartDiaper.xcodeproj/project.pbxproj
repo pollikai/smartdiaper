@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		12F04E0E4392FE3A6805DA5A /* Pods_SmartDiaper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 506DA3BAA69EB07ADEC94FCA /* Pods_SmartDiaper.framework */; };
+		AC155618201768D00000BF33 /* SDDataDisplayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC155617201768D00000BF33 /* SDDataDisplayViewModel.swift */; };
+		AC15561A20176B980000BF33 /* SDAVCaptureViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC15561920176B980000BF33 /* SDAVCaptureViewModel.swift */; };
 		AC1B0AC5201603D100059BD5 /* SDAnalysisResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1B0AC4201603D100059BD5 /* SDAnalysisResultViewController.swift */; };
 		AC1FE4CA2005FDF700EB2BD2 /* SDAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1FE4C92005FDF700EB2BD2 /* SDAppDelegate.swift */; };
 		AC1FE4CF2005FDF700EB2BD2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC1FE4CD2005FDF700EB2BD2 /* Main.storyboard */; };
@@ -43,6 +45,8 @@
 		715A482C0A10708EADAA6540 /* Pods-SmartDiaperTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartDiaperTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SmartDiaperTests/Pods-SmartDiaperTests.release.xcconfig"; sourceTree = "<group>"; };
 		9F585AD57E8FE490910061BB /* Pods-SmartDiaperTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartDiaperTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SmartDiaperTests/Pods-SmartDiaperTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A96877B5675B97BB58DC6E9D /* Pods-SmartDiaper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartDiaper.release.xcconfig"; path = "Pods/Target Support Files/Pods-SmartDiaper/Pods-SmartDiaper.release.xcconfig"; sourceTree = "<group>"; };
+		AC155617201768D00000BF33 /* SDDataDisplayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDataDisplayViewModel.swift; sourceTree = "<group>"; };
+		AC15561920176B980000BF33 /* SDAVCaptureViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDAVCaptureViewModel.swift; sourceTree = "<group>"; };
 		AC1B0AC4201603D100059BD5 /* SDAnalysisResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDAnalysisResultViewController.swift; sourceTree = "<group>"; };
 		AC1FE4C62005FDF700EB2BD2 /* SmartDiaper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartDiaper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC1FE4C92005FDF700EB2BD2 /* SDAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDAppDelegate.swift; sourceTree = "<group>"; };
@@ -186,6 +190,8 @@
 			isa = PBXGroup;
 			children = (
 				ACF7A48E20122CFA00417AEE /* SDColorAnalysis.swift */,
+				AC155617201768D00000BF33 /* SDDataDisplayViewModel.swift */,
+				AC15561920176B980000BF33 /* SDAVCaptureViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -442,6 +448,7 @@
 			files = (
 				ACF7A49220122D8500417AEE /* SDModels.swift in Sources */,
 				AC1B0AC5201603D100059BD5 /* SDAnalysisResultViewController.swift in Sources */,
+				AC155618201768D00000BF33 /* SDDataDisplayViewModel.swift in Sources */,
 				AC1FE4F220060A3700EB2BD2 /* UIColor+Extensions.swift in Sources */,
 				AC1FE4F020060A2B00EB2BD2 /* UIImage+Extensions.swift in Sources */,
 				ACF7A48F20122CFA00417AEE /* SDColorAnalysis.swift in Sources */,
@@ -450,6 +457,7 @@
 				AC1FE4CA2005FDF700EB2BD2 /* SDAppDelegate.swift in Sources */,
 				AC4252F5200631810083D2AB /* SDCameraOverlayView.swift in Sources */,
 				AC4252FE2006347F0083D2AB /* R.generated.swift in Sources */,
+				AC15561A20176B980000BF33 /* SDAVCaptureViewModel.swift in Sources */,
 				ACDF72BE200784D100F0DBCF /* SDAVCaptureViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

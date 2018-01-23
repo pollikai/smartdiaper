@@ -10,6 +10,8 @@ import UIKit
 import AVFoundation
 
 class SDAVCaptureViewController: UIViewController, AVCapturePhotoCaptureDelegate {
+    
+    
     enum SDAVCaptureError: Error {
         case noVideoInout(Error)
     }
@@ -21,7 +23,7 @@ class SDAVCaptureViewController: UIViewController, AVCapturePhotoCaptureDelegate
 
     let session = AVCaptureSession()
     let photoOutput = AVCapturePhotoOutput()
-    let sessionQueue = DispatchQueue(label: "session queue",
+    let sessionQueue = DispatchQueue(label: "sessionQueue",
                                      attributes: [],
                                      target: nil)
 
