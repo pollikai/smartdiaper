@@ -84,7 +84,7 @@ class SDAnalysisResultViewController: UIViewController {
     sampleImage.isHidden = false
     sampleImage2.isHidden = false
 
-    let rgbColour = specificGravity?.color.cgColor
+    let rgbColour = self.leftView.backgroundColor?.cgColor
     let rgbColours = rgbColour?.components
     let capruredRgb = self.leftView.backgroundColor?.cgColor.components
 
@@ -92,7 +92,7 @@ class SDAnalysisResultViewController: UIViewController {
 
     print("Red: \(rgbColours![0] * 255) Green: \(rgbColours![1] * 255), Blue: \(rgbColours![2] * 255)")
 
-    print("specificGravityValue: \(specificGravity!.specificGravityValue)")
+    print("specificGravityValue: \(specificGravityValueString)")
 
 #endif
     }
