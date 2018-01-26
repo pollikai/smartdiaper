@@ -111,4 +111,10 @@ class SDAnalysisResultViewController: UIViewController {
 #endif
     }
 
+#if DEBUG
+    deinit {
+        print("deinit")
+    }
+#endif
+
 }

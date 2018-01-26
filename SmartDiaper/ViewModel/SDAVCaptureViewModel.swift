@@ -78,7 +78,10 @@ class SDAVCaptureViewModel: NSObject, AVCapturePhotoCaptureDelegate {
     }
 
     func stopSession() {
-        sessionQueue.async { [unowned self] in
+
+        sessionQueue.async { //[unowned self] in // INFO: if we uncomment it. then deinit() runs
+            //without waiting this block to execute, and self = nil at that time, so wont stop self.session,
+            // this is very good example to see unowned into action
             if self.setupResult == .success {
                 self.session.stopRunning()
             }
@@ -205,6 +208,12 @@ class SDAVCaptureViewModel: NSObject, AVCapturePhotoCaptureDelegate {
             print("error")
         }
     }
+#if DEBUG
+    deinit {
+        print("deinit")
+    }
+#endif
+
 }
 
 // MARK: - --------AVCapturePhotoCaptureDelegate Methods--------

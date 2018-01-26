@@ -70,71 +70,89 @@ class SDAVCaptureViewController: UIViewController {
 
     private func addViewModelObservers() {
         viewModel?.photoIsCaptured.asObservable().skip(1)
-            .subscribe({ value in
-                self.capturedImage = self.viewModel?.capturedImage
+            .subscribe({[weak self] value in
 
-                self.performSegue(withIdentifier:
+                DispatchQueue.main.async {
+
+                self?.capturedImage = self?.viewModel?.capturedImage
+                    self?.performSegue(withIdentifier:
                     R.segue.sdavCaptureViewController.sdAnalysisResultViewController.identifier,
                                   sender: nil)
-            }).disposed(by: disposeBag)
-
-        viewModel?.avSessionFailed.asObservable().skip(1)
-            .subscribe({ value in
-
-                switch value.element! {
-                case .success:
-                    // no need to do anything, view model is handling this part
-                    break
-                case .notAuthorized:
-                    DispatchQueue.main.async { [unowned self] in
-                        let alertController = UIAlertController(title: "AVCam",
-                                                                message: "AVCam have no permission to use camera",
-                                                                preferredStyle: .alert)
-
-                        alertController.addAction(UIAlertAction(title: NSLocalizedString("OK",
-                                                                                         comment: "Alert OK button"),
-                                                                style: .cancel, handler: nil))
-
-                        alertController.addAction(UIAlertAction(title: "Settings",
-                                                                style: .`default`,
-                                                                handler: { _ in
-                                                                    UIApplication.shared.open(URL(string:
-                                                                        UIApplicationOpenSettingsURLString)!,
-                                                                                              options: [:],
-                                                                                              completionHandler: nil)
-                        }))
-
-                        self.present(alertController, animated: true, completion: nil)
-                    }
-                case .configurationFailed:
-
-                    DispatchQueue.main.async { [unowned self] in
-                        let alertController = UIAlertController(title: "AVCam",
-                                                                message: "Unable to capture media",
-                                                                preferredStyle: .alert)
-
-                        alertController.addAction(UIAlertAction(title: NSLocalizedString("OK",
-                                                                                         comment: "Alert OK button"),
-                                                                style: .cancel,
-                                                                handler: nil))
-
-                        self.present(alertController, animated: true, completion: nil)
-                    }
                 }
 
             }).disposed(by: disposeBag)
+
+        viewModel?.flashOn.asObservable().skip(1)
+            .subscribe({[weak self] value in
+
+                DispatchQueue.main.async {
+                    if value.element == true {
+                        self?.flashButton.setImage(R.image.flash_on(), for: .normal)
+                    } else {
+                        self?.flashButton.setImage(R.image.flash_off(), for: .normal)
+                    }
+                }
+            }).disposed(by: disposeBag)
+
+        viewModel?.avSessionFailed.asObservable().skip(1)
+            .subscribe({[weak self] value in
+                DispatchQueue.main.async {
+
+                    self?.handleCameraSetup(value: value.element!)
+                }
+            }).disposed(by: disposeBag)
     }
 
-    @IBAction private func capturePhoto(_ sender: UIButton) {
-        self.viewModel?.capturePhoto()
-    }
+    private func handleCameraSetup(value: SDAVCaptureViewModel.SessionSetupResult) {
 
-    @IBAction func backButtonAction(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+        switch value {
+        case .success:
+            // no need to do anything, view model is handling this part
+            break
+        case .notAuthorized:
+            DispatchQueue.main.async { [unowned self] in
+                let alertController = UIAlertController(title: "AVCam",
+                                                        message: "AVCam have no permission to use camera",
+                                                        preferredStyle: .alert)
+
+                alertController.addAction(UIAlertAction(title: NSLocalizedString("OK",
+                                                                                 comment: "Alert OK button"),
+                                                        style: .cancel, handler: nil))
+
+                alertController.addAction(UIAlertAction(title: "Settings",
+                                                        style: .`default`,
+                                                        handler: { _ in
+                                                            UIApplication.shared.open(URL(string:
+                                                                UIApplicationOpenSettingsURLString)!,
+                                                                                      options: [:],
+                                                                                      completionHandler: nil)
+                }))
+
+                self.present(alertController, animated: true, completion: nil)
+            }
+        case .configurationFailed:
+
+            DispatchQueue.main.async { [unowned self] in
+                let alertController = UIAlertController(title: "AVCam",
+                                                        message: "Unable to capture media",
+                                                        preferredStyle: .alert)
+
+                alertController.addAction(UIAlertAction(title: NSLocalizedString("OK",
+                                                                                 comment: "Alert OK button"),
+                                                        style: .cancel,
+                                                        handler: nil))
+
+                self.present(alertController, animated: true, completion: nil)
+            }
+        }
     }
 
     @IBAction func toggleFlashButtonAction(_ sender: Any) {
         self.viewModel?.toggleFlash()
+    }
+    
+    @IBAction func capturePhoto(_ sender: Any) {
+        self.viewModel?.capturePhoto()
     }
 
     @IBAction func showImage(_ sender: Any) {
@@ -143,4 +161,11 @@ class SDAVCaptureViewController: UIViewController {
                           sender: nil)
 
     }
+
+#if DEBUG
+    deinit {
+        print("deinit")
+    }
+#endif
+
 }

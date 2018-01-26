@@ -41,6 +41,10 @@ class SDAnalysisResultViewModel {
         }
     }
 
+#if DEBUG
     deinit {
+        print("deinit")
     }
+#endif
+
 }
