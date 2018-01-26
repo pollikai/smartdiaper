@@ -19,23 +19,20 @@ class SDAnalysisResultViewController: UIViewController {
     var overlayView: SDCameraOverlayView?
     @IBOutlet weak var leftView: UIView!
     @IBOutlet weak var middleView: UIView!
-    @IBOutlet weak var rightView: UIView!
     @IBOutlet weak var sampleImage: UIImageView!
     @IBOutlet weak var sampleImage2: UIImageView!
-
     @IBOutlet weak var label1: UILabel!
     @IBOutlet weak var label2: UILabel!
+    @IBOutlet weak var scanAgainButton: UIButton!
+    @IBOutlet weak var saveResultButton: UIButton!
 
-    @IBAction func backButtonAction(_ sender: Any) {
-
-        self.dismiss(animated: true, completion: nil)
-
+    @IBAction func saveResultsButtonAction(_ sender: Any) {
+        self.viewModel?.saveData()
+        self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
     }
 
     @IBAction func scanAgainButtonAction(_ sender: Any) {
-
         self.dismiss(animated: true, completion: nil)
-
     }
 
     override var prefersStatusBarHidden: Bool {
@@ -47,6 +44,15 @@ class SDAnalysisResultViewController: UIViewController {
         super.viewDidLoad()
 
         viewModel = SDAnalysisResultViewModel()
+
+        saveResultButton.layer.cornerRadius = 5.0
+
+        scanAgainButton.layer.cornerRadius = 5.0
+        scanAgainButton.layer.borderColor = UIColor(red: 243, green: 134, blue: 96).cgColor
+        scanAgainButton.layer.borderWidth = 1.0
+
+        leftView.layer.cornerRadius = 5.0
+        middleView.layer.cornerRadius = 5.0
 
         self.imageView.contentMode = .scaleAspectFill
 

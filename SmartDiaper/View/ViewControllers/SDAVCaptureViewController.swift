@@ -13,6 +13,8 @@ class SDAVCaptureViewController: UIViewController {
 
     @IBOutlet weak var previewView: UIView!
     @IBOutlet weak var showImageButton: UIButton!
+    @IBOutlet weak var middleView: UIView!
+    @IBOutlet weak var flashButton: UIButton!
 
     var capturedImage: UIImage!
 
@@ -25,6 +27,12 @@ class SDAVCaptureViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        middleView.layer.borderColor = UIColor(red: 254, green: 252, blue: 247).cgColor
+        middleView.layer.borderWidth = 30
+        middleView.clipsToBounds = true
+        middleView.layer.masksToBounds = true
+        middleView.layer.cornerRadius = 35
 
 #if DEBUG
             showImageButton.isHidden = false
@@ -54,7 +62,7 @@ class SDAVCaptureViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
        if segue.identifier == R.segue.sdavCaptureViewController.sdAnalysisResultViewController.identifier {
 
-            guard let viewController = R.storyboard.main.sdAnalysisResultViewController() else {return}
+            guard let viewController = segue.destination as? SDAnalysisResultViewController else {return}
             viewController.image = self.capturedImage
             self.show(viewController, sender: nil)
         }

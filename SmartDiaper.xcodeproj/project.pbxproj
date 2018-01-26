@@ -25,6 +25,11 @@
 		AC4252F7200631890083D2AB /* SDCameraOverlayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC4252F6200631890083D2AB /* SDCameraOverlayView.xib */; };
 		AC4252FE2006347F0083D2AB /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4252FD2006347F0083D2AB /* R.generated.swift */; };
 		AC4A1FAE2007580C00C191AA /* UIView+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4A1FAD2007580C00C191AA /* UIView+Extentions.swift */; };
+		AC4B4A372019F41F000D64FC /* Lobster-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AC4B4A362019F41F000D64FC /* Lobster-Regular.ttf */; };
+		AC4B4A3E2019F42C000D64FC /* NotoSansUI-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AC4B4A392019F42C000D64FC /* NotoSansUI-Bold.ttf */; };
+		AC4B4A3F2019F42C000D64FC /* NotoSansUI-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AC4B4A3A2019F42C000D64FC /* NotoSansUI-Regular.ttf */; };
+		AC4B4A402019F42C000D64FC /* NotoSansUI-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AC4B4A3B2019F42C000D64FC /* NotoSansUI-BoldItalic.ttf */; };
+		AC4B4A422019F42C000D64FC /* NotoSansUI-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AC4B4A3D2019F42C000D64FC /* NotoSansUI-Italic.ttf */; };
 		ACD6A68E20172BBA00546038 /* SDDataDisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD6A68D20172BBA00546038 /* SDDataDisplayViewController.swift */; };
 		ACDF72BE200784D100F0DBCF /* SDAVCaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDF72BD200784D100F0DBCF /* SDAVCaptureViewController.swift */; };
 		ACF7A49220122D8500417AEE /* SDModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF7A49120122D8500417AEE /* SDModels.swift */; };
@@ -68,6 +73,11 @@
 		AC4252F6200631890083D2AB /* SDCameraOverlayView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SDCameraOverlayView.xib; sourceTree = "<group>"; };
 		AC4252FD2006347F0083D2AB /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		AC4A1FAD2007580C00C191AA /* UIView+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extentions.swift"; sourceTree = "<group>"; };
+		AC4B4A362019F41F000D64FC /* Lobster-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lobster-Regular.ttf"; sourceTree = "<group>"; };
+		AC4B4A392019F42C000D64FC /* NotoSansUI-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansUI-Bold.ttf"; sourceTree = "<group>"; };
+		AC4B4A3A2019F42C000D64FC /* NotoSansUI-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansUI-Regular.ttf"; sourceTree = "<group>"; };
+		AC4B4A3B2019F42C000D64FC /* NotoSansUI-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansUI-BoldItalic.ttf"; sourceTree = "<group>"; };
+		AC4B4A3D2019F42C000D64FC /* NotoSansUI-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansUI-Italic.ttf"; sourceTree = "<group>"; };
 		ACD6A68D20172BBA00546038 /* SDDataDisplayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDataDisplayViewController.swift; sourceTree = "<group>"; };
 		ACDF72BD200784D100F0DBCF /* SDAVCaptureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDAVCaptureViewController.swift; sourceTree = "<group>"; };
 		ACF7A49120122D8500417AEE /* SDModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDModels.swift; sourceTree = "<group>"; };
@@ -153,6 +163,7 @@
 		AC1FE4C82005FDF700EB2BD2 /* SmartDiaper */ = {
 			isa = PBXGroup;
 			children = (
+				AC4B4A342019F3CB000D64FC /* Resources */,
 				AC1FE4C92005FDF700EB2BD2 /* SDAppDelegate.swift */,
 				AC4252FD2006347F0083D2AB /* R.generated.swift */,
 				ACF7A49020122D5A00417AEE /* Model */,
@@ -205,6 +216,26 @@
 				AC1B0AC4201603D100059BD5 /* SDAnalysisResultViewController.swift */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		AC4B4A342019F3CB000D64FC /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				AC4B4A352019F40E000D64FC /* Fonts */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		AC4B4A352019F40E000D64FC /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				AC4B4A392019F42C000D64FC /* NotoSansUI-Bold.ttf */,
+				AC4B4A3A2019F42C000D64FC /* NotoSansUI-Regular.ttf */,
+				AC4B4A3B2019F42C000D64FC /* NotoSansUI-BoldItalic.ttf */,
+				AC4B4A3D2019F42C000D64FC /* NotoSansUI-Italic.ttf */,
+				AC4B4A362019F41F000D64FC /* Lobster-Regular.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		ACF7A48D20122C3C00417AEE /* ViewModel */ = {
@@ -317,10 +348,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC4B4A372019F41F000D64FC /* Lobster-Regular.ttf in Resources */,
+				AC4B4A422019F42C000D64FC /* NotoSansUI-Italic.ttf in Resources */,
 				AC1FE4D42005FDF700EB2BD2 /* LaunchScreen.storyboard in Resources */,
 				AC4252F7200631890083D2AB /* SDCameraOverlayView.xib in Resources */,
 				AC1FE4D12005FDF700EB2BD2 /* Assets.xcassets in Resources */,
+				AC4B4A402019F42C000D64FC /* NotoSansUI-BoldItalic.ttf in Resources */,
+				AC4B4A3E2019F42C000D64FC /* NotoSansUI-Bold.ttf in Resources */,
 				AC1FE4CF2005FDF700EB2BD2 /* Main.storyboard in Resources */,
+				AC4B4A3F2019F42C000D64FC /* NotoSansUI-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

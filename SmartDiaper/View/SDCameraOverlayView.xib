@@ -25,14 +25,14 @@
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ec5-gi-pRD">
                     <rect key="frame" x="140" y="340" width="7.5" height="7.5"/>
-                    <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="Ec5-gi-pRD" secondAttribute="height" multiplier="1:1" id="zE8-Zp-Jlt"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PEw-S9-q8A">
                     <rect key="frame" x="227.5" y="340" width="7.5" height="7.5"/>
-                    <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SG" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V09-u6-hdM">
                     <rect key="frame" x="132.5" y="295.5" width="23" height="21"/>
@@ -46,14 +46,32 @@
                     <color key="textColor" red="1" green="0.0" blue="0.018721711901257265" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="overlay_focus" translatesAutoresizingMaskIntoConstraints="NO" id="adK-lA-Zbo">
+                    <rect key="frame" x="121" y="323" width="44" height="41"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="adK-lA-Zbo" secondAttribute="height" multiplier="44:41" id="nh8-VF-Vip"/>
+                        <constraint firstAttribute="width" constant="44" id="x8I-es-ERR"/>
+                    </constraints>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="overlay_focus" translatesAutoresizingMaskIntoConstraints="NO" id="YUL-C4-iCg">
+                    <rect key="frame" x="209.5" y="323.5" width="44" height="41"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="44" id="K6F-rw-X9l"/>
+                        <constraint firstAttribute="width" secondItem="YUL-C4-iCg" secondAttribute="height" multiplier="44:41" id="gFQ-op-Q5j"/>
+                    </constraints>
+                </imageView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="PEw-S9-q8A" firstAttribute="leading" secondItem="Ec5-gi-pRD" secondAttribute="trailing" constant="80" id="4sI-2d-hK5"/>
+                <constraint firstItem="adK-lA-Zbo" firstAttribute="centerY" secondItem="Ec5-gi-pRD" secondAttribute="centerY" id="5ph-bT-wIy"/>
                 <constraint firstItem="PEw-S9-q8A" firstAttribute="width" secondItem="Ec5-gi-pRD" secondAttribute="width" id="8ik-Ay-Sh1"/>
+                <constraint firstItem="YUL-C4-iCg" firstAttribute="centerX" secondItem="PEw-S9-q8A" secondAttribute="centerX" id="Gbq-Qr-P0C"/>
                 <constraint firstItem="PEw-S9-q8A" firstAttribute="bottom" secondItem="Ec5-gi-pRD" secondAttribute="bottom" id="JqL-HT-LPF"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="PEw-S9-q8A" secondAttribute="trailing" constant="140" id="NEQ-VG-rRP"/>
                 <constraint firstItem="Ec5-gi-pRD" firstAttribute="top" secondItem="V09-u6-hdM" secondAttribute="bottom" constant="23.5" id="R7v-N3-keJ"/>
+                <constraint firstItem="YUL-C4-iCg" firstAttribute="centerY" secondItem="PEw-S9-q8A" secondAttribute="centerY" id="RbC-rN-y5M"/>
+                <constraint firstItem="adK-lA-Zbo" firstAttribute="centerX" secondItem="Ec5-gi-pRD" secondAttribute="centerX" id="VBe-GN-gui"/>
                 <constraint firstItem="PEw-S9-q8A" firstAttribute="top" secondItem="Ec5-gi-pRD" secondAttribute="top" id="hVp-5s-9f4"/>
                 <constraint firstItem="EmN-Rd-X3O" firstAttribute="centerX" secondItem="PEw-S9-q8A" secondAttribute="centerX" id="kYs-Gk-aeH"/>
                 <constraint firstItem="Ec5-gi-pRD" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="140" id="mWU-Ta-jr2"/>
@@ -65,4 +83,7 @@
             <point key="canvasLocation" x="33.5" y="54.5"/>
         </view>
     </objects>
+    <resources>
+        <image name="overlay_focus" width="48" height="45"/>
+    </resources>
 </document>

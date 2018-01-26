@@ -42,6 +42,5 @@ class SDAnalysisResultViewModel {
     }
 
     deinit {
-        saveData()
     }
 }

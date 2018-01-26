@@ -13,6 +13,7 @@ import RxSwift
 class SDAVCaptureViewModel: NSObject, AVCapturePhotoCaptureDelegate {
 
     var photoIsCaptured = Variable(false)
+    var flashOn = Variable(false)
     var avSessionFailed = Variable(SessionSetupResult.configurationFailed)
 
     var capturedImage: UIImage? {
@@ -198,6 +199,7 @@ class SDAVCaptureViewModel: NSObject, AVCapturePhotoCaptureDelegate {
             let torchOn = !device.isTorchActive
             try device.setTorchModeOn(level: 1.0)
             device.torchMode = torchOn ? .on : .off
+            flashOn.value = !torchOn
             device.unlockForConfiguration()
         } catch {
             print("error")
