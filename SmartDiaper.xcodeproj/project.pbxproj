@@ -21,6 +21,10 @@
 		AC1FE4DF2005FDF800EB2BD2 /* SmartDiaperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1FE4DE2005FDF800EB2BD2 /* SmartDiaperTests.swift */; };
 		AC1FE4F020060A2B00EB2BD2 /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1FE4EF20060A2A00EB2BD2 /* UIImage+Extensions.swift */; };
 		AC1FE4F220060A3700EB2BD2 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1FE4F120060A3700EB2BD2 /* UIColor+Extensions.swift */; };
+		AC3E2C49201B6A7F003C29D3 /* SDResultDataTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3E2C47201B6A7F003C29D3 /* SDResultDataTableViewCell.swift */; };
+		AC3E2C4A201B6A7F003C29D3 /* SDResultDataTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC3E2C48201B6A7F003C29D3 /* SDResultDataTableViewCell.xib */; };
+		AC3E2C50201B800A003C29D3 /* SDResultHeaderFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3E2C4F201B800A003C29D3 /* SDResultHeaderFooterView.swift */; };
+		AC3E2C52201B8043003C29D3 /* SDResultHeaderFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC3E2C51201B8043003C29D3 /* SDResultHeaderFooterView.xib */; };
 		AC4252F5200631810083D2AB /* SDCameraOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4252F4200631810083D2AB /* SDCameraOverlayView.swift */; };
 		AC4252F7200631890083D2AB /* SDCameraOverlayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC4252F6200631890083D2AB /* SDCameraOverlayView.xib */; };
 		AC4252FE2006347F0083D2AB /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4252FD2006347F0083D2AB /* R.generated.swift */; };
@@ -69,6 +73,10 @@
 		AC1FE4E02005FDF800EB2BD2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AC1FE4EF20060A2A00EB2BD2 /* UIImage+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
 		AC1FE4F120060A3700EB2BD2 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
+		AC3E2C47201B6A7F003C29D3 /* SDResultDataTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDResultDataTableViewCell.swift; sourceTree = "<group>"; };
+		AC3E2C48201B6A7F003C29D3 /* SDResultDataTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SDResultDataTableViewCell.xib; sourceTree = "<group>"; };
+		AC3E2C4F201B800A003C29D3 /* SDResultHeaderFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDResultHeaderFooterView.swift; sourceTree = "<group>"; };
+		AC3E2C51201B8043003C29D3 /* SDResultHeaderFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SDResultHeaderFooterView.xib; sourceTree = "<group>"; };
 		AC4252F4200631810083D2AB /* SDCameraOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDCameraOverlayView.swift; sourceTree = "<group>"; };
 		AC4252F6200631890083D2AB /* SDCameraOverlayView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SDCameraOverlayView.xib; sourceTree = "<group>"; };
 		AC4252FD2006347F0083D2AB /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
@@ -202,8 +210,12 @@
 			isa = PBXGroup;
 			children = (
 				AC4252F3200631600083D2AB /* ViewControllers */,
+				AC3E2C47201B6A7F003C29D3 /* SDResultDataTableViewCell.swift */,
+				AC3E2C48201B6A7F003C29D3 /* SDResultDataTableViewCell.xib */,
 				AC4252F4200631810083D2AB /* SDCameraOverlayView.swift */,
 				AC4252F6200631890083D2AB /* SDCameraOverlayView.xib */,
+				AC3E2C4F201B800A003C29D3 /* SDResultHeaderFooterView.swift */,
+				AC3E2C51201B8043003C29D3 /* SDResultHeaderFooterView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -354,9 +366,11 @@
 				AC4252F7200631890083D2AB /* SDCameraOverlayView.xib in Resources */,
 				AC1FE4D12005FDF700EB2BD2 /* Assets.xcassets in Resources */,
 				AC4B4A402019F42C000D64FC /* NotoSansUI-BoldItalic.ttf in Resources */,
+				AC3E2C52201B8043003C29D3 /* SDResultHeaderFooterView.xib in Resources */,
 				AC4B4A3E2019F42C000D64FC /* NotoSansUI-Bold.ttf in Resources */,
 				AC1FE4CF2005FDF700EB2BD2 /* Main.storyboard in Resources */,
 				AC4B4A3F2019F42C000D64FC /* NotoSansUI-Regular.ttf in Resources */,
+				AC3E2C4A201B6A7F003C29D3 /* SDResultDataTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -475,7 +489,7 @@
 		};
 		AC1FE4E92005FFCB00EB2BD2 /* SwiftLint Run Script */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 12;
 			files = (
 			);
 			inputPaths = (
@@ -511,6 +525,7 @@
 				ACF7A49220122D8500417AEE /* SDModels.swift in Sources */,
 				AC1B0AC5201603D100059BD5 /* SDAnalysisResultViewController.swift in Sources */,
 				AC155618201768D00000BF33 /* SDDataDisplayViewModel.swift in Sources */,
+				AC3E2C50201B800A003C29D3 /* SDResultHeaderFooterView.swift in Sources */,
 				AC1FE4F220060A3700EB2BD2 /* UIColor+Extensions.swift in Sources */,
 				AC15561F20177B840000BF33 /* SDAnalysisResultViewModel.swift in Sources */,
 				AC1FE4F020060A2B00EB2BD2 /* UIImage+Extensions.swift in Sources */,
@@ -521,6 +536,7 @@
 				AC4252F5200631810083D2AB /* SDCameraOverlayView.swift in Sources */,
 				AC15562220177EAC0000BF33 /* SDDatabaseManager.swift in Sources */,
 				AC4252FE2006347F0083D2AB /* R.generated.swift in Sources */,
+				AC3E2C49201B6A7F003C29D3 /* SDResultDataTableViewCell.swift in Sources */,
 				AC15561A20176B980000BF33 /* SDAVCaptureViewModel.swift in Sources */,
 				ACDF72BE200784D100F0DBCF /* SDAVCaptureViewController.swift in Sources */,
 			);

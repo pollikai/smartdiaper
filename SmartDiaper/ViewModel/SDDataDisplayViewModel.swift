@@ -20,13 +20,14 @@ class SDDataDisplayViewModel {
         self.data = SDDatabaseManager.sharedInstance.savedResults()
     }
 
-    func textForCellAt(indexPath: IndexPath) -> String {
+    func textForCellAt(indexPath: IndexPath) -> (String, String, String) {
 
         let dict = self.data![indexPath.row]
+        let dateText = "\(dict[DBKeys.dateKey]!)"
+        let phText = "pH: \(dict[DBKeys.phKey]!)"
+        let specifigGravityText = "SG: \(dict[DBKeys.specificGravityKey]!)"
 
-        let text = "\(dict[DBKeys.dateKey]!)     pH: \(dict[DBKeys.phKey]!)     SG: \(dict[DBKeys.specificGravityKey]!)"
-
-        return text
+        return (dateText, phText, specifigGravityText)
     }
 
     func numberOfRows() -> Int {

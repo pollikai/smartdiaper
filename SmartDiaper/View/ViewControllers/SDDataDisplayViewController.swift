@@ -8,18 +8,32 @@
 
 import UIKit
 
-class SDDataDisplayViewController: UIViewController, UITableViewDataSource {
+class SDDataDisplayViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     private var viewModel: SDDataDisplayViewModel! = nil
 
     @IBOutlet weak var tableView: UITableView!
+
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.viewModel = SDDataDisplayViewModel()
 
+        self.tableView.register(R.nib.sdResultDataTableViewCell(),
+                                forCellReuseIdentifier: R.reuseIdentifier.sdResultDataTableViewCell.identifier)
+
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 44.0
+
+        tableView.register(R.nib.sdResultHeaderFooterView(),
+                           forHeaderFooterViewReuseIdentifier: String(describing: SDResultHeaderFooterView.self))
+
         self.tableView.dataSource = self
+        self.tableView.delegate = self
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -38,16 +52,38 @@ class SDDataDisplayViewController: UIViewController, UITableViewDataSource {
 
 extension SDDataDisplayViewController {
 
+    func numberOfSections(in tableView: UITableView) -> Int {
+       return 1
+    }
+
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+
+        let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier:
+            String(describing: SDResultHeaderFooterView.self)) as? SDResultHeaderFooterView
+
+        return headerView
+    }
+
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier:
+            String(describing: SDResultHeaderFooterView.self)) as? SDResultHeaderFooterView
+        return (headerView?.frame.height)!
+    }
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.viewModel.numberOfRows()
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
-        let cellIdentifier = R.reuseIdentifier.sdDataDisplayTableViewCell
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
+        let cellIdentifier = R.reuseIdentifier.sdResultDataTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier,
+                                                 for: indexPath)
 
-        cell?.textLabel?.text = self.viewModel.textForCellAt(indexPath: indexPath)
+        let (date, ph, specifigGravity) = self.viewModel.textForCellAt(indexPath: indexPath)
+        cell?.dateLabel?.text = date
+        cell?.phLabel?.text = ph
+        cell?.specifigGravityLabel?.text = specifigGravity
 
         return cell!
     }
