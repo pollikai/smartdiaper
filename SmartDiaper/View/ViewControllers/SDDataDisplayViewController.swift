@@ -13,6 +13,7 @@ class SDDataDisplayViewController: UIViewController, UITableViewDataSource, UITa
     private var viewModel: SDDataDisplayViewModel! = nil
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var tableBackgroundShadowView: UIView!
 
     override var prefersStatusBarHidden: Bool {
         return true
@@ -22,6 +23,10 @@ class SDDataDisplayViewController: UIViewController, UITableViewDataSource, UITa
         super.viewDidLoad()
 
         self.viewModel = SDDataDisplayViewModel()
+
+        tableBackgroundShadowView.layer.cornerRadius = 5
+
+        tableBackgroundShadowView.addShadowWithMargin(margin: 5.0)
 
         self.tableView.register(R.nib.sdResultDataTableViewCell(),
                                 forCellReuseIdentifier: R.reuseIdentifier.sdResultDataTableViewCell.identifier)
@@ -84,7 +89,7 @@ extension SDDataDisplayViewController {
         cell?.dateLabel?.text = date
         cell?.phLabel?.text = ph
         cell?.specifigGravityLabel?.text = specifigGravity
-
+        cell?.layer.backgroundColor = UIColor.clear.cgColor
         return cell!
     }
 

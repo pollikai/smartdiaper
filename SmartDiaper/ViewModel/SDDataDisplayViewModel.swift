@@ -24,8 +24,8 @@ class SDDataDisplayViewModel {
 
         let dict = self.data![indexPath.row]
         let dateText = "\(dict[DBKeys.dateKey]!)"
-        let phText = "pH: \(dict[DBKeys.phKey]!)"
-        let specifigGravityText = "SG: \(dict[DBKeys.specificGravityKey]!)"
+        let phText = "\(dict[DBKeys.phKey]!)"
+        let specifigGravityText = "\(dict[DBKeys.specificGravityKey]!)"
 
         return (dateText, phText, specifigGravityText)
     }
