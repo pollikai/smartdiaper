@@ -62,10 +62,17 @@ class SDAnalysisResultViewController: UIViewController {
         self.overlayView?.setBorderColorOfAreas(color: .clear)
         self.view.addSubview(self.overlayView!)
 
-        // System correct frame in snapshot once we call this function
-        // FIXME: Need to call this function as drawHierarchy(in: bounds, afterScreenUpdates: true)
-        self.view.snapshot(of: self.overlayView?.leftView.frameInSuperView)
-        //somehow force autolayout to set and we have desired frame for our views
+        // Need to delay computeColors() to complete autolayout cycle
+        Timer.scheduledTimer(withTimeInterval: 1.0, repeats: false) { _ in
+            self.computeColors()
+        }
+    }
+
+    func computeColors() {
+
+        // NOTE: We must refresh autolayout cycle,
+        //so that overlay subviews have their correct frames
+//        self.overlayView?.contentView.layoutIfNeeded()
 
         let leftDotFrame = self.overlayView?.leftView.frameInSuperView
         // self.overlayView?.leftView.frameInSuperView.frme =
@@ -90,37 +97,35 @@ class SDAnalysisResultViewController: UIViewController {
         sampleImage.isHidden = true
         sampleImage2.isHidden = true
 
-#if DEBUG
-    self.imageView.isHidden = false
-    sampleImage.isHidden = false
-    sampleImage2.isHidden = false
+        #if DEBUG
+            self.imageView.isHidden = false
+            sampleImage.isHidden = false
+            sampleImage2.isHidden = false
 
-    leftView.isHidden = true
-    middleView.isHidden = true
+            leftView.isHidden = true
+            middleView.isHidden = true
 
-    let rgbColour = self.leftView.backgroundColor?.cgColor
-    let rgbColours = rgbColour?.components
-    let capruredRgb = self.leftView.backgroundColor?.cgColor.components
+            let rgbColour = self.leftView.backgroundColor?.cgColor
+            let rgbColours = rgbColour?.components
+            let capruredRgb = self.leftView.backgroundColor?.cgColor.components
 
-    addSubViewAtFrame(frame: leftDotFrame!) // for debugging
+            addSubViewAtFrame(frame: leftDotFrame!)
 
-    addSubViewAtFrame(frame: rightDotFrame!) // for debugging
+            addSubViewAtFrame(frame: rightDotFrame!)
 
-    print("Caprured Red: \(capruredRgb![0] * 255) Green: \(capruredRgb![1] * 255), Blue: \(capruredRgb![2] * 255)")
+            print("Caprured Red: \(capruredRgb![0] * 255) Green: \(capruredRgb![1] * 255), Blue: \(capruredRgb![2] * 255)")
 
-    print("Red: \(rgbColours![0] * 255) Green: \(rgbColours![1] * 255), Blue: \(rgbColours![2] * 255)")
+            print("Red: \(rgbColours![0] * 255) Green: \(rgbColours![1] * 255), Blue: \(rgbColours![2] * 255)")
 
-    print("specificGravityValue: \(String(describing: specificGravityValueString))")
+            print("specificGravityValue: \(String(describing: specificGravityValueString))")
 
-#endif
+        #endif
     }
 
     private func addSubViewAtFrame(frame: CGRect) {
-#if DEBUG
         let view = UIView(frame: frame)
         view.backgroundColor = .red
         self.view.addSubview(view)
-#endif
     }
 
 #if DEBUG
