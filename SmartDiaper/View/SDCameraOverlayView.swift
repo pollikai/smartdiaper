@@ -28,6 +28,8 @@ class SDCameraOverlayView: UIView {
         Bundle.main.loadNibNamed(String(describing: SDCameraOverlayView.self), owner: self, options: nil)
         addSubview(contentView)
 
+        self.contentView.frame = frame
+
         self.leftView.layer.borderColor = UIColor.red.cgColor
         self.leftView.layer.borderWidth = 2
         self.leftView.backgroundColor = .clear

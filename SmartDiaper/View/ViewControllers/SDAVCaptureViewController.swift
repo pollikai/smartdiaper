@@ -49,7 +49,7 @@ class SDAVCaptureViewController: UIViewController {
 
         self.viewModel?.tryToOpenSessionPreviewInsideView(previewView: self.previewView)
 
-        let overlayView = SDCameraOverlayView.init(frame: .zero)
+        let overlayView = SDCameraOverlayView(frame: self.view.frame)
         self.view.addSubview(overlayView)
         self.view.bringSubview(toFront: self.bottomView)
     }

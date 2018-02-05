@@ -58,20 +58,25 @@ class SDAnalysisResultViewController: UIViewController {
 
         self.imageView.image = image
 
-        self.overlayView = SDCameraOverlayView.init(frame: .zero)
-        self.imageView.addSubview(self.overlayView!)
-
+        self.overlayView = SDCameraOverlayView(frame: self.view.frame)
         self.overlayView?.setBorderColorOfAreas(color: .clear)
-        // System taking correct frame in snapshot once we calll this function
-        self.view.snapshot(of: self.overlayView?.leftView.frameInSuperView) // FIXME:
+        self.view.addSubview(self.overlayView!)
 
-        sampleImage.image = self.view.snapshot(of: self.overlayView?.leftView.frameInSuperView)
-        addSubViewAtFrame(frame: (self.overlayView?.leftView.frameInSuperView)!) // for debugging
+        // System correct frame in snapshot once we call this function
+        // FIXME: Need to call this function as drawHierarchy(in: bounds, afterScreenUpdates: true)
+        self.view.snapshot(of: self.overlayView?.leftView.frameInSuperView)
+        //somehow force autolayout to set and we have desired frame for our views
+
+        let leftDotFrame = self.overlayView?.leftView.frameInSuperView
+        // self.overlayView?.leftView.frameInSuperView.frme =
+        //self.overlayView.contentView = self.imageview.frame = self.view.frame
+        sampleImage.image = self.view.snapshot(of: leftDotFrame)
 
         self.leftView.backgroundColor = sampleImage.image?.areaAverageColor()
 
-        sampleImage2.image = self.view.snapshot(of: self.overlayView?.middleView.frameInSuperView)
-        addSubViewAtFrame(frame: (self.overlayView?.middleView.frameInSuperView)!) // for debugging
+        let rightDotFrame = self.overlayView?.middleView.frameInSuperView
+
+        sampleImage2.image = self.view.snapshot(of: rightDotFrame)
 
         self.middleView.backgroundColor = sampleImage2.image?.areaAverageColor()
 
@@ -92,16 +97,20 @@ class SDAnalysisResultViewController: UIViewController {
 
     leftView.isHidden = true
     middleView.isHidden = true
-    
+
     let rgbColour = self.leftView.backgroundColor?.cgColor
     let rgbColours = rgbColour?.components
     let capruredRgb = self.leftView.backgroundColor?.cgColor.components
+
+    addSubViewAtFrame(frame: leftDotFrame!) // for debugging
+
+    addSubViewAtFrame(frame: rightDotFrame!) // for debugging
 
     print("Caprured Red: \(capruredRgb![0] * 255) Green: \(capruredRgb![1] * 255), Blue: \(capruredRgb![2] * 255)")
 
     print("Red: \(rgbColours![0] * 255) Green: \(rgbColours![1] * 255), Blue: \(rgbColours![2] * 255)")
 
-    print("specificGravityValue: \(specificGravityValueString)")
+    print("specificGravityValue: \(String(describing: specificGravityValueString))")
 
 #endif
     }
