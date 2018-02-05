@@ -62,13 +62,13 @@ class SDAnalysisResultViewController: UIViewController {
         self.overlayView?.setBorderColorOfAreas(color: .clear)
         self.view.addSubview(self.overlayView!)
 
-        // Need to delay computeColors() to complete autolayout cycle
-        Timer.scheduledTimer(withTimeInterval: 1.0, repeats: false) { _ in
-            self.computeColors()
+        DispatchQueue.main.async {
+            // Use main queue to compute things as UI frames depends on autolayout, and autolayout must se frames in main queue
+            self.performAnalysis()
         }
     }
 
-    func computeColors() {
+    func performAnalysis() {
 
         // NOTE: We must refresh autolayout cycle,
         //so that overlay subviews have their correct frames
