@@ -90,6 +90,9 @@ class SDAnalysisResultViewController: UIViewController {
     sampleImage.isHidden = false
     sampleImage2.isHidden = false
 
+    leftView.isHidden = true
+    middleView.isHidden = true
+    
     let rgbColour = self.leftView.backgroundColor?.cgColor
     let rgbColours = rgbColour?.components
     let capruredRgb = self.leftView.backgroundColor?.cgColor.components
