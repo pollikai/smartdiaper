@@ -72,7 +72,7 @@ class SDAVCaptureViewController: UIViewController {
 
     private func addViewModelObservers() {
         viewModel?.photoIsCaptured.asObservable().skip(1)
-            .subscribe({[weak self] value in
+            .subscribe({[weak self] _ in
 
                 DispatchQueue.main.async {
 

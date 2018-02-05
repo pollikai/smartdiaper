@@ -70,10 +70,6 @@ class SDAnalysisResultViewController: UIViewController {
 
     func computeColors() {
 
-        // NOTE: We must refresh autolayout cycle,
-        //so that overlay subviews have their correct frames
-//        self.overlayView?.contentView.layoutIfNeeded()
-
         let leftDotFrame = self.overlayView?.leftView.frameInSuperView
         // self.overlayView?.leftView.frameInSuperView.frme =
         //self.overlayView.contentView = self.imageview.frame = self.view.frame
@@ -113,11 +109,11 @@ class SDAnalysisResultViewController: UIViewController {
 
             addSubViewAtFrame(frame: rightDotFrame!)
 
-            print("Caprured Red: \(capruredRgb![0] * 255) Green: \(capruredRgb![1] * 255), Blue: \(capruredRgb![2] * 255)")
+            print("Caprured Red:\(capruredRgb![0] * 255) Green:\(capruredRgb![1] * 255),Blue: \(capruredRgb![2] * 255)")
 
             print("Red: \(rgbColours![0] * 255) Green: \(rgbColours![1] * 255), Blue: \(rgbColours![2] * 255)")
 
-            print("specificGravityValue: \(String(describing: specificGravityValueString))")
+            print("specificGravity: \(String(describing: specificGravityValueString))")
 
         #endif
     }
