@@ -152,7 +152,7 @@ class SDAVCaptureViewController: UIViewController {
     @IBAction func toggleFlashButtonAction(_ sender: Any) {
         self.viewModel?.toggleFlash()
     }
-    
+
     @IBAction func capturePhoto(_ sender: Any) {
         self.viewModel?.capturePhoto()
     }

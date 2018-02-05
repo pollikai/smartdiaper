@@ -38,7 +38,7 @@ class SDAVCaptureViewModel: NSObject, AVCapturePhotoCaptureDelegate {
     private enum SDAVCaptureError: Error {
         case noVideoInput(Error)
     }
-    
+
     override init() {
         super.init()
 
