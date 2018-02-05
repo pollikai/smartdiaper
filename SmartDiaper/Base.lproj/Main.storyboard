@@ -132,6 +132,7 @@
                         <viewLayoutGuide key="safeArea" id="as5-Fg-vfO"/>
                     </view>
                     <connections>
+                        <outlet property="bottomView" destination="raG-Fw-cP8" id="taE-cH-3pW"/>
                         <outlet property="flashButton" destination="h4e-rx-Zcz" id="D37-m9-L4a"/>
                         <outlet property="middleView" destination="nZo-rA-41y" id="vkz-gZ-dtC"/>
                         <outlet property="previewView" destination="1q1-GQ-L9N" id="rNu-65-vo6"/>

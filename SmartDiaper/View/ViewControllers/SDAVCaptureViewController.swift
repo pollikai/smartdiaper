@@ -16,6 +16,7 @@ class SDAVCaptureViewController: UIViewController {
     @IBOutlet weak var middleView: UIView!
     @IBOutlet weak var flashButton: UIButton!
 
+    @IBOutlet weak var bottomView: UIView!
     var capturedImage: UIImage!
 
     private var viewModel: SDAVCaptureViewModel?
@@ -50,6 +51,7 @@ class SDAVCaptureViewController: UIViewController {
 
         let overlayView = SDCameraOverlayView.init(frame: .zero)
         self.view.addSubview(overlayView)
+        self.view.bringSubview(toFront: self.bottomView)
     }
 
     override func viewWillDisappear(_ animated: Bool) {
