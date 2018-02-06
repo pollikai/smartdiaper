@@ -26,7 +26,7 @@ class SDDataDisplayViewController: UIViewController, UITableViewDataSource, UITa
 
         tableBackgroundShadowView.layer.cornerRadius = 5
 
-        tableBackgroundShadowView.addShadowWithMargin(margin: 5.0)
+        tableBackgroundShadowView.addShadow()
 
         self.tableView.register(R.nib.sdResultDataTableViewCell(),
                                 forCellReuseIdentifier: R.reuseIdentifier.sdResultDataTableViewCell.identifier)
