@@ -197,14 +197,18 @@ class SDAVCaptureViewModel: NSObject, AVCapturePhotoCaptureDelegate {
 
     func toggleFlash() {
         guard let device = AVCaptureDevice.default(for: AVMediaType.video), device.hasTorch else {return}
-        do {
-            try device.lockForConfiguration()
-            let torchOn = !device.isTorchActive
-            try device.setTorchModeOn(level: 1.0)
-            device.torchMode = torchOn ? .on : .off
-            flashOn.value = !torchOn
-            device.unlockForConfiguration()
-        } catch {
+            do {
+                try device.lockForConfiguration()
+                if device.torchMode == .on {
+                    
+                    device.torchMode = .off
+                    self.flashOn.value = false
+                } else {
+                    device.torchMode = .on
+                    self.flashOn.value = true
+                }
+                device.unlockForConfiguration()
+            } catch {
             print("error")
         }
     }
