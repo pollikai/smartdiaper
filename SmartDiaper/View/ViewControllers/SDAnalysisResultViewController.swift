@@ -93,6 +93,8 @@ class SDAnalysisResultViewController: UIViewController {
         sampleImage.isHidden = true
         sampleImage2.isHidden = true
 
+        self.overlayView?.removeFromSuperview()
+
         #if DEBUG
             self.imageView.isHidden = false
             sampleImage.isHidden = false
