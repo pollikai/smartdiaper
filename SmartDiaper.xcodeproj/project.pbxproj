@@ -34,6 +34,7 @@
 		AC4B4A3F2019F42C000D64FC /* NotoSansUI-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AC4B4A3A2019F42C000D64FC /* NotoSansUI-Regular.ttf */; };
 		AC4B4A402019F42C000D64FC /* NotoSansUI-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AC4B4A3B2019F42C000D64FC /* NotoSansUI-BoldItalic.ttf */; };
 		AC4B4A422019F42C000D64FC /* NotoSansUI-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AC4B4A3D2019F42C000D64FC /* NotoSansUI-Italic.ttf */; };
+		AC4B66392029E688008C10E9 /* SDTutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4B66382029E688008C10E9 /* SDTutorialViewController.swift */; };
 		ACD6A68E20172BBA00546038 /* SDDataDisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD6A68D20172BBA00546038 /* SDDataDisplayViewController.swift */; };
 		ACDF72BE200784D100F0DBCF /* SDAVCaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDF72BD200784D100F0DBCF /* SDAVCaptureViewController.swift */; };
 		ACF7A49220122D8500417AEE /* SDModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF7A49120122D8500417AEE /* SDModels.swift */; };
@@ -86,6 +87,7 @@
 		AC4B4A3A2019F42C000D64FC /* NotoSansUI-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansUI-Regular.ttf"; sourceTree = "<group>"; };
 		AC4B4A3B2019F42C000D64FC /* NotoSansUI-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansUI-BoldItalic.ttf"; sourceTree = "<group>"; };
 		AC4B4A3D2019F42C000D64FC /* NotoSansUI-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansUI-Italic.ttf"; sourceTree = "<group>"; };
+		AC4B66382029E688008C10E9 /* SDTutorialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDTutorialViewController.swift; sourceTree = "<group>"; };
 		ACD6A68D20172BBA00546038 /* SDDataDisplayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDataDisplayViewController.swift; sourceTree = "<group>"; };
 		ACDF72BD200784D100F0DBCF /* SDAVCaptureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDAVCaptureViewController.swift; sourceTree = "<group>"; };
 		ACF7A49120122D8500417AEE /* SDModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDModels.swift; sourceTree = "<group>"; };
@@ -223,6 +225,7 @@
 		AC4252F3200631600083D2AB /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				AC4B66382029E688008C10E9 /* SDTutorialViewController.swift */,
 				ACD6A68D20172BBA00546038 /* SDDataDisplayViewController.swift */,
 				ACDF72BD200784D100F0DBCF /* SDAVCaptureViewController.swift */,
 				AC1B0AC4201603D100059BD5 /* SDAnalysisResultViewController.swift */,
@@ -539,6 +542,7 @@
 				AC3E2C49201B6A7F003C29D3 /* SDResultDataTableViewCell.swift in Sources */,
 				AC15561A20176B980000BF33 /* SDAVCaptureViewModel.swift in Sources */,
 				ACDF72BE200784D100F0DBCF /* SDAVCaptureViewController.swift in Sources */,
+				AC4B66392029E688008C10E9 /* SDTutorialViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
