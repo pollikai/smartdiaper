@@ -89,9 +89,9 @@ class SDAVCaptureViewController: UIViewController {
 
                 DispatchQueue.main.async {
                     if value.element == true {
-                        self?.flashButton.setImage(R.image.flash_on(), for: .normal)
-                    } else {
                         self?.flashButton.setImage(R.image.flash_off(), for: .normal)
+                    } else {
+                        self?.flashButton.setImage(R.image.flash_on(), for: .normal)
                     }
                 }
             }).disposed(by: disposeBag)
