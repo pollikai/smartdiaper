@@ -35,6 +35,36 @@
 		AC4B4A402019F42C000D64FC /* NotoSansUI-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AC4B4A3B2019F42C000D64FC /* NotoSansUI-BoldItalic.ttf */; };
 		AC4B4A422019F42C000D64FC /* NotoSansUI-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AC4B4A3D2019F42C000D64FC /* NotoSansUI-Italic.ttf */; };
 		AC4B66392029E688008C10E9 /* SDTutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4B66382029E688008C10E9 /* SDTutorialViewController.swift */; };
+		AC9CF9C62031C86C009DCEBD /* SDModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF7A49120122D8500417AEE /* SDModels.swift */; };
+		AC9CF9C72031C86C009DCEBD /* SDAnalysisResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1B0AC4201603D100059BD5 /* SDAnalysisResultViewController.swift */; };
+		AC9CF9C82031C86C009DCEBD /* SDDataDisplayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC155617201768D00000BF33 /* SDDataDisplayViewModel.swift */; };
+		AC9CF9C92031C86C009DCEBD /* SDResultHeaderFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3E2C4F201B800A003C29D3 /* SDResultHeaderFooterView.swift */; };
+		AC9CF9CA2031C86C009DCEBD /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1FE4F120060A3700EB2BD2 /* UIColor+Extensions.swift */; };
+		AC9CF9CB2031C86C009DCEBD /* SDAnalysisResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC15561E20177B840000BF33 /* SDAnalysisResultViewModel.swift */; };
+		AC9CF9CC2031C86C009DCEBD /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1FE4EF20060A2A00EB2BD2 /* UIImage+Extensions.swift */; };
+		AC9CF9CD2031C86C009DCEBD /* UIView+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4A1FAD2007580C00C191AA /* UIView+Extentions.swift */; };
+		AC9CF9CE2031C86C009DCEBD /* SDDataDisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD6A68D20172BBA00546038 /* SDDataDisplayViewController.swift */; };
+		AC9CF9CF2031C86C009DCEBD /* SDColorAnalysis.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC15561C20177B5E0000BF33 /* SDColorAnalysis.swift */; };
+		AC9CF9D02031C86C009DCEBD /* SDAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1FE4C92005FDF700EB2BD2 /* SDAppDelegate.swift */; };
+		AC9CF9D12031C86C009DCEBD /* SDCameraOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4252F4200631810083D2AB /* SDCameraOverlayView.swift */; };
+		AC9CF9D22031C86C009DCEBD /* SDDatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC15562120177EAC0000BF33 /* SDDatabaseManager.swift */; };
+		AC9CF9D32031C86C009DCEBD /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4252FD2006347F0083D2AB /* R.generated.swift */; };
+		AC9CF9D42031C86C009DCEBD /* SDResultDataTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3E2C47201B6A7F003C29D3 /* SDResultDataTableViewCell.swift */; };
+		AC9CF9D52031C86C009DCEBD /* SDAVCaptureViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC15561920176B980000BF33 /* SDAVCaptureViewModel.swift */; };
+		AC9CF9D62031C86C009DCEBD /* SDAVCaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDF72BD200784D100F0DBCF /* SDAVCaptureViewController.swift */; };
+		AC9CF9D72031C86C009DCEBD /* SDTutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4B66382029E688008C10E9 /* SDTutorialViewController.swift */; };
+		AC9CF9D92031C86C009DCEBD /* Pods_SmartDiaper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 506DA3BAA69EB07ADEC94FCA /* Pods_SmartDiaper.framework */; };
+		AC9CF9DB2031C86C009DCEBD /* Lobster-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AC4B4A362019F41F000D64FC /* Lobster-Regular.ttf */; };
+		AC9CF9DC2031C86C009DCEBD /* NotoSansUI-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AC4B4A3D2019F42C000D64FC /* NotoSansUI-Italic.ttf */; };
+		AC9CF9DD2031C86C009DCEBD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC1FE4D22005FDF700EB2BD2 /* LaunchScreen.storyboard */; };
+		AC9CF9DE2031C86C009DCEBD /* SDCameraOverlayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC4252F6200631890083D2AB /* SDCameraOverlayView.xib */; };
+		AC9CF9DF2031C86C009DCEBD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC1FE4D02005FDF700EB2BD2 /* Assets.xcassets */; };
+		AC9CF9E02031C86C009DCEBD /* NotoSansUI-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AC4B4A3B2019F42C000D64FC /* NotoSansUI-BoldItalic.ttf */; };
+		AC9CF9E12031C86C009DCEBD /* SDResultHeaderFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC3E2C51201B8043003C29D3 /* SDResultHeaderFooterView.xib */; };
+		AC9CF9E22031C86C009DCEBD /* NotoSansUI-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AC4B4A392019F42C000D64FC /* NotoSansUI-Bold.ttf */; };
+		AC9CF9E42031C86C009DCEBD /* NotoSansUI-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AC4B4A3A2019F42C000D64FC /* NotoSansUI-Regular.ttf */; };
+		AC9CF9E52031C86C009DCEBD /* SDResultDataTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC3E2C48201B6A7F003C29D3 /* SDResultDataTableViewCell.xib */; };
+		AC9CF9F02031C902009DCEBD /* MainColorAnalysis.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC9CF9EE2031C902009DCEBD /* MainColorAnalysis.storyboard */; };
 		ACD6A68E20172BBA00546038 /* SDDataDisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD6A68D20172BBA00546038 /* SDDataDisplayViewController.swift */; };
 		ACDF72BE200784D100F0DBCF /* SDAVCaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDF72BD200784D100F0DBCF /* SDAVCaptureViewController.swift */; };
 		ACF7A49220122D8500417AEE /* SDModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF7A49120122D8500417AEE /* SDModels.swift */; };
@@ -88,6 +118,9 @@
 		AC4B4A3B2019F42C000D64FC /* NotoSansUI-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansUI-BoldItalic.ttf"; sourceTree = "<group>"; };
 		AC4B4A3D2019F42C000D64FC /* NotoSansUI-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansUI-Italic.ttf"; sourceTree = "<group>"; };
 		AC4B66382029E688008C10E9 /* SDTutorialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDTutorialViewController.swift; sourceTree = "<group>"; };
+		AC9CF9EC2031C86C009DCEBD /* ColorAnalysis.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ColorAnalysis.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC9CF9ED2031C86C009DCEBD /* ColorAnalysisInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = ColorAnalysisInfo.plist; path = /Users/startcut/Documents/S4_projects/iOS/SmartDiaper/ColorAnalysisInfo.plist; sourceTree = "<absolute>"; };
+		AC9CF9EF2031C902009DCEBD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainColorAnalysis.storyboard; sourceTree = "<group>"; };
 		ACD6A68D20172BBA00546038 /* SDDataDisplayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDataDisplayViewController.swift; sourceTree = "<group>"; };
 		ACDF72BD200784D100F0DBCF /* SDAVCaptureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDAVCaptureViewController.swift; sourceTree = "<group>"; };
 		ACF7A49120122D8500417AEE /* SDModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDModels.swift; sourceTree = "<group>"; };
@@ -108,6 +141,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				D4479573F404F1649B02C9DC /* Pods_SmartDiaperTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AC9CF9D82031C86C009DCEBD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AC9CF9D92031C86C009DCEBD /* Pods_SmartDiaper.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -158,6 +199,7 @@
 				AC1FE4C72005FDF700EB2BD2 /* Products */,
 				00E74694F6E6AA5B9E86FEA0 /* Pods */,
 				51CDB7131266C70721DC6128 /* Frameworks */,
+				AC9CF9ED2031C86C009DCEBD /* ColorAnalysisInfo.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -166,6 +208,7 @@
 			children = (
 				AC1FE4C62005FDF700EB2BD2 /* SmartDiaper.app */,
 				AC1FE4DA2005FDF800EB2BD2 /* SmartDiaperTests.xctest */,
+				AC9CF9EC2031C86C009DCEBD /* ColorAnalysis.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -182,6 +225,7 @@
 				AC15562020177E890000BF33 /* DataSource */,
 				AC1FE4EC200607C500EB2BD2 /* Extensions */,
 				AC1FE4CD2005FDF700EB2BD2 /* Main.storyboard */,
+				AC9CF9EE2031C902009DCEBD /* MainColorAnalysis.storyboard */,
 				AC1FE4D02005FDF700EB2BD2 /* Assets.xcassets */,
 				AC1FE4D22005FDF700EB2BD2 /* LaunchScreen.storyboard */,
 				AC1FE4D52005FDF700EB2BD2 /* Info.plist */,
@@ -318,6 +362,28 @@
 			productReference = AC1FE4DA2005FDF800EB2BD2 /* SmartDiaperTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		AC9CF9C22031C86C009DCEBD /* ColorAnalysis */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AC9CF9E92031C86C009DCEBD /* Build configuration list for PBXNativeTarget "ColorAnalysis" */;
+			buildPhases = (
+				AC9CF9C32031C86C009DCEBD /* [CP] Check Pods Manifest.lock */,
+				AC9CF9C42031C86C009DCEBD /* R.Swift Run Script */,
+				AC9CF9C52031C86C009DCEBD /* Sources */,
+				AC9CF9D82031C86C009DCEBD /* Frameworks */,
+				AC9CF9DA2031C86C009DCEBD /* Resources */,
+				AC9CF9E62031C86C009DCEBD /* [CP] Embed Pods Frameworks */,
+				AC9CF9E72031C86C009DCEBD /* [CP] Copy Pods Resources */,
+				AC9CF9E82031C86C009DCEBD /* SwiftLint Run Script */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ColorAnalysis;
+			productName = SmartDiaper;
+			productReference = AC9CF9EC2031C86C009DCEBD /* ColorAnalysis.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -337,6 +403,9 @@
 						ProvisioningStyle = Automatic;
 						TestTargetID = AC1FE4C52005FDF700EB2BD2;
 					};
+					AC9CF9C22031C86C009DCEBD = {
+						ProvisioningStyle = Automatic;
+					};
 				};
 			};
 			buildConfigurationList = AC1FE4C12005FDF700EB2BD2 /* Build configuration list for PBXProject "SmartDiaper" */;
@@ -353,6 +422,7 @@
 			projectRoot = "";
 			targets = (
 				AC1FE4C52005FDF700EB2BD2 /* SmartDiaper */,
+				AC9CF9C22031C86C009DCEBD /* ColorAnalysis */,
 				AC1FE4D92005FDF800EB2BD2 /* SmartDiaperTests */,
 			);
 		};
@@ -381,6 +451,24 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AC9CF9DA2031C86C009DCEBD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AC9CF9DB2031C86C009DCEBD /* Lobster-Regular.ttf in Resources */,
+				AC9CF9DC2031C86C009DCEBD /* NotoSansUI-Italic.ttf in Resources */,
+				AC9CF9DD2031C86C009DCEBD /* LaunchScreen.storyboard in Resources */,
+				AC9CF9F02031C902009DCEBD /* MainColorAnalysis.storyboard in Resources */,
+				AC9CF9DE2031C86C009DCEBD /* SDCameraOverlayView.xib in Resources */,
+				AC9CF9DF2031C86C009DCEBD /* Assets.xcassets in Resources */,
+				AC9CF9E02031C86C009DCEBD /* NotoSansUI-BoldItalic.ttf in Resources */,
+				AC9CF9E12031C86C009DCEBD /* SDResultHeaderFooterView.xib in Resources */,
+				AC9CF9E22031C86C009DCEBD /* NotoSansUI-Bold.ttf in Resources */,
+				AC9CF9E42031C86C009DCEBD /* NotoSansUI-Regular.ttf in Resources */,
+				AC9CF9E52031C86C009DCEBD /* SDResultDataTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -518,6 +606,89 @@
 			shellPath = /bin/sh;
 			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT\"\n";
 		};
+		AC9CF9C32031C86C009DCEBD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SmartDiaper-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AC9CF9C42031C86C009DCEBD /* R.Swift Run Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "R.Swift Run Script";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT\"\n";
+		};
+		AC9CF9E62031C86C009DCEBD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-SmartDiaper/Pods-SmartDiaper-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rswift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SmartDiaper/Pods-SmartDiaper-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AC9CF9E72031C86C009DCEBD /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SmartDiaper/Pods-SmartDiaper-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AC9CF9E82031C86C009DCEBD /* SwiftLint Run Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 12;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "SwiftLint Run Script";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -554,6 +725,31 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		AC9CF9C52031C86C009DCEBD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AC9CF9C62031C86C009DCEBD /* SDModels.swift in Sources */,
+				AC9CF9C72031C86C009DCEBD /* SDAnalysisResultViewController.swift in Sources */,
+				AC9CF9C82031C86C009DCEBD /* SDDataDisplayViewModel.swift in Sources */,
+				AC9CF9C92031C86C009DCEBD /* SDResultHeaderFooterView.swift in Sources */,
+				AC9CF9CA2031C86C009DCEBD /* UIColor+Extensions.swift in Sources */,
+				AC9CF9CB2031C86C009DCEBD /* SDAnalysisResultViewModel.swift in Sources */,
+				AC9CF9CC2031C86C009DCEBD /* UIImage+Extensions.swift in Sources */,
+				AC9CF9CD2031C86C009DCEBD /* UIView+Extentions.swift in Sources */,
+				AC9CF9CE2031C86C009DCEBD /* SDDataDisplayViewController.swift in Sources */,
+				AC9CF9CF2031C86C009DCEBD /* SDColorAnalysis.swift in Sources */,
+				AC9CF9D02031C86C009DCEBD /* SDAppDelegate.swift in Sources */,
+				AC9CF9D12031C86C009DCEBD /* SDCameraOverlayView.swift in Sources */,
+				AC9CF9D22031C86C009DCEBD /* SDDatabaseManager.swift in Sources */,
+				AC9CF9D32031C86C009DCEBD /* R.generated.swift in Sources */,
+				AC9CF9D42031C86C009DCEBD /* SDResultDataTableViewCell.swift in Sources */,
+				AC9CF9D52031C86C009DCEBD /* SDAVCaptureViewModel.swift in Sources */,
+				AC9CF9D62031C86C009DCEBD /* SDAVCaptureViewController.swift in Sources */,
+				AC9CF9D72031C86C009DCEBD /* SDTutorialViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -579,6 +775,14 @@
 				AC1FE4D32005FDF700EB2BD2 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		AC9CF9EE2031C902009DCEBD /* MainColorAnalysis.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AC9CF9EF2031C902009DCEBD /* Base */,
+			);
+			name = MainColorAnalysis.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -757,6 +961,38 @@
 			};
 			name = Release;
 		};
+		AC9CF9EA2031C86C009DCEBD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F0157F1410F5FB330BCF24E7 /* Pods-SmartDiaper.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SB865CS7Y5;
+				INFOPLIST_FILE = ColorAnalysisInfo.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.starcut.coloranalysis;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		AC9CF9EB2031C86C009DCEBD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A96877B5675B97BB58DC6E9D /* Pods-SmartDiaper.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SB865CS7Y5;
+				INFOPLIST_FILE = ColorAnalysisInfo.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.starcut.coloranalysis;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -783,6 +1019,15 @@
 			buildConfigurations = (
 				AC1FE4E72005FDF800EB2BD2 /* Debug */,
 				AC1FE4E82005FDF800EB2BD2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AC9CF9E92031C86C009DCEBD /* Build configuration list for PBXNativeTarget "ColorAnalysis" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AC9CF9EA2031C86C009DCEBD /* Debug */,
+				AC9CF9EB2031C86C009DCEBD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
