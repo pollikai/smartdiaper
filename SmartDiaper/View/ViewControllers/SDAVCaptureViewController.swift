@@ -64,7 +64,7 @@ class SDAVCaptureViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
        if segue.identifier == R.segue.sdavCaptureViewController.sdAnalysisResultViewController.identifier {
 
-            guard let viewController = segue.destination as? SDAnalysisResultViewController else {return}
+            guard let viewController = segue.destination as? SDCommonAnalysisViewController else {return}
             viewController.image = self.capturedImage
             self.show(viewController, sender: nil)
         }

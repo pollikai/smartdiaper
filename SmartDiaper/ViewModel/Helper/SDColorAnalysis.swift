@@ -107,4 +107,16 @@ struct SDColorAnalysis {
         return result
     }
 
+    func sortedCloseColorModels(color: UIColor) -> [SDColorNameModel]? {
+
+        let mutableColorModels = self.colorNameSet.map { (colorNameModel: SDColorNameModel) -> SDColorNameModel in
+            var mutableColorNameModel = colorNameModel
+            let tolerance = colorsBecomeSimilarAtTolerance(color1: mutableColorNameModel.color, color2: color)
+            mutableColorNameModel.tolerance = tolerance
+            return mutableColorNameModel
+        }
+
+        return mutableColorModels.sorted(by: { $0.tolerance < $1.tolerance })
+    }
+
 }

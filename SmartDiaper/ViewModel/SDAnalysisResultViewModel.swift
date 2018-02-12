@@ -41,6 +41,12 @@ class SDAnalysisResultViewModel {
         return String(format: "%@", colorNameModel!.name)
     }
 
+    func sortedCloseColorModels(color: UIColor) -> [SDColorNameModel]? {
+        let colorNameModels = colorAnalysis.sortedCloseColorModels(color: color)
+
+        return colorNameModels
+    }
+
     func saveData() {
         if self.latestSpecificGravityModel != nil, self.latestPHModel != nil {
             SDDatabaseManager.sharedInstance.saveResultInDB(

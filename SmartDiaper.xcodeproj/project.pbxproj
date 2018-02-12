@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		12F04E0E4392FE3A6805DA5A /* Pods_SmartDiaper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 506DA3BAA69EB07ADEC94FCA /* Pods_SmartDiaper.framework */; };
+		AC0291FC2031E524009D205B /* SDCommonAnalysisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0291FB2031E524009D205B /* SDCommonAnalysisViewController.swift */; };
+		AC0291FD2031E524009D205B /* SDCommonAnalysisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0291FB2031E524009D205B /* SDCommonAnalysisViewController.swift */; };
 		AC155618201768D00000BF33 /* SDDataDisplayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC155617201768D00000BF33 /* SDDataDisplayViewModel.swift */; };
 		AC15561A20176B980000BF33 /* SDAVCaptureViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC15561920176B980000BF33 /* SDAVCaptureViewModel.swift */; };
 		AC15561D20177B5E0000BF33 /* SDColorAnalysis.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC15561C20177B5E0000BF33 /* SDColorAnalysis.swift */; };
@@ -65,6 +67,7 @@
 		AC9CF9E42031C86C009DCEBD /* NotoSansUI-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AC4B4A3A2019F42C000D64FC /* NotoSansUI-Regular.ttf */; };
 		AC9CF9E52031C86C009DCEBD /* SDResultDataTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC3E2C48201B6A7F003C29D3 /* SDResultDataTableViewCell.xib */; };
 		AC9CF9F02031C902009DCEBD /* MainColorAnalysis.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC9CF9EE2031C902009DCEBD /* MainColorAnalysis.storyboard */; };
+		AC9CF9F62031E20A009DCEBD /* CAAnalysisResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9CF9F52031E20A009DCEBD /* CAAnalysisResultViewController.swift */; };
 		ACD6A68E20172BBA00546038 /* SDDataDisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD6A68D20172BBA00546038 /* SDDataDisplayViewController.swift */; };
 		ACDF72BE200784D100F0DBCF /* SDAVCaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDF72BD200784D100F0DBCF /* SDAVCaptureViewController.swift */; };
 		ACF7A49220122D8500417AEE /* SDModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF7A49120122D8500417AEE /* SDModels.swift */; };
@@ -87,6 +90,7 @@
 		715A482C0A10708EADAA6540 /* Pods-SmartDiaperTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartDiaperTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SmartDiaperTests/Pods-SmartDiaperTests.release.xcconfig"; sourceTree = "<group>"; };
 		9F585AD57E8FE490910061BB /* Pods-SmartDiaperTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartDiaperTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SmartDiaperTests/Pods-SmartDiaperTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A96877B5675B97BB58DC6E9D /* Pods-SmartDiaper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartDiaper.release.xcconfig"; path = "Pods/Target Support Files/Pods-SmartDiaper/Pods-SmartDiaper.release.xcconfig"; sourceTree = "<group>"; };
+		AC0291FB2031E524009D205B /* SDCommonAnalysisViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDCommonAnalysisViewController.swift; sourceTree = "<group>"; };
 		AC155617201768D00000BF33 /* SDDataDisplayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDataDisplayViewModel.swift; sourceTree = "<group>"; };
 		AC15561920176B980000BF33 /* SDAVCaptureViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDAVCaptureViewModel.swift; sourceTree = "<group>"; };
 		AC15561C20177B5E0000BF33 /* SDColorAnalysis.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDColorAnalysis.swift; sourceTree = "<group>"; };
@@ -121,6 +125,7 @@
 		AC9CF9EC2031C86C009DCEBD /* ColorAnalysis.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ColorAnalysis.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC9CF9ED2031C86C009DCEBD /* ColorAnalysisInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = ColorAnalysisInfo.plist; path = /Users/startcut/Documents/S4_projects/iOS/SmartDiaper/ColorAnalysisInfo.plist; sourceTree = "<absolute>"; };
 		AC9CF9EF2031C902009DCEBD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainColorAnalysis.storyboard; sourceTree = "<group>"; };
+		AC9CF9F52031E20A009DCEBD /* CAAnalysisResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CAAnalysisResultViewController.swift; sourceTree = "<group>"; };
 		ACD6A68D20172BBA00546038 /* SDDataDisplayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDataDisplayViewController.swift; sourceTree = "<group>"; };
 		ACDF72BD200784D100F0DBCF /* SDAVCaptureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDAVCaptureViewController.swift; sourceTree = "<group>"; };
 		ACF7A49120122D8500417AEE /* SDModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDModels.swift; sourceTree = "<group>"; };
@@ -272,7 +277,9 @@
 				AC4B66382029E688008C10E9 /* SDTutorialViewController.swift */,
 				ACD6A68D20172BBA00546038 /* SDDataDisplayViewController.swift */,
 				ACDF72BD200784D100F0DBCF /* SDAVCaptureViewController.swift */,
+				AC0291FB2031E524009D205B /* SDCommonAnalysisViewController.swift */,
 				AC1B0AC4201603D100059BD5 /* SDAnalysisResultViewController.swift */,
+				AC9CF9F52031E20A009DCEBD /* CAAnalysisResultViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -709,6 +716,7 @@
 				AC1FE4CA2005FDF700EB2BD2 /* SDAppDelegate.swift in Sources */,
 				AC4252F5200631810083D2AB /* SDCameraOverlayView.swift in Sources */,
 				AC15562220177EAC0000BF33 /* SDDatabaseManager.swift in Sources */,
+				AC0291FC2031E524009D205B /* SDCommonAnalysisViewController.swift in Sources */,
 				AC4252FE2006347F0083D2AB /* R.generated.swift in Sources */,
 				AC3E2C49201B6A7F003C29D3 /* SDResultDataTableViewCell.swift in Sources */,
 				AC15561A20176B980000BF33 /* SDAVCaptureViewModel.swift in Sources */,
@@ -734,6 +742,7 @@
 				AC9CF9C82031C86C009DCEBD /* SDDataDisplayViewModel.swift in Sources */,
 				AC9CF9C92031C86C009DCEBD /* SDResultHeaderFooterView.swift in Sources */,
 				AC9CF9CA2031C86C009DCEBD /* UIColor+Extensions.swift in Sources */,
+				AC9CF9F62031E20A009DCEBD /* CAAnalysisResultViewController.swift in Sources */,
 				AC9CF9CB2031C86C009DCEBD /* SDAnalysisResultViewModel.swift in Sources */,
 				AC9CF9CC2031C86C009DCEBD /* UIImage+Extensions.swift in Sources */,
 				AC9CF9CD2031C86C009DCEBD /* UIView+Extentions.swift in Sources */,
@@ -742,6 +751,7 @@
 				AC9CF9D02031C86C009DCEBD /* SDAppDelegate.swift in Sources */,
 				AC9CF9D12031C86C009DCEBD /* SDCameraOverlayView.swift in Sources */,
 				AC9CF9D22031C86C009DCEBD /* SDDatabaseManager.swift in Sources */,
+				AC0291FD2031E524009D205B /* SDCommonAnalysisViewController.swift in Sources */,
 				AC9CF9D32031C86C009DCEBD /* R.generated.swift in Sources */,
 				AC9CF9D42031C86C009DCEBD /* SDResultDataTableViewCell.swift in Sources */,
 				AC9CF9D52031C86C009DCEBD /* SDAVCaptureViewModel.swift in Sources */,
