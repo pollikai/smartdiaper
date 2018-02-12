@@ -16,6 +16,20 @@ protocol SDAnalysisObjectEditable {
     var tolerance: Int { get set}
 }
 
+struct SDColorNameModel: SDAnalysisObject, SDAnalysisObjectEditable {
+
+    var color: UIColor!
+    let name: String!
+    var tolerance: Int
+
+    init(color: UIColor, name: String) {
+        self.color = color
+        self.name = name
+        self.tolerance = 0
+
+    }
+}
+
 struct SDPHModel: SDAnalysisObject, SDAnalysisObjectEditable {
 
     var color: UIColor!

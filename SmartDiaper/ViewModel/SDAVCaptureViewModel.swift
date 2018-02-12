@@ -200,7 +200,7 @@ class SDAVCaptureViewModel: NSObject, AVCapturePhotoCaptureDelegate {
             do {
                 try device.lockForConfiguration()
                 if device.torchMode == .on {
-                    
+
                     device.torchMode = .off
                     self.flashOn.value = false
                 } else {

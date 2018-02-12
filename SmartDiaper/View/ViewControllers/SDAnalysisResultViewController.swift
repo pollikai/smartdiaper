@@ -62,13 +62,32 @@ class SDAnalysisResultViewController: UIViewController {
         self.overlayView?.setBorderColorOfAreas(color: .clear)
         self.view.addSubview(self.overlayView!)
 
-        DispatchQueue.main.async {
+        DispatchQueue.main.async { [unowned self] in
             // Use main queue to compute things as UI frames depends on autolayout, and autolayout must se frames in main queue
-            self.performAnalysis()
+            self.performAnalysisForColorName()
+
+            #if DEBUG
+                self.imageView.isHidden = false
+                self.sampleImage.isHidden = false
+                self.sampleImage2.isHidden = false
+
+                self.leftView.isHidden = true
+                self.middleView.isHidden = true
+
+                let rgbColour = self.leftView.backgroundColor?.cgColor
+                let rgbColours = rgbColour?.components
+                let capruredRgb = self.leftView.backgroundColor?.cgColor.components
+
+                print("Caprured Red:\(capruredRgb![0] * 255) Green:\(capruredRgb![1] * 255),Blue: \(capruredRgb![2] * 255)")
+
+                print("Red: \(rgbColours![0] * 255) Green: \(rgbColours![1] * 255), Blue: \(rgbColours![2] * 255)")
+
+            #endif
+
         }
     }
 
-    func performAnalysis() {
+    private func performAnalysis() {
 
         let leftDotFrame = self.overlayView?.leftView.frameInSuperView
         // self.overlayView?.leftView.frameInSuperView.frme =
@@ -95,29 +114,49 @@ class SDAnalysisResultViewController: UIViewController {
 
         self.overlayView?.removeFromSuperview()
 
+        self.commonDebugTasks(leftDotFrame: leftDotFrame, rightDotFrame: rightDotFrame)
+
+    }
+
+    private func performAnalysisForColorName() {
+
+        let leftDotFrame = self.overlayView?.leftView.frameInSuperView
+
+        sampleImage.image = self.view.snapshot(of: leftDotFrame)
+
+        self.leftView.backgroundColor = sampleImage.image?.areaAverageColor()
+
+        let rightDotFrame = self.overlayView?.middleView.frameInSuperView
+
+        sampleImage2.image = self.view.snapshot(of: rightDotFrame)
+
+        self.middleView.backgroundColor = sampleImage2.image?.areaAverageColor()
+
+        let name = self.viewModel?.nameForColorValue(color: self.leftView.backgroundColor!)
+        self.label1.text = "name: \(name ?? "")"
+
+        let name2 = self.viewModel?.nameForColorValue(color: self.middleView.backgroundColor!)
+        self.label2.text = "name2: \(name2 ?? "")"
+
+        self.imageView.isHidden = true
+        sampleImage.isHidden = true
+        sampleImage2.isHidden = true
+
+        self.overlayView?.removeFromSuperview()
+
+        self.commonDebugTasks(leftDotFrame: leftDotFrame, rightDotFrame: rightDotFrame)
+    }
+
+    private func commonDebugTasks(leftDotFrame: CGRect?, rightDotFrame: CGRect?) {
+
+        guard let leftDotFrameValue = leftDotFrame, let rightDotFrameValue = rightDotFrame else {return}
+
         #if DEBUG
-            self.imageView.isHidden = false
-            sampleImage.isHidden = false
-            sampleImage2.isHidden = false
+            addSubViewAtFrame(frame: leftDotFrameValue)
 
-            leftView.isHidden = true
-            middleView.isHidden = true
-
-            let rgbColour = self.leftView.backgroundColor?.cgColor
-            let rgbColours = rgbColour?.components
-            let capruredRgb = self.leftView.backgroundColor?.cgColor.components
-
-            addSubViewAtFrame(frame: leftDotFrame!)
-
-            addSubViewAtFrame(frame: rightDotFrame!)
-
-            print("Caprured Red:\(capruredRgb![0] * 255) Green:\(capruredRgb![1] * 255),Blue: \(capruredRgb![2] * 255)")
-
-            print("Red: \(rgbColours![0] * 255) Green: \(rgbColours![1] * 255), Blue: \(rgbColours![2] * 255)")
-
-            print("specificGravity: \(String(describing: specificGravityValueString))")
-
+            addSubViewAtFrame(frame: rightDotFrameValue)
         #endif
+
     }
 
     private func addSubViewAtFrame(frame: CGRect) {

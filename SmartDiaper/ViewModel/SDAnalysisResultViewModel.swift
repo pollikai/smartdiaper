@@ -14,6 +14,7 @@ class SDAnalysisResultViewModel {
 
     private var latestSpecificGravityModel: SDSpecificGravityModel?
     private var latestPHModel: SDPHModel?
+    private var latestColorNameModel: SDColorNameModel?
 
     init() {
         self.colorAnalysis = SDColorAnalysis()
@@ -31,6 +32,13 @@ class SDAnalysisResultViewModel {
         self.latestPHModel = phModel
 
         return String(format: "%d", phModel!.phValue)
+    }
+
+    func nameForColorValue(color: UIColor) -> String {
+        let colorNameModel = colorAnalysis.nameForColorValue(color: color)
+        self.latestColorNameModel = colorNameModel
+
+        return String(format: "%@", colorNameModel!.name)
     }
 
     func saveData() {

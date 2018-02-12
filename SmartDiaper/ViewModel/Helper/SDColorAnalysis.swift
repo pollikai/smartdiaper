@@ -11,6 +11,7 @@ struct SDColorAnalysis {
 
     let specificGravitySet: [SDSpecificGravityModel]!
     let phValuesSet: [SDPHModel]!
+    let colorNameSet: [SDColorNameModel]!
 
     init() {
 
@@ -34,6 +35,17 @@ struct SDColorAnalysis {
                                 SDPHModel(color: UIColor(red: 121, green: 125, blue: 28), phValue: 7),
                                 SDPHModel(color: UIColor(red: 73, green: 98, blue: 66), phValue: 8),
                                 SDPHModel(color: UIColor(red: 21, green: 63, blue: 62), phValue: 9)]
+
+        self.colorNameSet = [
+            SDColorNameModel(color: UIColor(red: 237, green: 233, blue: 222), name: "Brie"),
+            SDColorNameModel(color: UIColor(red: 245, green: 241, blue: 231), name: "Kalla"),
+            SDColorNameModel(color: UIColor(red: 239, green: 241, blue: 237), name: "Opaali"),
+            SDColorNameModel(color: UIColor(red: 198, green: 216, blue: 229), name: "Cumulus"),
+            SDColorNameModel(color: UIColor(red: 208, green: 221, blue: 237), name: "Pisara"),
+            SDColorNameModel(color: UIColor(red: 186, green: 205, blue: 147), name: "Helinä"),
+            SDColorNameModel(color: UIColor(red: 77, green: 75, blue: 71), name: "Toro"),
+            SDColorNameModel(color: UIColor(red: 80, green: 83, blue: 86), name: "Takorauta"),
+            SDColorNameModel(color: UIColor(red: 63, green: 64, blue: 65), name: "Keskiyö")]
 
     }
 
@@ -77,6 +89,20 @@ struct SDColorAnalysis {
         }
 
         let result = mutablePhValues.min {first, second in first.tolerance < second.tolerance}
+
+        return result
+    }
+
+    func nameForColorValue(color: UIColor) -> SDColorNameModel? {
+
+        let mutableColorModels = self.colorNameSet.map { (colorNameModel: SDColorNameModel) -> SDColorNameModel in
+            var mutableColorNameModel = colorNameModel
+            let tolerance = colorsBecomeSimilarAtTolerance(color1: mutableColorNameModel.color, color2: color)
+            mutableColorNameModel.tolerance = tolerance
+            return mutableColorNameModel
+        }
+
+        let result = mutableColorModels.min {first, second in first.tolerance < second.tolerance}
 
         return result
     }
