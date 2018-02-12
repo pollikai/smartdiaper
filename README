@@ -1,0 +1,7 @@
+Software is written in Swift 4, using xcode 9.1
+
+Steps to add new target theme:
+
+1. Add new target.
+2. Update the target name and info.plist file name.
+3. Set new info.plist file name in the target under 'Buil setting'
