@@ -24,7 +24,7 @@ class SDAnalysisResultViewController: SDCommonAnalysisViewController {
     @IBOutlet weak var saveResultButton: UIButton!
 
     @IBAction func saveResultsButtonAction(_ sender: Any) {
-        self.viewModel?.saveData()
+        self.viewModel?.saveDataPHandSG()
         self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
     }
 

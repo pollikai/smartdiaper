@@ -9,8 +9,8 @@
 import Foundation
 
 struct DBKeys {
-    static var phKey = "ph_key"
-    static var specificGravityKey = "specific_gravit_key"
+    static var value1 = "value1"
+    static var value2 = "value2"
     static var dateKey = "date_key"
     static var scanResultsKey = "scan_results_key"
 
@@ -38,8 +38,8 @@ class SDDatabaseManager {
 
         if  var data = defaults.object(forKey: DBKeys.scanResultsKey) as? [[String: Any]] {
 
-            let dict = [DBKeys.phKey: phValue,
-                        DBKeys.specificGravityKey: specificGravity,
+            let dict = [DBKeys.value1: phValue,
+                        DBKeys.value2: specificGravity,
                         DBKeys.dateKey: dateString] as [String: Any]
             data.append(dict)
 
@@ -47,8 +47,37 @@ class SDDatabaseManager {
 
         } else {
 
-            let dict = [DBKeys.phKey: phValue,
-                        DBKeys.specificGravityKey: specificGravity,
+            let dict = [DBKeys.value1: phValue,
+                        DBKeys.value2: specificGravity,
+                        DBKeys.dateKey: dateString] as [String: Any]
+
+            var data = [[String: Any]]()
+            data.append(dict)
+            defaults.set(data, forKey: DBKeys.scanResultsKey)
+        }
+
+        defaults.synchronize()
+    }
+
+    func saveColorNameResultInDB(colorName: String?) {
+
+        guard let colorNameString = colorName else { return }
+
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd.MM.yyyy HH:mm"
+        let dateString = dateFormatter.string(from: Date())
+
+        if  var data = defaults.object(forKey: DBKeys.scanResultsKey) as? [[String: Any]] {
+
+            let dict = [DBKeys.value2: colorNameString,
+                        DBKeys.dateKey: dateString] as [String: Any]
+            data.append(dict)
+
+            defaults.set(data, forKey: DBKeys.scanResultsKey)
+
+        } else {
+
+            let dict = [DBKeys.value2: colorNameString,
                         DBKeys.dateKey: dateString] as [String: Any]
 
             var data = [[String: Any]]()

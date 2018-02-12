@@ -24,7 +24,7 @@ class CAAnalysisResultViewController: SDCommonAnalysisViewController {
     @IBOutlet weak var saveResultButton: UIButton!
 
     @IBAction func saveResultsButtonAction(_ sender: Any) {
-        self.viewModel?.saveData()
+        self.viewModel?.saveColorName()
         self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
     }
 
@@ -39,24 +39,24 @@ class CAAnalysisResultViewController: SDCommonAnalysisViewController {
     override func viewDidLoad() {
 
         super.viewDidLoad()
-        
+
         saveResultButton.layer.cornerRadius = 5.0
-        
+
         scanAgainButton.layer.cornerRadius = 5.0
         scanAgainButton.layer.borderColor = UIColor(red: 243, green: 134, blue: 96).cgColor
         scanAgainButton.layer.borderWidth = 1.0
-        
+
         leftView.layer.cornerRadius = 5.0
         middleView.layer.cornerRadius = 5.0
-        
+
         self.imageView.contentMode = .scaleAspectFill
-        
+
         self.imageView.image = image
-        
+
         self.overlayView = SDCameraOverlayView(frame: self.view.frame)
         self.overlayView?.setBorderColorOfAreas(color: .clear)
         self.view.addSubview(self.overlayView!)
-         
+
         DispatchQueue.main.async { [unowned self] in
             // Use main queue to compute things as UI frames depends on autolayout, and autolayout must se frames in main queue
             self.performAnalysisForColorName()

@@ -47,11 +47,17 @@ class SDAnalysisResultViewModel {
         return colorNameModels
     }
 
-    func saveData() {
+    func saveDataPHandSG() {
         if self.latestSpecificGravityModel != nil, self.latestPHModel != nil {
             SDDatabaseManager.sharedInstance.saveResultInDB(
                 specificGravity: self.latestSpecificGravityModel?.specificGravityValue,
                 phValue: self.latestPHModel?.phValue)
+        }
+    }
+
+    func saveColorName() {
+        if self.latestColorNameModel != nil {
+            SDDatabaseManager.sharedInstance.saveColorNameResultInDB(colorName: self.latestColorNameModel?.name)
         }
     }
 
