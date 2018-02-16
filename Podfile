@@ -10,13 +10,13 @@ def shared_pods
     pod 'R.swift'
     pod 'RxSwift',    '~> 4.0'
     pod 'RxCocoa',    '~> 4.0'
+    pod 'Firebase/Core'
+    pod 'Firebase/Database'
+
 end
 
 target 'SmartDiaper' do
     shared_pods
-    pod 'Firebase/Core'
-    pod 'Firebase/Database'
-
 end
 
 target 'ColorAnalysis' do
