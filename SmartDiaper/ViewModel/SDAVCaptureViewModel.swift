@@ -17,9 +17,7 @@ class SDAVCaptureViewModel: NSObject, AVCapturePhotoCaptureDelegate {
     var avSessionFailed = Variable(SessionSetupResult.configurationFailed)
 
     var capturedImage: UIImage? {
-        get {
-            return self.image
-        }
+        return self.image
     }
 
     enum SessionSetupResult {

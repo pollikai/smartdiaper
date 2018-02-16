@@ -18,9 +18,7 @@ class SDTargetConfiguration {
     private let currentTarget: Targets!
 
     var target: Targets! {
-        get {
-            return currentTarget
-        }
+        return currentTarget
     }
 
     init() {
