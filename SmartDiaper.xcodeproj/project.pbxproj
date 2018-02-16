@@ -922,6 +922,7 @@
 				DEVELOPMENT_TEAM = SB865CS7Y5;
 				INFOPLIST_FILE = SmartDiaper/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -D TARGET_SMART_DIAPER";
 				PRODUCT_BUNDLE_IDENTIFIER = com.starcut.smartdiaper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -938,6 +939,7 @@
 				DEVELOPMENT_TEAM = SB865CS7Y5;
 				INFOPLIST_FILE = SmartDiaper/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -D TARGET_SMART_DIAPER";
 				PRODUCT_BUNDLE_IDENTIFIER = com.starcut.smartdiaper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -988,6 +990,7 @@
 				DEVELOPMENT_TEAM = SB865CS7Y5;
 				INFOPLIST_FILE = ColorAnalysisInfo.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -D TARGET_COLOR_ANALYSIS";
 				PRODUCT_BUNDLE_IDENTIFIER = com.starcut.coloranalysis;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -1004,6 +1007,7 @@
 				DEVELOPMENT_TEAM = SB865CS7Y5;
 				INFOPLIST_FILE = ColorAnalysisInfo.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -D TARGET_COLOR_ANALYSIS";
 				PRODUCT_BUNDLE_IDENTIFIER = com.starcut.coloranalysis;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

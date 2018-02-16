@@ -16,6 +16,14 @@ class SDAppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         UIApplication.shared.isStatusBarHidden = true
+        
+        #if TARGET_COLOR_ANALYSIS
+            print("TARGET_COLOR_ANALYSIS")
+        #elseif TARGET_SMART_DIAPER
+            print("TARGET_SMART_DIAPER")
+        #else
+            print("no flag is specified for this target")
+        #endif
         return true
     }
 
