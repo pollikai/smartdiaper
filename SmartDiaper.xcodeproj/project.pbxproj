@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		12F04E0E4392FE3A6805DA5A /* Pods_SmartDiaper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 506DA3BAA69EB07ADEC94FCA /* Pods_SmartDiaper.framework */; };
+		3EAF441682F81D02CD8F524E /* Pods_ColorAnalysis.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 431190395CE519861F28D39D /* Pods_ColorAnalysis.framework */; };
+		6D6A3E6A2E469FA5A3D3FC1B /* libPods-SmartDiaperTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B189C1FA3DD3AE0F5054B117 /* libPods-SmartDiaperTests.a */; };
 		AC0291FC2031E524009D205B /* SDCommonAnalysisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0291FB2031E524009D205B /* SDCommonAnalysisViewController.swift */; };
 		AC0291FD2031E524009D205B /* SDCommonAnalysisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0291FB2031E524009D205B /* SDCommonAnalysisViewController.swift */; };
 		AC155618201768D00000BF33 /* SDDataDisplayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC155617201768D00000BF33 /* SDDataDisplayViewModel.swift */; };
@@ -71,7 +73,6 @@
 		ACD6A68E20172BBA00546038 /* SDDataDisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD6A68D20172BBA00546038 /* SDDataDisplayViewController.swift */; };
 		ACDF72BE200784D100F0DBCF /* SDAVCaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDF72BD200784D100F0DBCF /* SDAVCaptureViewController.swift */; };
 		ACF7A49220122D8500417AEE /* SDModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF7A49120122D8500417AEE /* SDModels.swift */; };
-		D4479573F404F1649B02C9DC /* Pods_SmartDiaperTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6029B941F729BAB756958506 /* Pods_SmartDiaperTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,8 +86,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2CC5F00891831982557DB714 /* Pods-ColorAnalysis.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ColorAnalysis.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ColorAnalysis/Pods-ColorAnalysis.debug.xcconfig"; sourceTree = "<group>"; };
+		431190395CE519861F28D39D /* Pods_ColorAnalysis.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ColorAnalysis.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		506DA3BAA69EB07ADEC94FCA /* Pods_SmartDiaper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SmartDiaper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6029B941F729BAB756958506 /* Pods_SmartDiaperTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SmartDiaperTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		715A482C0A10708EADAA6540 /* Pods-SmartDiaperTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartDiaperTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SmartDiaperTests/Pods-SmartDiaperTests.release.xcconfig"; sourceTree = "<group>"; };
 		9F585AD57E8FE490910061BB /* Pods-SmartDiaperTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartDiaperTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SmartDiaperTests/Pods-SmartDiaperTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A96877B5675B97BB58DC6E9D /* Pods-SmartDiaper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartDiaper.release.xcconfig"; path = "Pods/Target Support Files/Pods-SmartDiaper/Pods-SmartDiaper.release.xcconfig"; sourceTree = "<group>"; };
@@ -129,6 +131,8 @@
 		ACD6A68D20172BBA00546038 /* SDDataDisplayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDataDisplayViewController.swift; sourceTree = "<group>"; };
 		ACDF72BD200784D100F0DBCF /* SDAVCaptureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDAVCaptureViewController.swift; sourceTree = "<group>"; };
 		ACF7A49120122D8500417AEE /* SDModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDModels.swift; sourceTree = "<group>"; };
+		B189C1FA3DD3AE0F5054B117 /* libPods-SmartDiaperTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SmartDiaperTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC778DD877C2CB1A5DC57728 /* Pods-ColorAnalysis.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ColorAnalysis.release.xcconfig"; path = "Pods/Target Support Files/Pods-ColorAnalysis/Pods-ColorAnalysis.release.xcconfig"; sourceTree = "<group>"; };
 		F0157F1410F5FB330BCF24E7 /* Pods-SmartDiaper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartDiaper.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SmartDiaper/Pods-SmartDiaper.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -145,7 +149,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D4479573F404F1649B02C9DC /* Pods_SmartDiaperTests.framework in Frameworks */,
+				6D6A3E6A2E469FA5A3D3FC1B /* libPods-SmartDiaperTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -154,6 +158,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AC9CF9D92031C86C009DCEBD /* Pods_SmartDiaper.framework in Frameworks */,
+				3EAF441682F81D02CD8F524E /* Pods_ColorAnalysis.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -167,6 +172,8 @@
 				A96877B5675B97BB58DC6E9D /* Pods-SmartDiaper.release.xcconfig */,
 				9F585AD57E8FE490910061BB /* Pods-SmartDiaperTests.debug.xcconfig */,
 				715A482C0A10708EADAA6540 /* Pods-SmartDiaperTests.release.xcconfig */,
+				2CC5F00891831982557DB714 /* Pods-ColorAnalysis.debug.xcconfig */,
+				EC778DD877C2CB1A5DC57728 /* Pods-ColorAnalysis.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -175,7 +182,8 @@
 			isa = PBXGroup;
 			children = (
 				506DA3BAA69EB07ADEC94FCA /* Pods_SmartDiaper.framework */,
-				6029B941F729BAB756958506 /* Pods_SmartDiaperTests.framework */,
+				431190395CE519861F28D39D /* Pods_ColorAnalysis.framework */,
+				B189C1FA3DD3AE0F5054B117 /* libPods-SmartDiaperTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -624,7 +632,7 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-SmartDiaper-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-ColorAnalysis-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -651,7 +659,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-SmartDiaper/Pods-SmartDiaper-frameworks.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-ColorAnalysis/Pods-ColorAnalysis-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
@@ -664,7 +672,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SmartDiaper/Pods-SmartDiaper-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ColorAnalysis/Pods-ColorAnalysis-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		AC9CF9E72031C86C009DCEBD /* [CP] Copy Pods Resources */ = {
@@ -679,7 +687,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SmartDiaper/Pods-SmartDiaper-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ColorAnalysis/Pods-ColorAnalysis-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		AC9CF9E82031C86C009DCEBD /* SwiftLint Run Script */ = {
@@ -973,7 +981,7 @@
 		};
 		AC9CF9EA2031C86C009DCEBD /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F0157F1410F5FB330BCF24E7 /* Pods-SmartDiaper.debug.xcconfig */;
+			baseConfigurationReference = 2CC5F00891831982557DB714 /* Pods-ColorAnalysis.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -989,7 +997,7 @@
 		};
 		AC9CF9EB2031C86C009DCEBD /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A96877B5675B97BB58DC6E9D /* Pods-SmartDiaper.release.xcconfig */;
+			baseConfigurationReference = EC778DD877C2CB1A5DC57728 /* Pods-ColorAnalysis.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
