@@ -50,9 +50,9 @@ class SDAnalysisResultViewModel {
     func saveDataPHandSG() {
 
         guard let sgValue = self.latestSpecificGravityModel?.specificGravityValue,
-        let phValue = self.latestPHModel?.phValue
-        else {
-            return
+            let phValue = self.latestPHModel?.phValue
+            else {
+                return
         }
 
         let dateFormatter = DateFormatter()
@@ -66,9 +66,13 @@ class SDAnalysisResultViewModel {
                 timeStamp: dateString)
         }
 
-        SDFireBaseManager.sharedInstance.saveScanned(specificGravity: sgValue,
-                                                     phValue: phValue,
-                                                     timeStamp: dateString)
+        let targetConfig = SDTargetConfiguration()
+
+        if targetConfig.target == .smartDiaper {
+            SDFireBaseManager.sharedInstance.saveScanned(specificGravity: sgValue,
+                                                         phValue: phValue,
+                                                         timeStamp: dateString)
+        }
     }
 
     func saveColorName() {
@@ -77,10 +81,10 @@ class SDAnalysisResultViewModel {
         }
     }
 
-#if DEBUG
+    #if DEBUG
     deinit {
         print("deinit")
     }
-#endif
+    #endif
 
 }

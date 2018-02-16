@@ -17,13 +17,17 @@ class SDTargetConfiguration {
 
     private let currentTarget: Targets!
 
-    init() {
-        #if TARGET_SMART_DIAPER
-            print("TARGET_SMART_DIAPER")
-            self.currentTarget = .smartDiaper
+    var target: Targets! {
+        get {
+            return currentTarget
+        }
+    }
 
+    init() {
+
+        #if TARGET_SMART_DIAPER
+            self.currentTarget = .smartDiaper
         #elseif TARGET_COLOR_ANALYSIS
-            print("TARGET_COLOR_ANALYSIS")
             self.currentTarget = .colorAnalysis
         #else
             print("no flag is specified for this target")
