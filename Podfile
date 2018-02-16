@@ -15,6 +15,8 @@ end
 target 'SmartDiaper' do
     shared_pods
     pod 'Firebase/Core'
+    pod 'Firebase/Database'
+
 end
 
 target 'ColorAnalysis' do
