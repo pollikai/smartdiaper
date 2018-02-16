@@ -28,19 +28,15 @@ class SDDatabaseManager {
         self.defaults = UserDefaults.standard
     }
 
-    func saveResultInDB(specificGravity: Double?, phValue: Int?) {
+    func saveResultInDB(specificGravity: Double?, phValue: Int?, timeStamp: String) {
 
         guard let specificGravity = specificGravity, let phValue = phValue else { return }
-
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd.MM.yyyy HH:mm"
-        let dateString = dateFormatter.string(from: Date())
 
         if  var data = defaults.object(forKey: DBKeys.scanResultsKey) as? [[String: Any]] {
 
             let dict = [DBKeys.value1: phValue,
                         DBKeys.value2: specificGravity,
-                        DBKeys.dateKey: dateString] as [String: Any]
+                        DBKeys.dateKey: timeStamp] as [String: Any]
             data.append(dict)
 
             defaults.set(data, forKey: DBKeys.scanResultsKey)
@@ -49,7 +45,7 @@ class SDDatabaseManager {
 
             let dict = [DBKeys.value1: phValue,
                         DBKeys.value2: specificGravity,
-                        DBKeys.dateKey: dateString] as [String: Any]
+                        DBKeys.dateKey: timeStamp] as [String: Any]
 
             var data = [[String: Any]]()
             data.append(dict)
