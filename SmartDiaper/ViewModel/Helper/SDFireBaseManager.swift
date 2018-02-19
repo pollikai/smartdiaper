@@ -42,5 +42,44 @@ class SDFireBaseManager {
 
         let locationRef = rootDB.childByAutoId()
         locationRef.setValue(post)
+
     }
+
+    func exportToCSV() {
+
+        let fileName = "data"
+        let path = NSURL(fileURLWithPath: "/Users/startcut/Desktop").appendingPathComponent(fileName)
+        var csvText = "TimeStamp,ph, SpecificGravity,deviceId\n"
+
+        rootDB.observe(DataEventType.value, with: { (snapshot) in
+            let postDict = snapshot.value as? [String: AnyObject] ?? [:]
+
+            for (_, value) in postDict {
+//                print("\(key) = \(value)")
+
+                let dataEntry = value as? [String: AnyObject]
+
+                let ph = String(format: "%d", dataEntry!["ph"] as? Int ?? 0)
+                let sg = String(format: "%f", dataEntry!["specificGravity"] as? Double ?? 0.0)
+                let deviceId = dataEntry!["deviceId"] as? String ?? ""
+                let timeStamp = dataEntry!["timestamp"] as? String ?? ""
+
+                let newLine = "\(timeStamp), \(ph), \(sg), \(deviceId)\n"
+                csvText.append(newLine)
+            }
+
+            DispatchQueue.main.async {
+                do {
+                    try csvText.write(to: path!, atomically: true, encoding: String.Encoding.utf8)
+                } catch {
+                    print("Failed to create file")
+                    print("\(error)")
+                }
+                print(path ?? "not found")
+            }
+
+        })
+
+    }
+
 }
