@@ -25,18 +25,20 @@ class SDFireBaseManager {
     private init() {
         FirebaseApp.configure()
         let ref = Database.database().reference()
-        let deviceId = UIDevice.current.identifierForVendor!.uuidString
-        let deviceName = UIDevice.current.name
-        let uniqueId = deviceName + "__" + deviceId
 
-        rootDB = ref.child(Bundle.targetName()).child(configuration).child(uniqueId)
+        rootDB = ref.child(Bundle.targetName()).child(configuration)
     }
 
     func saveScanned(specificGravity: Double, phValue: Int, timeStamp: String) {
 
+        let deviceId = UIDevice.current.identifierForVendor!.uuidString
+        let deviceName = UIDevice.current.name
+        let uniqueId = deviceName + "__" + deviceId
+
         let post = ["timestamp": timeStamp,
                     "specificGravity": specificGravity,
-                    "ph": phValue] as [String: Any]
+                    "ph": phValue,
+                    "deviceId": uniqueId] as [String: Any]
 
         let locationRef = rootDB.childByAutoId()
         locationRef.setValue(post)
