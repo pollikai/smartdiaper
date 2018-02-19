@@ -1,6 +1,11 @@
 ## Unknown
 
 
+## [0.3.1] - 19.2.2018
+
+- Changed the firebase data structure
+- Added code for firebase json to csv parser
+
 ## [0.3.0] - 16.2.2018
 
 - Added: Firebase cloud data storage
