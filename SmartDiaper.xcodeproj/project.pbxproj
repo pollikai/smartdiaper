@@ -36,6 +36,7 @@
 		AC38AD5A203AC7500062CBB1 /* SDCameraOverlayViewForOneTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC38AD58203AC7500062CBB1 /* SDCameraOverlayViewForOneTarget.swift */; };
 		AC38AD5C203AC7A30062CBB1 /* SDCameraOverlayViewForOneTarget.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC38AD5B203AC7A30062CBB1 /* SDCameraOverlayViewForOneTarget.xib */; };
 		AC38AD5D203AC7A30062CBB1 /* SDCameraOverlayViewForOneTarget.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC38AD5B203AC7A30062CBB1 /* SDCameraOverlayViewForOneTarget.xib */; };
+		AC38AD61203B247C0062CBB1 /* LaunchScreenColorAnalysis.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC38AD60203B247C0062CBB1 /* LaunchScreenColorAnalysis.storyboard */; };
 		AC3E2C49201B6A7F003C29D3 /* SDResultDataTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3E2C47201B6A7F003C29D3 /* SDResultDataTableViewCell.swift */; };
 		AC3E2C4A201B6A7F003C29D3 /* SDResultDataTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC3E2C48201B6A7F003C29D3 /* SDResultDataTableViewCell.xib */; };
 		AC3E2C50201B800A003C29D3 /* SDResultHeaderFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3E2C4F201B800A003C29D3 /* SDResultHeaderFooterView.swift */; };
@@ -127,6 +128,7 @@
 		AC2F23432037029F0058B39B /* Bundle+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Extension.swift"; sourceTree = "<group>"; };
 		AC38AD58203AC7500062CBB1 /* SDCameraOverlayViewForOneTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDCameraOverlayViewForOneTarget.swift; sourceTree = "<group>"; };
 		AC38AD5B203AC7A30062CBB1 /* SDCameraOverlayViewForOneTarget.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SDCameraOverlayViewForOneTarget.xib; sourceTree = "<group>"; };
+		AC38AD60203B247C0062CBB1 /* LaunchScreenColorAnalysis.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreenColorAnalysis.storyboard; sourceTree = "<group>"; };
 		AC3E2C47201B6A7F003C29D3 /* SDResultDataTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDResultDataTableViewCell.swift; sourceTree = "<group>"; };
 		AC3E2C48201B6A7F003C29D3 /* SDResultDataTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SDResultDataTableViewCell.xib; sourceTree = "<group>"; };
 		AC3E2C4F201B800A003C29D3 /* SDResultHeaderFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDResultHeaderFooterView.swift; sourceTree = "<group>"; };
@@ -260,6 +262,7 @@
 				AC9CF9EE2031C902009DCEBD /* MainColorAnalysis.storyboard */,
 				AC1FE4D02005FDF700EB2BD2 /* Assets.xcassets */,
 				AC1FE4D22005FDF700EB2BD2 /* LaunchScreen.storyboard */,
+				AC38AD60203B247C0062CBB1 /* LaunchScreenColorAnalysis.storyboard */,
 				AC1FE4D52005FDF700EB2BD2 /* Info.plist */,
 				AC2F233C2036E4A10058B39B /* GoogleService-Info.plist */,
 			);
@@ -502,6 +505,7 @@
 				AC38AD5D203AC7A30062CBB1 /* SDCameraOverlayViewForOneTarget.xib in Resources */,
 				AC9CF9DC2031C86C009DCEBD /* NotoSansUI-Italic.ttf in Resources */,
 				AC9CF9DD2031C86C009DCEBD /* LaunchScreen.storyboard in Resources */,
+				AC38AD61203B247C0062CBB1 /* LaunchScreenColorAnalysis.storyboard in Resources */,
 				AC9CF9F02031C902009DCEBD /* MainColorAnalysis.storyboard in Resources */,
 				AC9CF9DE2031C86C009DCEBD /* SDCameraOverlayView.xib in Resources */,
 				AC9CF9DF2031C86C009DCEBD /* Assets.xcassets in Resources */,
