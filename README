@@ -8,3 +8,5 @@ Steps to add new target theme:
 4. Add new storyboard (If UI is completely changed) and change UI
 5. Change Display name for target
 6. Change the bundel Identifier for the target if needed.
+7. Change/Add launch-screen if needed
+8. Add target configuration in SDTargetConfiguration.swift file
