@@ -32,6 +32,10 @@
 		AC2F23442037029F0058B39B /* Bundle+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2F23432037029F0058B39B /* Bundle+Extension.swift */; };
 		AC2F23452037029F0058B39B /* Bundle+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2F23432037029F0058B39B /* Bundle+Extension.swift */; };
 		AC2F2346203710520058B39B /* SDFireBaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2F2341203700900058B39B /* SDFireBaseManager.swift */; };
+		AC38AD59203AC7500062CBB1 /* SDCameraOverlayViewForOneTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC38AD58203AC7500062CBB1 /* SDCameraOverlayViewForOneTarget.swift */; };
+		AC38AD5A203AC7500062CBB1 /* SDCameraOverlayViewForOneTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC38AD58203AC7500062CBB1 /* SDCameraOverlayViewForOneTarget.swift */; };
+		AC38AD5C203AC7A30062CBB1 /* SDCameraOverlayViewForOneTarget.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC38AD5B203AC7A30062CBB1 /* SDCameraOverlayViewForOneTarget.xib */; };
+		AC38AD5D203AC7A30062CBB1 /* SDCameraOverlayViewForOneTarget.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC38AD5B203AC7A30062CBB1 /* SDCameraOverlayViewForOneTarget.xib */; };
 		AC3E2C49201B6A7F003C29D3 /* SDResultDataTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3E2C47201B6A7F003C29D3 /* SDResultDataTableViewCell.swift */; };
 		AC3E2C4A201B6A7F003C29D3 /* SDResultDataTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC3E2C48201B6A7F003C29D3 /* SDResultDataTableViewCell.xib */; };
 		AC3E2C50201B800A003C29D3 /* SDResultHeaderFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3E2C4F201B800A003C29D3 /* SDResultHeaderFooterView.swift */; };
@@ -121,6 +125,8 @@
 		AC2F233E2036FD390058B39B /* SDTargetConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDTargetConfiguration.swift; sourceTree = "<group>"; };
 		AC2F2341203700900058B39B /* SDFireBaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDFireBaseManager.swift; sourceTree = "<group>"; };
 		AC2F23432037029F0058B39B /* Bundle+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Extension.swift"; sourceTree = "<group>"; };
+		AC38AD58203AC7500062CBB1 /* SDCameraOverlayViewForOneTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDCameraOverlayViewForOneTarget.swift; sourceTree = "<group>"; };
+		AC38AD5B203AC7A30062CBB1 /* SDCameraOverlayViewForOneTarget.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SDCameraOverlayViewForOneTarget.xib; sourceTree = "<group>"; };
 		AC3E2C47201B6A7F003C29D3 /* SDResultDataTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDResultDataTableViewCell.swift; sourceTree = "<group>"; };
 		AC3E2C48201B6A7F003C29D3 /* SDResultDataTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SDResultDataTableViewCell.xib; sourceTree = "<group>"; };
 		AC3E2C4F201B800A003C29D3 /* SDResultHeaderFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDResultHeaderFooterView.swift; sourceTree = "<group>"; };
@@ -288,6 +294,8 @@
 				AC3E2C48201B6A7F003C29D3 /* SDResultDataTableViewCell.xib */,
 				AC4252F4200631810083D2AB /* SDCameraOverlayView.swift */,
 				AC4252F6200631890083D2AB /* SDCameraOverlayView.xib */,
+				AC38AD58203AC7500062CBB1 /* SDCameraOverlayViewForOneTarget.swift */,
+				AC38AD5B203AC7A30062CBB1 /* SDCameraOverlayViewForOneTarget.xib */,
 				AC3E2C4F201B800A003C29D3 /* SDResultHeaderFooterView.swift */,
 				AC3E2C51201B8043003C29D3 /* SDResultHeaderFooterView.xib */,
 			);
@@ -472,6 +480,7 @@
 				AC4B4A402019F42C000D64FC /* NotoSansUI-BoldItalic.ttf in Resources */,
 				AC3E2C52201B8043003C29D3 /* SDResultHeaderFooterView.xib in Resources */,
 				AC4B4A3E2019F42C000D64FC /* NotoSansUI-Bold.ttf in Resources */,
+				AC38AD5C203AC7A30062CBB1 /* SDCameraOverlayViewForOneTarget.xib in Resources */,
 				AC1FE4CF2005FDF700EB2BD2 /* Main.storyboard in Resources */,
 				AC4B4A3F2019F42C000D64FC /* NotoSansUI-Regular.ttf in Resources */,
 				AC3E2C4A201B6A7F003C29D3 /* SDResultDataTableViewCell.xib in Resources */,
@@ -490,6 +499,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AC9CF9DB2031C86C009DCEBD /* Lobster-Regular.ttf in Resources */,
+				AC38AD5D203AC7A30062CBB1 /* SDCameraOverlayViewForOneTarget.xib in Resources */,
 				AC9CF9DC2031C86C009DCEBD /* NotoSansUI-Italic.ttf in Resources */,
 				AC9CF9DD2031C86C009DCEBD /* LaunchScreen.storyboard in Resources */,
 				AC9CF9F02031C902009DCEBD /* MainColorAnalysis.storyboard in Resources */,
@@ -746,6 +756,7 @@
 				AC155618201768D00000BF33 /* SDDataDisplayViewModel.swift in Sources */,
 				AC3E2C50201B800A003C29D3 /* SDResultHeaderFooterView.swift in Sources */,
 				AC1FE4F220060A3700EB2BD2 /* UIColor+Extensions.swift in Sources */,
+				AC38AD59203AC7500062CBB1 /* SDCameraOverlayViewForOneTarget.swift in Sources */,
 				AC15561F20177B840000BF33 /* SDAnalysisResultViewModel.swift in Sources */,
 				AC1FE4F020060A2B00EB2BD2 /* UIImage+Extensions.swift in Sources */,
 				AC4A1FAE2007580C00C191AA /* UIView+Extentions.swift in Sources */,
@@ -781,6 +792,7 @@
 				AC9CF9C82031C86C009DCEBD /* SDDataDisplayViewModel.swift in Sources */,
 				AC2F2346203710520058B39B /* SDFireBaseManager.swift in Sources */,
 				AC2F23452037029F0058B39B /* Bundle+Extension.swift in Sources */,
+				AC38AD5A203AC7500062CBB1 /* SDCameraOverlayViewForOneTarget.swift in Sources */,
 				AC9CF9C92031C86C009DCEBD /* SDResultHeaderFooterView.swift in Sources */,
 				AC2F23402036FD390058B39B /* SDTargetConfiguration.swift in Sources */,
 				AC9CF9CA2031C86C009DCEBD /* UIColor+Extensions.swift in Sources */,

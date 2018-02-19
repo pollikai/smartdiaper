@@ -13,7 +13,7 @@ class CAAnalysisResultViewController: SDCommonAnalysisViewController {
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var imageView: UIImageView!
 
-    var overlayView: SDCameraOverlayView?
+    var overlayView: SDCameraOverlayViewForOneTarget?
     @IBOutlet weak var leftView: UIView!
     @IBOutlet weak var middleView: UIView!
     @IBOutlet weak var sampleImage: UIImageView!
@@ -53,15 +53,19 @@ class CAAnalysisResultViewController: SDCommonAnalysisViewController {
 
         self.imageView.image = image
 
-        self.overlayView = SDCameraOverlayView(frame: self.view.frame)
+        self.overlayView = SDCameraOverlayViewForOneTarget(frame: self.view.frame)
         self.overlayView?.setBorderColorOfAreas(color: .clear)
         self.view.addSubview(self.overlayView!)
+
+        self.view.bringSubview(toFront: self.imageView)
 
         DispatchQueue.main.async { [unowned self] in
             // Use main queue to compute things as UI frames depends on autolayout, and autolayout must se frames in main queue
             self.performAnalysisForColorName()
-
+            
             #if DEBUG
+                self.view.sendSubview(toBack: self.imageView)
+                
                 self.imageView.isHidden = false
                 self.sampleImage.isHidden = false
                 self.sampleImage2.isHidden = false
@@ -84,13 +88,13 @@ class CAAnalysisResultViewController: SDCommonAnalysisViewController {
 
     private func performAnalysisForColorName() {
 
-        let leftDotFrame = self.overlayView?.leftView.frameInSuperView
+        let leftDotFrame = self.overlayView?.targetView.frameInSuperView
 
         sampleImage.image = self.view.snapshot(of: leftDotFrame)
 
         self.leftView.backgroundColor = sampleImage.image?.areaAverageColor()
 
-        let rightDotFrame = self.overlayView?.middleView.frameInSuperView
+        let rightDotFrame = self.overlayView?.targetView.frameInSuperView
 
         sampleImage2.image = self.view.snapshot(of: rightDotFrame)
 

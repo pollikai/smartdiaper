@@ -17,6 +17,7 @@ class SDAVCaptureViewController: UIViewController {
     @IBOutlet weak var flashButton: UIButton!
 
     @IBOutlet weak var bottomView: UIView!
+    private var overlayView: UIView!
     var capturedImage: UIImage!
 
     private var viewModel: SDAVCaptureViewModel?
@@ -49,8 +50,22 @@ class SDAVCaptureViewController: UIViewController {
 
         self.viewModel?.tryToOpenSessionPreviewInsideView(previewView: self.previewView)
 
-        let overlayView = SDCameraOverlayView(frame: self.view.frame)
-        self.view.addSubview(overlayView)
+        if self.overlayView == nil {
+            let config = SDTargetConfiguration()
+
+            switch config.target {
+            case .smartDiaper:
+                overlayView = SDCameraOverlayView(frame: self.view.frame)
+
+            case .colorAnalysis:
+                overlayView = SDCameraOverlayViewForOneTarget(frame: self.view.frame)
+
+            default:
+                fatalError("could not detect the target")
+            }
+
+            self.view.addSubview(overlayView)
+        }
         self.view.bringSubview(toFront: self.bottomView)
     }
 

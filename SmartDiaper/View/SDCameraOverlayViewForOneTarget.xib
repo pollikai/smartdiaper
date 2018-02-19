@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SDCameraOverlayViewForOneTarget" customModule="ColorAnalysis" customModuleProvider="target">
+            <connections>
+                <outlet property="contentView" destination="js7-Va-62I" id="bCa-aB-dpz"/>
+                <outlet property="targetView" destination="Rz5-DI-Xaa" id="dJy-ti-XQD"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="js7-Va-62I">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rz5-DI-Xaa">
+                    <rect key="frame" x="184" y="340" width="7.5" height="7.5"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="7.5" id="BDe-ak-ocJ"/>
+                        <constraint firstAttribute="width" constant="7.5" id="h68-UD-98S"/>
+                    </constraints>
+                </view>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="overlay_focus" translatesAutoresizingMaskIntoConstraints="NO" id="u7u-lo-57k">
+                    <rect key="frame" x="166" y="323" width="44" height="41"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="44" id="SgE-NX-rdE"/>
+                        <constraint firstAttribute="width" secondItem="u7u-lo-57k" secondAttribute="height" multiplier="44:41" id="vWj-63-DMg"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="u7u-lo-57k" firstAttribute="centerY" secondItem="Rz5-DI-Xaa" secondAttribute="centerY" id="ELT-dF-BqE"/>
+                <constraint firstItem="u7u-lo-57k" firstAttribute="centerX" secondItem="Rz5-DI-Xaa" secondAttribute="centerX" id="RZZ-TK-BiG"/>
+                <constraint firstItem="Rz5-DI-Xaa" firstAttribute="centerX" secondItem="3BD-PO-usW" secondAttribute="centerX" id="XqW-LB-26y"/>
+                <constraint firstItem="Rz5-DI-Xaa" firstAttribute="centerY" secondItem="3BD-PO-usW" secondAttribute="centerY" id="jc0-pc-KsS"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="3BD-PO-usW"/>
+            <point key="canvasLocation" x="33.5" y="54.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="overlay_focus" width="48" height="45"/>
+    </resources>
+</document>
