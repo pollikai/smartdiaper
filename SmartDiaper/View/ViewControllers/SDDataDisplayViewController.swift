@@ -66,6 +66,13 @@ extension SDDataDisplayViewController {
         let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier:
             String(describing: SDResultHeaderFooterView.self)) as? SDResultHeaderFooterView
 
+        let config = SDTargetConfiguration()
+
+        if config.target == .colorAnalysis {
+            headerView?.setLabel1(text: "")
+            headerView?.setLabel2(text: "Color")
+        }
+
         return headerView
     }
 

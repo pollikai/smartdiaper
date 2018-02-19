@@ -10,12 +10,15 @@ import UIKit
 
 class SDResultHeaderFooterView: UITableViewHeaderFooterView {
 
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    @IBOutlet weak var label1: UILabel!
+    @IBOutlet weak var label2: UILabel!
+
+    func setLabel1(text: String) {
+        label1.text = text
     }
-    */
+
+    func setLabel2(text: String) {
+        label2.text = text
+    }
 
 }
