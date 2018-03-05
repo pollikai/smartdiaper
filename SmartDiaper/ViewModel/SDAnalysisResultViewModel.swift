@@ -104,9 +104,15 @@ class SDAnalysisResultViewModel {
 
         let targetConfig = SDTargetConfiguration()
 
+        guard let sgvalue = latestSpecificGravityModel.specificGravityValue,
+            let phvalue = self.latestPHModel?.phValue
+            else {
+                return
+        }
+
         if targetConfig.target == .smartDiaper {
-            SDFireBaseManager.sharedInstance.saveScanned(specificGravity: statusForSGModel.rawValue,
-                                                         phValue: statusForPHModel.rawValue,
+            SDFireBaseManager.sharedInstance.saveScanned(specificGravity: sgvalue,
+                                                         phValue: phvalue,
                                                          timeStamp: dateString)
         }
     }
