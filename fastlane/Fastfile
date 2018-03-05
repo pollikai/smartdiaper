@@ -1,0 +1,48 @@
+# More documentation about how to customize your build
+# can be found here:
+# https://docs.fastlane.tools
+# fastlane_version "2.68.0"
+
+# This value helps us track success metrics for Fastfiles
+# we automatically generate. Feel free to remove this line
+# once you get things running smoothly!
+
+# default_platform :ios
+
+# Fastfile actions accept additional configuration, but
+# don't worry, fastlane will prompt you for required
+# info which you can add here later
+
+#https://docs.fastlane.tools/
+#https://docs.fastlane.tools/codesigning/getting-started/
+
+desc "Starting lane deploy new build"
+
+
+lane :beta do
+
+  begin
+
+    increment_version_number(
+      version_number: "0.3.3" # Set a specific version number
+    )
+
+    increment_build_number(
+        build_number: "1" 
+    )
+
+    get_certificates           # invokes cert
+
+    get_provisioning_profile(app_identifier: "com.delipap.cuddlies")  # invokes sigh
+    build_app(scheme: "SmartDiaper Release")
+    upload_to_testflight(skip_waiting_for_build_processing: true)
+
+    notification(subtitle: "beta success", message: "")
+
+  
+  rescue => ex # Block if above task fails
+       UI.error("Something went wrong: #{ex}")
+       notification(subtitle: "beta lane Failed", message: "See the logs...#{ex}")
+  end
+
+end

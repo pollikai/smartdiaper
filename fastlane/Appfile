@@ -1,0 +1,17 @@
+# The Appfile can be used to specify information that's used across all fastlane
+# tools, like your username or the app's bundle identifier.
+#
+# For more details, check out the documentation at:
+# https://github.com/fastlane/fastlane/blob/master/fastlane/docs/Appfile.md
+
+# app_identifier "com.your.app" # the bundle identifier of your app
+# apple_id "apple@fastlane.tools" # Your Apple ID
+# app_identifier "com.powerderiva.powerderiva" # The bundle identifier of your app
+apple_id "ankush.kushwaha@starcut.com" # Your Apple email address
+
+team_id "QRJPQ93QK8" # Developer Portal Team ID
+
+itc_team_id "118998582" #iTunes connect team Id
+
+# you can even provide different app identifiers, Apple IDs and team names per lane:
+# More information: https://github.com/fastlane/fastlane/blob/master/fastlane/docs/Appfile.md
