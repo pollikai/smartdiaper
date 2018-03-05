@@ -92,7 +92,7 @@ extension SDDataDisplayViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier,
                                                  for: indexPath)
 
-        let (date, ph, specifigGravity) = self.viewModel.textForCellAt(indexPath: indexPath)
+        let (date, specifigGravity, ph) = self.viewModel.textForCellAt(indexPath: indexPath)
         cell?.dateLabel?.text = date
         cell?.phLabel?.text = ph
         cell?.specifigGravityLabel?.text = specifigGravity

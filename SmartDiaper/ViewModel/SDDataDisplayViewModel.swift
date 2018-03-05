@@ -27,7 +27,7 @@ class SDDataDisplayViewModel {
         let phText = "\(dict[DBKeys.value1] ?? "")"
         let specifigGravityText = "\(dict[DBKeys.value2] ?? "")"
 
-        return (dateText, phText, specifigGravityText)
+        return (dateText, specifigGravityText, phText)
     }
 
     func numberOfRows() -> Int {
