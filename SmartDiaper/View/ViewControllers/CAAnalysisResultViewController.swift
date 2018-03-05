@@ -62,10 +62,10 @@ class CAAnalysisResultViewController: SDCommonAnalysisViewController {
         DispatchQueue.main.async { [unowned self] in
             // Use main queue to compute things as UI frames depends on autolayout, and autolayout must se frames in main queue
             self.performAnalysisForColorName()
-            
+
             #if DEBUG
                 self.view.sendSubview(toBack: self.imageView)
-                
+
                 self.imageView.isHidden = false
                 self.sampleImage.isHidden = false
                 self.sampleImage2.isHidden = false

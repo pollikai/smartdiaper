@@ -82,6 +82,7 @@
 		AC9CF9E52031C86C009DCEBD /* SDResultDataTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC3E2C48201B6A7F003C29D3 /* SDResultDataTableViewCell.xib */; };
 		AC9CF9F02031C902009DCEBD /* MainColorAnalysis.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC9CF9EE2031C902009DCEBD /* MainColorAnalysis.storyboard */; };
 		AC9CF9F62031E20A009DCEBD /* CAAnalysisResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9CF9F52031E20A009DCEBD /* CAAnalysisResultViewController.swift */; };
+		ACB36454204D244D009BDEE8 /* SDStatusCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB36453204D244D009BDEE8 /* SDStatusCalculator.swift */; };
 		ACD6A68E20172BBA00546038 /* SDDataDisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD6A68D20172BBA00546038 /* SDDataDisplayViewController.swift */; };
 		ACDF72BE200784D100F0DBCF /* SDAVCaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDF72BD200784D100F0DBCF /* SDAVCaptureViewController.swift */; };
 		ACF7A49220122D8500417AEE /* SDModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF7A49120122D8500417AEE /* SDModels.swift */; };
@@ -147,6 +148,7 @@
 		AC9CF9ED2031C86C009DCEBD /* ColorAnalysisInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = ColorAnalysisInfo.plist; path = /Users/startcut/Documents/S4_projects/iOS/SmartDiaper/ColorAnalysisInfo.plist; sourceTree = "<absolute>"; };
 		AC9CF9EF2031C902009DCEBD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainColorAnalysis.storyboard; sourceTree = "<group>"; };
 		AC9CF9F52031E20A009DCEBD /* CAAnalysisResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CAAnalysisResultViewController.swift; sourceTree = "<group>"; };
+		ACB36453204D244D009BDEE8 /* SDStatusCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDStatusCalculator.swift; sourceTree = "<group>"; };
 		ACD6A68D20172BBA00546038 /* SDDataDisplayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDataDisplayViewController.swift; sourceTree = "<group>"; };
 		ACDF72BD200784D100F0DBCF /* SDAVCaptureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDAVCaptureViewController.swift; sourceTree = "<group>"; };
 		ACF7A49120122D8500417AEE /* SDModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDModels.swift; sourceTree = "<group>"; };
@@ -212,6 +214,7 @@
 			children = (
 				AC2F233E2036FD390058B39B /* SDTargetConfiguration.swift */,
 				AC15561C20177B5E0000BF33 /* SDColorAnalysis.swift */,
+				ACB36453204D244D009BDEE8 /* SDStatusCalculator.swift */,
 				AC2F2341203700900058B39B /* SDFireBaseManager.swift */,
 			);
 			path = Helper;
@@ -769,6 +772,7 @@
 				AC15561D20177B5E0000BF33 /* SDColorAnalysis.swift in Sources */,
 				AC1FE4CA2005FDF700EB2BD2 /* SDAppDelegate.swift in Sources */,
 				AC4252F5200631810083D2AB /* SDCameraOverlayView.swift in Sources */,
+				ACB36454204D244D009BDEE8 /* SDStatusCalculator.swift in Sources */,
 				AC15562220177EAC0000BF33 /* SDDatabaseManager.swift in Sources */,
 				AC0291FC2031E524009D205B /* SDCommonAnalysisViewController.swift in Sources */,
 				AC4252FE2006347F0083D2AB /* R.generated.swift in Sources */,

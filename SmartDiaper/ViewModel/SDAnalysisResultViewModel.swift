@@ -20,18 +20,50 @@ class SDAnalysisResultViewModel {
         self.colorAnalysis = SDColorAnalysis()
     }
 
-    func specificGravityForColor(color: UIColor) -> String {
+    private func specificGravityModelForColor(color: UIColor) -> SDSpecificGravityModel? {
         let specificGravity = colorAnalysis.specificGravityForColor(color: color)
+        return specificGravity
+    }
+
+    private func phModelForColor(color: UIColor) -> SDPHModel? {
+        let phModel = colorAnalysis.phValueForColor(color: color)
+        return phModel
+    }
+
+    func specificGravityForColor(color: UIColor) -> String {
+        let specificGravity = specificGravityModelForColor(color: color)
         self.latestSpecificGravityModel = specificGravity
 
         return String(format: "%.3f", specificGravity!.specificGravityValue)
     }
 
     func phValueForColor(color: UIColor) -> String {
-        let phModel = colorAnalysis.phValueForColor(color: color)
+        let phModel = phModelForColor(color: color)
         self.latestPHModel = phModel
 
         return String(format: "%d", phModel!.phValue)
+    }
+
+    func specificGravityStatusForColor(color: UIColor) -> String {
+        let statusCalculator = SDStatusCalculator()
+
+        let specificGravityModel = specificGravityModelForColor(color: color)
+
+        let status = statusCalculator.statusForSpecificGravityModel(model: specificGravityModel!)
+
+        return status.rawValue
+
+    }
+
+    func phStatusForColor(color: UIColor) -> String {
+        let statusCalculator = SDStatusCalculator()
+
+        let phModel = colorAnalysis.phValueForColor(color: color)
+
+        let status = statusCalculator.statusForPHModel(model: phModel!)
+
+        return status.rawValue
+
     }
 
     func nameForColorValue(color: UIColor) -> String {

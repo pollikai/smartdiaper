@@ -20,6 +20,8 @@ class SDAnalysisResultViewController: SDCommonAnalysisViewController {
     @IBOutlet weak var sampleImage2: UIImageView!
     @IBOutlet weak var label1: UILabel!
     @IBOutlet weak var label2: UILabel!
+    @IBOutlet weak var sgStatusLabel: UILabel!
+    @IBOutlet weak var phStatusLabel: UILabel!
     @IBOutlet weak var scanAgainButton: UIButton!
     @IBOutlet weak var saveResultButton: UIButton!
 
@@ -100,7 +102,12 @@ class SDAnalysisResultViewController: SDCommonAnalysisViewController {
         let specificGravityValueString = self.viewModel?.specificGravityForColor(color: self.leftView.backgroundColor!)
         self.label1.text = "SG: \(specificGravityValueString ?? "")"
 
+        self.sgStatusLabel.text = self.viewModel?.specificGravityStatusForColor(color: self.leftView.backgroundColor!)
+
         let phValueString = self.viewModel?.phValueForColor(color: self.middleView.backgroundColor!)
+
+        self.phStatusLabel.text = self.viewModel?.phStatusForColor(color: self.middleView.backgroundColor!)
+
         self.label2.text = "PH: \(phValueString ?? "")"
 
         self.imageView.isHidden = true
