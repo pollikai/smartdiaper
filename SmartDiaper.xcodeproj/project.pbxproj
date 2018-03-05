@@ -973,11 +973,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = SB865CS7Y5;
+				DEVELOPMENT_TEAM = QRJPQ93QK8;
 				INFOPLIST_FILE = SmartDiaper/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -D TARGET_SMART_DIAPER";
-				PRODUCT_BUNDLE_IDENTIFIER = com.starcut.smartdiaper;
+				PRODUCT_BUNDLE_IDENTIFIER = com.delipap.cuddlies;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -990,11 +990,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = SB865CS7Y5;
+				DEVELOPMENT_TEAM = QRJPQ93QK8;
 				INFOPLIST_FILE = SmartDiaper/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -D TARGET_SMART_DIAPER";
-				PRODUCT_BUNDLE_IDENTIFIER = com.starcut.smartdiaper;
+				PRODUCT_BUNDLE_IDENTIFIER = com.delipap.cuddlies;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
