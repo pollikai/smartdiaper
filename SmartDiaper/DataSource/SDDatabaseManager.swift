@@ -28,7 +28,7 @@ class SDDatabaseManager {
         self.defaults = UserDefaults.standard
     }
 
-    func saveResultInDB(specificGravity: Double?, phValue: Int?, timeStamp: String) {
+    func saveResultInDB(specificGravity: String?, phValue: String?, timeStamp: String) {
 
         guard let specificGravity = specificGravity, let phValue = phValue else { return }
 

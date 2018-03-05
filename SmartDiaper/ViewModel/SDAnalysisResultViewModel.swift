@@ -81,11 +81,15 @@ class SDAnalysisResultViewModel {
 
     func saveDataPHandSG() {
 
-        guard let sgValue = self.latestSpecificGravityModel?.specificGravityValue,
-            let phValue = self.latestPHModel?.phValue
+        guard let latestSpecificGravityModel = latestSpecificGravityModel,
+            let latestPHModel = self.latestPHModel
             else {
                 return
         }
+
+        let statusCalculator = SDStatusCalculator()
+        let statusForSGModel =  statusCalculator.statusForSpecificGravityModel(model: latestSpecificGravityModel)
+        let statusForPHModel = statusCalculator.statusForPHModel(model: latestPHModel)
 
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd.MM.yyyy HH:mm"
@@ -93,16 +97,16 @@ class SDAnalysisResultViewModel {
 
         if self.latestSpecificGravityModel != nil, self.latestPHModel != nil {
             SDDatabaseManager.sharedInstance.saveResultInDB(
-                specificGravity: sgValue,
-                phValue: phValue,
+                specificGravity: statusForSGModel.rawValue,
+                phValue: statusForPHModel.rawValue,
                 timeStamp: dateString)
         }
 
         let targetConfig = SDTargetConfiguration()
 
         if targetConfig.target == .smartDiaper {
-            SDFireBaseManager.sharedInstance.saveScanned(specificGravity: sgValue,
-                                                         phValue: phValue,
+            SDFireBaseManager.sharedInstance.saveScanned(specificGravity: statusForSGModel.rawValue,
+                                                         phValue: statusForPHModel.rawValue,
                                                          timeStamp: dateString)
         }
     }

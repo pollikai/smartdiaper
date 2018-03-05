@@ -38,7 +38,7 @@ class SDFireBaseManager {
         rootDB = ref.child(Bundle.targetName()).child(configuration)
     }
 
-    func saveScanned(specificGravity: Double, phValue: Int, timeStamp: String) {
+    func saveScanned(specificGravity: String, phValue: String, timeStamp: String) {
 
         let deviceId = UIDevice.current.identifierForVendor!.uuidString
         let deviceName = UIDevice.current.name
