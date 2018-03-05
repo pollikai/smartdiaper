@@ -37,7 +37,7 @@ class SDDatabaseManager {
             let dict = [DBKeys.value1: phValue,
                         DBKeys.value2: specificGravity,
                         DBKeys.dateKey: timeStamp] as [String: Any]
-            data.append(dict)
+            data.insert(dict, at: data.startIndex)
 
             defaults.set(data, forKey: DBKeys.scanResultsKey)
 
