@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "AC1FE4C52005FDF700EB2BD2"
-               BuildableName = "SmartDiaper.app"
-               BlueprintName = "SmartDiaper"
+               BuildableName = "Cuddlies.app"
+               BlueprintName = "Cuddlies"
                ReferencedContainer = "container:SmartDiaper.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -44,8 +44,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "AC1FE4C52005FDF700EB2BD2"
-            BuildableName = "SmartDiaper.app"
-            BlueprintName = "SmartDiaper"
+            BuildableName = "Cuddlies.app"
+            BlueprintName = "Cuddlies"
             ReferencedContainer = "container:SmartDiaper.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -68,8 +68,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "AC1FE4C52005FDF700EB2BD2"
-            BuildableName = "SmartDiaper.app"
-            BlueprintName = "SmartDiaper"
+            BuildableName = "Cuddlies.app"
+            BlueprintName = "Cuddlies"
             ReferencedContainer = "container:SmartDiaper.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -87,8 +87,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "AC1FE4C52005FDF700EB2BD2"
-            BuildableName = "SmartDiaper.app"
-            BlueprintName = "SmartDiaper"
+            BuildableName = "Cuddlies.app"
+            BlueprintName = "Cuddlies"
             ReferencedContainer = "container:SmartDiaper.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

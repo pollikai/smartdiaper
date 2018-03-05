@@ -112,7 +112,7 @@
 		AC15561E20177B840000BF33 /* SDAnalysisResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDAnalysisResultViewModel.swift; sourceTree = "<group>"; };
 		AC15562120177EAC0000BF33 /* SDDatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDatabaseManager.swift; sourceTree = "<group>"; };
 		AC1B0AC4201603D100059BD5 /* SDAnalysisResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDAnalysisResultViewController.swift; sourceTree = "<group>"; };
-		AC1FE4C62005FDF700EB2BD2 /* SmartDiaper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartDiaper.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC1FE4C62005FDF700EB2BD2 /* Cuddlies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cuddlies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC1FE4C92005FDF700EB2BD2 /* SDAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDAppDelegate.swift; sourceTree = "<group>"; };
 		AC1FE4CE2005FDF700EB2BD2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AC1FE4D02005FDF700EB2BD2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -243,7 +243,7 @@
 		AC1FE4C72005FDF700EB2BD2 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				AC1FE4C62005FDF700EB2BD2 /* SmartDiaper.app */,
+				AC1FE4C62005FDF700EB2BD2 /* Cuddlies.app */,
 				AC1FE4DA2005FDF800EB2BD2 /* SmartDiaperTests.xctest */,
 				AC9CF9EC2031C86C009DCEBD /* ColorAnalysis.app */,
 			);
@@ -363,9 +363,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		AC1FE4C52005FDF700EB2BD2 /* SmartDiaper */ = {
+		AC1FE4C52005FDF700EB2BD2 /* Cuddlies */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AC1FE4E32005FDF800EB2BD2 /* Build configuration list for PBXNativeTarget "SmartDiaper" */;
+			buildConfigurationList = AC1FE4E32005FDF800EB2BD2 /* Build configuration list for PBXNativeTarget "Cuddlies" */;
 			buildPhases = (
 				951924B4D12D8357958D357E /* [CP] Check Pods Manifest.lock */,
 				AC4252F82006329D0083D2AB /* R.Swift Run Script */,
@@ -380,9 +380,9 @@
 			);
 			dependencies = (
 			);
-			name = SmartDiaper;
+			name = Cuddlies;
 			productName = SmartDiaper;
-			productReference = AC1FE4C62005FDF700EB2BD2 /* SmartDiaper.app */;
+			productReference = AC1FE4C62005FDF700EB2BD2 /* Cuddlies.app */;
 			productType = "com.apple.product-type.application";
 		};
 		AC1FE4D92005FDF800EB2BD2 /* SmartDiaperTests */ = {
@@ -465,7 +465,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				AC1FE4C52005FDF700EB2BD2 /* SmartDiaper */,
+				AC1FE4C52005FDF700EB2BD2 /* Cuddlies */,
 				AC9CF9C22031C86C009DCEBD /* ColorAnalysis */,
 				AC1FE4D92005FDF800EB2BD2 /* SmartDiaperTests */,
 			);
@@ -827,7 +827,7 @@
 /* Begin PBXTargetDependency section */
 		AC1FE4DC2005FDF800EB2BD2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = AC1FE4C52005FDF700EB2BD2 /* SmartDiaper */;
+			target = AC1FE4C52005FDF700EB2BD2 /* Cuddlies */;
 			targetProxy = AC1FE4DB2005FDF800EB2BD2 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -1081,7 +1081,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AC1FE4E32005FDF800EB2BD2 /* Build configuration list for PBXNativeTarget "SmartDiaper" */ = {
+		AC1FE4E32005FDF800EB2BD2 /* Build configuration list for PBXNativeTarget "Cuddlies" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AC1FE4E42005FDF800EB2BD2 /* Debug */,
