@@ -22,10 +22,10 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
-    <key>ITSAppUsesNonExemptEncryption</key>
-    <false/>
+	<key>ITSAppUsesNonExemptEncryption</key>
+	<false/>
 	<key>NSCameraUsageDescription</key>
-	<string>This app will use camera.</string>
+	<string>The application requires access to the camera in order to read and analyze the visual indicators from the diaper.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>You can select photos to attach to reports.</string>
 	<key>UIAppFonts</key>
