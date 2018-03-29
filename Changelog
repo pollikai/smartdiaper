@@ -1,5 +1,9 @@
 ## Unknown
 
+## [0.3.5] - 29.3.2018
+- Fixed #4185
+	Camera stuck in iPhone X, 8 plus when turn the torch on
+
 
 ## [0.3.4] - 7.3.2018
 - Add description 'why app needs to use camera' 
