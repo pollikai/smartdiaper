@@ -24,7 +24,7 @@ lane :beta do
   begin
 
     increment_version_number(
-      version_number: "0.3.4" # Set a specific version number
+      version_number: "0.3.5" # Set a specific version number
     )
 
     increment_build_number(
