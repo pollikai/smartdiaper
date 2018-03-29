@@ -82,6 +82,8 @@ class SDAVCaptureViewModel: NSObject, AVCapturePhotoCaptureDelegate {
             // this is very good example to see unowned into action
             if self.setupResult == .success {
                 self.session.stopRunning()
+                self.flashOn.value = false // here torch gets off by its own, when we stop session,
+                //so broadcasting that torch is off now
             }
         }
     }
@@ -141,8 +143,30 @@ class SDAVCaptureViewModel: NSObject, AVCapturePhotoCaptureDelegate {
 
     private func addVieoInput(text: String) throws {
         do {
-            var defaultVideoDevice: AVCaptureDevice?
 
+            let defaultVideoDevice = try defaultDevice()
+
+            let videoDeviceInput = try AVCaptureDeviceInput(device: defaultVideoDevice)
+
+            if session.canAddInput(videoDeviceInput) {
+                session.addInput(videoDeviceInput)
+                self.videoDeviceInput = videoDeviceInput
+
+            } else {
+                setupResult = .configurationFailed
+                session.commitConfiguration()
+
+                throw  SDAVCaptureError.noVideoInput(NSError(domain: "Could not add video device input to the session",
+                                                             code: -1,
+                                                             userInfo: nil))
+            }
+        }
+    }
+
+    private func defaultDevice() throws -> AVCaptureDevice {
+        var defaultVideoDevice: AVCaptureDevice
+
+        do {
             // Choose the back dual camera if available, otherwise default to a wide angle camera.
             if let dualCameraDevice = AVCaptureDevice.default(AVCaptureDevice.DeviceType.builtInDualCamera,
                                                               for: AVMediaType.video,
@@ -161,22 +185,13 @@ class SDAVCaptureViewModel: NSObject, AVCapturePhotoCaptureDelegate {
                  In this case, we should default to the front wide angle camera.
                  */
                 defaultVideoDevice = frontCameraDevice
-            }
-
-            let videoDeviceInput = try AVCaptureDeviceInput(device: defaultVideoDevice!)
-
-            if session.canAddInput(videoDeviceInput) {
-                session.addInput(videoDeviceInput)
-                self.videoDeviceInput = videoDeviceInput
-
             } else {
-                setupResult = .configurationFailed
-                session.commitConfiguration()
-
-                throw  SDAVCaptureError.noVideoInput(NSError(domain: "Could not add video device input to the session",
-                                                             code: -1,
-                                                             userInfo: nil))
+                throw SDAVCaptureError.noVideoInput(NSError(domain: "No Camera device available.",
+                                                      code: -1,
+                                                      userInfo: nil))
             }
+
+            return defaultVideoDevice
         }
     }
 
@@ -194,9 +209,13 @@ class SDAVCaptureViewModel: NSObject, AVCapturePhotoCaptureDelegate {
     }
 
     func toggleFlash() {
-        guard let device = AVCaptureDevice.default(for: AVMediaType.video), device.hasTorch else {return}
-            do {
+        do {
+            let device = try defaultDevice()
+
+            guard device.hasTorch else {return}
+
                 try device.lockForConfiguration()
+
                 if device.torchMode == .on {
 
                     device.torchMode = .off
@@ -206,8 +225,8 @@ class SDAVCaptureViewModel: NSObject, AVCapturePhotoCaptureDelegate {
                     self.flashOn.value = true
                 }
                 device.unlockForConfiguration()
-            } catch {
-            print("error")
+            } catch let error as NSError {
+            print(error)
         }
     }
 #if DEBUG
